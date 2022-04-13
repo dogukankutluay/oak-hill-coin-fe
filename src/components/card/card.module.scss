@@ -1,0 +1,25 @@
+@import 'assets/styles/_variables.scss';
+.card {
+  background: linear-gradient(180deg, #2f7646 0%, rgba(46, 117, 68, 0) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  border-radius: 2rem;
+  max-width: 70%;
+  padding: 0.5rem;
+  min-height: 300px;
+  &Title {
+    font-family: playfairRegular;
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  &Text {
+    font-family: redhatRegular;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: #fff;
+  }
+}

@@ -1,0 +1,26 @@
+@import 'assets/styles/_variables.scss';
+%btn {
+  border-radius: 40px;
+  min-width: 150px;
+  outline: none;
+  border: none;
+  font-family: redhatRegular;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 1rem 1.4rem;
+  text-align: center;
+  cursor: pointer;
+  margin: 15px 10px;
+}
+.primary {
+  @extend %btn;
+  background: #2f7646;
+  color: white;
+}
+.secondary {
+  @extend %btn;
+  color: #b6b6b6;
+  background: rgba(196, 255, 216, 0.6);
+}

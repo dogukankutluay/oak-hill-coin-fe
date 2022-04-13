@@ -1,0 +1,29 @@
+@import 'assets/styles/_variables.scss';
+.footer {
+  display: flex;
+
+  &Item {
+    &:last-child a {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 12px;
+        height: 2px;
+        background-color: #a4afb0;
+        top: 18px;
+        left: 0;
+      }
+    }
+  }
+  &Item a {
+    display: block;
+    padding: 5px 20px;
+    color: #a4afb0;
+  }
+
+  margin-top: auto;
+  align-self: flex-end;
+}

@@ -1,0 +1,20 @@
+.navbar {
+  align-self: flex-start;
+  width: 100%;
+  ul {
+    display: flex;
+    list-style: none;
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em;
+    justify-content: space-between;
+    li a {
+      display: block;
+      padding: 5px 10px 5px 0px;
+      color: #2f7646;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

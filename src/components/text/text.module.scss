@@ -1,0 +1,33 @@
+@import 'assets/styles/_variables.scss';
+.text {
+  text-align: center;
+  &Title {
+    font-family: playfairBold;
+    color: #2f7646;
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  &Subtitle,
+  &Description {
+    font-family: redhatRegular;
+    color: rgba(49, 49, 49, 0.6);
+  }
+  &Subtitle {
+    font-size: 1.25rem;
+
+    margin-top: 25px;
+  }
+  &Description {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+
+    margin-bottom: 1.2rem;
+    a {
+      font-size: 1rem;
+      color: #2f7646;
+    }
+  }
+}
