@@ -2,9 +2,16 @@ import React from 'react';
 import style from './container.module.scss';
 import containerImage from 'assets/images/container.png';
 import { default as cn } from 'classnames';
+
 export default function Container({ children }) {
   return (
-    <div className={style.container} style={containerStyle}>
+    <div
+      className={cn(
+        style.container,
+        'animate__animated animate__fadein delay-100'
+      )}
+      style={containerStyle}
+    >
       {children}
     </div>
   );

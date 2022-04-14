@@ -1,10 +1,16 @@
 import style from './form.module.scss';
+import { default as cn } from 'classnames';
 export default function Form({ children }) {
   return <form className={style.form}>{children}</form>;
 }
 export const Input = (props) => {
   return (
-    <div className={style.formItem}>
+    <div
+      className={cn(
+        style.formItem,
+        'animate__animated animate__fadeIn delay-300'
+      )}
+    >
       <label htmlFor="" className={style.formLabel}>
         {props.title}
       </label>
@@ -15,7 +21,12 @@ export const Input = (props) => {
 
 export const Checkbox = (props) => {
   return (
-    <div className={style.checkboxWrapper}>
+    <div
+      className={cn(
+        style.checkboxWrapper,
+        'animate__animated animate__fadeIn delay-400'
+      )}
+    >
       <input type="checkbox" className={style.checkbox} />
       <label htmlFor="" className={style.checkboxLabel}>
         {props.title}

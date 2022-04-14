@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './navbar.module.scss';
+import { default as cn } from 'classnames';
 export default function Navbar() {
   return (
-    <nav className={style.navbar}>
+    <nav
+      className={cn(
+        style.navbar,
+        'animate__animated animate__fadeIn delay-100'
+      )}
+    >
       <ul>
         <li>
           <Link to={'/'}>Home</Link>
