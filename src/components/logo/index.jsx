@@ -4,8 +4,12 @@ import { default as cn } from 'classnames';
 import style from './logo.module.scss';
 export default function Logo() {
   return (
-    <div className={cn(style.logo, 'animate__animated animate__fadeIn')}>
-      <OakHillIcon />
-    </div>
+    <>
+      <div
+        className={cn(style.logo, 'animate__animated animate__fadeIn')}></div>
+      <div className={cn(style.logo1, 'animate__animated animate__fadeIn')}>
+        <OakHillIcon />
+      </div>
+    </>
   );
 }
