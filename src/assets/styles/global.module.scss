@@ -6,3 +6,9 @@
     width: 100%;
   }
 }
+@media (max-width: '500px') {
+  .inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './container.module.scss';
 import containerImage from 'assets/images/container.png';
 import { default as cn } from 'classnames';
@@ -21,7 +21,10 @@ export const Row = ({ children, className }) => {
 };
 
 const containerStyle = {
-  background: `url(${containerImage})`,
+  background:
+    window.innerWidth > 1000
+      ? `url(${containerImage})`
+      : 'rgba(255,255,255,0.9)',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: 'cover',

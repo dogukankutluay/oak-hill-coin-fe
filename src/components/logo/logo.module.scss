@@ -1,5 +1,6 @@
 .logo {
   /* Rectangle 38 */
+  position: relative;
   width: 120px;
   aspect-ratio: 1;
   display: flex;
@@ -10,5 +11,10 @@
   opacity: 0.9;
   align-self: flex-start;
   margin-bottom: 2rem;
+  filter: blur(4px);
   border-radius: 20px;
+  svg {
+    position: absolute;
+    z-index: 100;
+  }
 }
