@@ -1,5 +1,10 @@
 import React from 'react';
+import Splash from '../../components/splash';
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Splash />
+    </div>
+  );
 }

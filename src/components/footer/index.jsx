@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './footer.module.scss';
 import { default as cn } from 'classnames';
+import { useSelector } from 'react-redux';
+import languages from 'constants/routes/language';
 export default function Footer() {
+  const lang = useSelector((state) => languages[state.preferences.lang]).footer;
+
   return (
     <ul
       className={cn(
@@ -11,10 +15,10 @@ export default function Footer() {
       )}
     >
       <li className={style.footerItem}>
-        <Link to={'/'}>Terms & Conditions</Link>
+        <Link to={'/'}>{lang.terms}</Link>
       </li>
       <li className={style.footerItem}>
-        <Link to={'/'}>Privacy Policy</Link>
+        <Link to={'/'}>{lang.privacy}</Link>
       </li>
     </ul>
   );

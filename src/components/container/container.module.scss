@@ -1,8 +1,6 @@
+@import 'assets/styles/_global.module.scss';
 .container {
-  width: min(90%, 1200px);
-  display: flex;
-  min-height: 600px;
-  border-radius: 40px;
+  @extend %container;
 }
 .row {
   flex-basis: 1;

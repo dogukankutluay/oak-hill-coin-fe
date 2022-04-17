@@ -6,8 +6,12 @@ import Form, { Input } from 'components/form';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Subtitle, Title } from 'components/text';
+import languages from 'constants/routes/language';
+import { useSelector } from 'react-redux';
 
 export default function Reset() {
+  const lang = useSelector((state) => languages[state.preferences.lang]).reset;
+  document.title = lang.pageTitle;
   return (
     <Background>
       <Container>
@@ -17,17 +21,15 @@ export default function Reset() {
         <Row>
           <Navbar />
           <Form>
-            <Subtitle>READY TO LAUNCH</Subtitle>
-            <Title>Forgot password</Title>
-            <Description>
-              Please enter your email for verification code.
-            </Description>
+            <Subtitle>{lang.subtitle}</Subtitle>
+            <Title>{lang.title}</Title>
+            <Description>{lang.description}</Description>
             <Input
-              title="Verification Code"
-              placeholder="Please enter verification code"
+              title={lang.verification}
+              placeholder={lang.verificationHolder}
             />
-            <Button variant="secondary">Back</Button>
-            <Button>Confirm</Button>
+            <Button variant="secondary">{lang.btnBack}</Button>
+            <Button>{lang.btnConfirm}</Button>
           </Form>
           <Footer />
         </Row>

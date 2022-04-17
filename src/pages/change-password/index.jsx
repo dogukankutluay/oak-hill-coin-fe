@@ -6,8 +6,14 @@ import Form, { Input } from 'components/form';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Subtitle, Title } from 'components/text';
+import { useSelector } from 'react-redux';
+import languages from 'constants/routes/language';
 
 export default function ChangePassword() {
+  const lang = useSelector(
+    (state) => languages[state.preferences.lang]
+  ).changePassword;
+  document.title = lang.pageTitle;
   return (
     <Background>
       <Container>
@@ -17,23 +23,21 @@ export default function ChangePassword() {
         <Row>
           <Navbar />
           <Form>
-            <Subtitle>READY TO LAUNCH</Subtitle>
-            <Title>Change password</Title>
-            <Description>
-              Please enter your email for verification code.
-            </Description>
+            <Subtitle>{lang.subtitle}</Subtitle>
+            <Title>{lang.title}</Title>
+            <Description>{lang.description}</Description>
             <Input
-              type="password"
-              title="New password"
-              placeholder="Enter your new password"
+              type={'password'}
+              title={lang.password}
+              placeholder={lang.passwordHolder}
             />
             <Input
               type="password"
-              title="Re-enter password"
-              placeholder="Re-enter your password"
+              title={lang.passwordConfirm}
+              placeholder={lang.passwordConfirmHolder}
             />
-            <Button variant="secondary">Back</Button>
-            <Button>Confirm</Button>
+            <Button variant="secondary">{lang.btnBack}</Button>
+            <Button>{lang.btnConfirm}</Button>
           </Form>
           <Footer />
         </Row>

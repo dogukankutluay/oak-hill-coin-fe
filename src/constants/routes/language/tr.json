@@ -1,0 +1,116 @@
+{
+  "login": {
+    "cardTitle": "Hoşgeldiniz",
+    "cardBody": "“Hedeflerimizden biri alternatif varlık yönetimi tarafından temsil edilmektedir, bu nedenle tüm grup, ihtiyaçlarınıza ve isteklerinize göre iyi tasarlanmış yatırım çözümleri sunmaktadır.”",
+    "pageTitle": "Giriş yap",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Lütfen hesabınıza giriş yapın.",
+    "description": "Üye değil misin?",
+    "direct": "Kayıt ol",
+    "mail": "E-mail",
+    "mailHolder": "Mail adresinizi giriniz",
+    "password": "Şifre",
+    "passwordHolder": "Şifrenizi giriniz",
+    "checkbox": "Beni hatırla",
+    "btnForgot": "Şifremi unuttum",
+    "btnSignin": "Giriş yap"
+  },
+  "loginVerify": {
+    "pageTitle": "Doğrula",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Doğrulama Kodu",
+    "description": "Lütfen doğrulama kodu için mailinizi kontrol edin",
+    "verification": "Doğrulama kodu",
+    "verificationHolder": "Lüften doğrulama kodunu giriniz",
+    "btnBack": "Geri",
+    "btnConfirm": "Onayla"
+  },
+  "loginSuccess": {
+    "pageTitle": "Başarılı!",
+    "title": "Başarılı şekilde giriş yaptın!",
+    "description": "“Devam” butonuna tıklayarak anasayfayı görüntüleyebilirsin.",
+    "btnContinue": "Devam"
+  },
+  "register": {
+    "cardTitle": "Hoşgeldiniz",
+    "cardBody": "“Hedeflerimizden biri alternatif varlık yönetimi tarafından temsil edilmektedir, bu nedenle tüm grup, ihtiyaçlarınıza ve isteklerinize göre iyi tasarlanmış yatırım çözümleri sunmaktadır.”",
+    "pageTitle": "Kayıt ol",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Lütfen bilgilerinizi girin.",
+    "description": "Zaten üye misin?",
+    "direct": "Giriş yap",
+    "firstname": "İsim",
+    "lastname": "Soyisim",
+    "mail": "E-mail",
+    "password": "Şifre",
+    "passwordConfirm": "Şifre tekrar",
+    "firstnameHolder": "Adınızı giriniz",
+    "lastnameHolder": "Soyadınızı giriniz",
+    "mailHolder": "Mail adresinizi giriniz",
+    "passwordHolder": "Şifrenizi giriniz",
+    "passwordConfirmHolder": "Şifrenizi tekrar giriniz",
+    "checkbox": "Oakhill Coin üyelik sözleşmesini kabul ediyorum",
+    "btnForgot": "Şifremi unuttum",
+    "btnCreateAccount": "Hesap oluştur"
+  },
+  "registerVerify": {
+    "pageTitle": "Doğrula",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Doğrulama Kodu",
+    "description": "Lütfen doğrulama kodu için mailinizi kontrol edin",
+    "verification": "Doğrulama kodu",
+    "verificationHolder": "Lüften doğrulama kodunu giriniz",
+    "btnBack": "Geri",
+    "btnConfirm": "Onayla"
+  },
+  "registerSuccess": {
+    "pageTitle": "Başarılı!",
+    "title": "Başarılı şekilde kayıt oldun!",
+    "description": "“Devam” butonuna tıklayarak giriş yapabilirsin.",
+    "btnContinue": "Devam"
+  },
+  "reset": {
+    "pageTitle": "Sıfırla",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Şifremi unuttum",
+    "description": "Lütfen doğrulama kodu için mailinizi kontrol edin",
+    "verification": "Doğrulama kodu",
+    "verificationHolder": "Lüften doğrulama kodunu giriniz",
+    "btnBack": "Geri",
+    "btnConfirm": "Onayla"
+  },
+  "changePassword": {
+    "pageTitle": "Şifreni değiştir",
+    "subtitle": "LANSMAN İÇİN HAZIR",
+    "title": "Şifreni değiştir",
+    "description": "Lütfen yeni şifrenizi giriniz.",
+    "password": "Yeni şifre",
+    "passwordConfirm": "Yeni şifre tekrar",
+    "passwordHolder": "Yeni şifrenizi giriniz",
+    "passwordConfirmHolder": "Yeni şifrenizi tekrar giriniz",
+    "btnBack": "Geri",
+    "btnConfirm": "Onayla"
+  },
+  "changePasswordSuccess": {
+    "pageTitle": "Başarılı!",
+    "title": "Başarılı bir şekilde şifreni değiştirdin!",
+    "description": " “Devam” butonuna tıklayarak giriş yapabilirsin.",
+    "btnContinue": "Devam"
+  },
+  "splash": {
+    "pageTitle": "Oak Hill Coin",
+    "title": "Oak Hill Coin",
+    "subtitle": "Hoşgeldiniz",
+    "description": "“Hedeflerimizden biri alternatif varlık yönetimi tarafından temsil edilmektedir, bu nedenle tüm grup, ihtiyaçlarınıza ve isteklerinize göre iyi tasarlanmış yatırım çözümleri sunmaktadır.”",
+    "btnConfirm": "Onayla"
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "footer": {
+    "terms": "Şartlar & Koşullar",
+    "privacy": "Gizlilik politikası"
+  }
+}

@@ -5,7 +5,13 @@ import Footer from 'components/footer';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Title } from 'components/text';
+import languages from 'constants/routes/language';
+import { useSelector } from 'react-redux';
 export default function LoginSuccess() {
+  const lang = useSelector(
+    (state) => languages[state.preferences.lang]
+  ).loginSuccess;
+  document.title = lang.pageTitle;
   return (
     <Background>
       <Container>
@@ -185,11 +191,9 @@ export default function LoginSuccess() {
               stroke-width="18"
             />
           </svg>
-          <Title>You have successfully login!</Title>
-          <Description>
-            You can click to “Continue” button to see your dashboard.
-          </Description>
-          <Button>Continue</Button>
+          <Title align="center">{lang.title}</Title>
+          <Description align="center">{lang.description}</Description>
+          <Button>{lang.btnContinue}</Button>
           <Footer />
         </Row>
       </Container>

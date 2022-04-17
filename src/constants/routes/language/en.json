@@ -1,0 +1,116 @@
+{
+  "login": {
+    "cardTitle": "Welcome",
+    "cardBody": "“One of our objectives is represented by the alternative asset management, therefore the entire group offers investment solutions well-tailored to your needs and wishes.”",
+    "pageTitle": "Login",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Please Log in your account.",
+    "description": "Not a member",
+    "direct": "Sign up",
+    "mail": "E-mail",
+    "mailHolder": "Emaill address",
+    "password": "Password",
+    "passwordHolder": "Password",
+    "checkbox": "Remember me",
+    "btnForgot": "Forgot password",
+    "btnSignin": "Sign in"
+  },
+  "loginVerify": {
+    "pageTitle": "Verify",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Verification Code",
+    "description": "Please check your email for verification code.",
+    "verification": "Verification Code",
+    "verificationHolder": "Please enter verification code",
+    "btnBack": "Back",
+    "btnConfirm": "Confirm"
+  },
+  "loginSuccess": {
+    "pageTitle": "Success!",
+    "title": "You have successfully login!",
+    "description": "You can click to “Continue” button to see your dashboard.",
+    "btnContinue": "Continue"
+  },
+  "register": {
+    "cardTitle": "Welcome",
+    "cardBody": "“One of our objectives is represented by the alternative asset management, therefore the entire group offers investment solutions well-tailored to your needs and wishes.”",
+    "pageTitle": "Register",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Please enter your information.",
+    "description": "Already a member?",
+    "direct": "Log in",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "mail": "E-mail",
+    "password": "Password",
+    "passwordConfirm": "Re-enter password",
+    "firstnameHolder": "Enter your firstname",
+    "lastnameHolder": "Enter your lastname",
+    "mailHolder": "Enter your email",
+    "passwordHolder": "Enter your password",
+    "passwordConfirmHolder": "Re enter your password",
+    "checkbox": "I have aggreed terms associated to Oakhill Coin",
+    "btnForgot": "Forgot password",
+    "btnCreateAccount": "Create account"
+  },
+  "registerVerify": {
+    "pageTitle": "Verify",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Verification Code",
+    "description": "Please check your email for verification code.",
+    "verification": "Verification Code",
+    "verificationHolder": "Please enter verification code",
+    "btnBack": "Back",
+    "btnConfirm": "Confirm"
+  },
+  "registerSuccess": {
+    "pageTitle": "Success!",
+    "title": "You have successfully registered!",
+    "description": "You can click to “Continue” button to see your dashboard.",
+    "btnContinue": "Continue"
+  },
+  "reset": {
+    "pageTitle": "Reset",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Forgot password",
+    "description": "Please check your email for verification code.",
+    "verification": "Verification Code",
+    "verificationHolder": "Please enter verification code",
+    "btnBack": "Back",
+    "btnConfirm": "Confirm"
+  },
+  "changePassword": {
+    "pageTitle": "Change password",
+    "subtitle": "READY TO LAUNCH",
+    "title": "Forgot password",
+    "description": "Please enter your new password.",
+    "password": "New password",
+    "passwordConfirm": "Re-enter password",
+    "passwordHolder": "Enter your new password",
+    "passwordConfirmHolder": "Re-enter your new password",
+    "btnBack": "Back",
+    "btnConfirm": "Confirm"
+  },
+  "changePasswordSuccess": {
+    "pageTitle": "Success!",
+    "title": "You have successfully changed your password!",
+    "description": "You can click to “Continue” button to see your dashboard.",
+    "btnContinue": "Continue"
+  },
+  "splash": {
+    "pageTitle": "Oak Hill Coin",
+    "title": "Oak Hill Coin",
+    "subtitle": "Welcome",
+    "description": "“One of our objectives is represented by the alternative asset management, therefore the entire group offers investment solutions well-tailored to your needs and wishes.”",
+    "btnConfirm": "Confirm"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  }
+}
