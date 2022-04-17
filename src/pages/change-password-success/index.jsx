@@ -29,6 +29,7 @@ export default function ChangePasswordSuccess() {
             style={{
               padding: '2rem',
             }}
+            className="animate__animated animate__fadeIn delay-200"
           >
             <path
               d="M7 176.483H187.119M7.07067 230.202H187.191H7.07067ZM133.608 203.24L187.191 203.462L133.608 203.24ZM7.07067 203.462L97.7307 203.24L7.07067 203.462Z"

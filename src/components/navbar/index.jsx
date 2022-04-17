@@ -40,7 +40,7 @@ export default function Navbar() {
               className={style.dropdownToggle}
               onClick={() => setActive(!active)}
             >
-              {langs.find((l) => l.code == language).flag}
+              {langs.find((l) => l.code === language).flag}
             </div>
             {active && (
               <ul className={style.dropdownItems}>

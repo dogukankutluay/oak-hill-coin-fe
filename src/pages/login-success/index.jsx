@@ -26,6 +26,7 @@ export default function LoginSuccess() {
             viewBox="0 0 435 409"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="animate__animated animate__fadeIn delay-200"
           >
             <g opacity="0.5">
               <path
