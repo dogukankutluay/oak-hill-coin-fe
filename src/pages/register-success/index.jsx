@@ -7,7 +7,7 @@ import Navbar from 'components/navbar';
 import { Description, Title } from 'components/text';
 import languages from 'constants/routes/language';
 import { useSelector } from 'react-redux';
-import LottieCheckRegister from 'assets/animations/CheckRegister';
+import LottieCheckRegister from 'assets/animations/register-success/CheckRegister';
 import Lottie from 'lottie-react';
 export default function RegisterSuccess() {
   const lang = useSelector(

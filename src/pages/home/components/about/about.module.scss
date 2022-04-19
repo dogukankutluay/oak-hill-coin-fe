@@ -1,0 +1,32 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.about {
+  @extend %wrapper;
+  display: flex;
+}
+.card {
+  width: 100%;
+  color: white;
+  text-align: center;
+  h1,
+  h2 {
+    font-family: redhatRegular;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: 0em;
+  }
+  $space: 200px;
+  h1 {
+    font-weight: 700;
+  }
+  h2 {
+    font-weight: 400;
+  }
+  &:nth-child(2) {
+    margin-top: $space * 1;
+  }
+  &:nth-child(3) {
+    margin-top: $space * 2;
+    text-align: right;
+  }
+}

@@ -7,7 +7,7 @@ import Navbar from 'components/navbar';
 import { Description, Title } from 'components/text';
 import languages from 'constants/routes/language';
 import { useSelector } from 'react-redux';
-import LoginSuccessLottie from 'assets/animations/LoginSuccess.json';
+import LoginSuccessLottie from 'assets/animations/login-success/LoginSuccess.json';
 import Lottie from 'lottie-react';
 export default function LoginSuccess() {
   const lang = useSelector(

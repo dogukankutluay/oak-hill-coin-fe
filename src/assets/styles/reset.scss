@@ -83,3 +83,8 @@ a {
 *:focus-visible {
   outline: 2px dashed green;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}

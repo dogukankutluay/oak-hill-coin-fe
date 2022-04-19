@@ -7,7 +7,7 @@ import Navbar from 'components/navbar';
 import { Description, Title } from 'components/text';
 import languages from 'constants/routes/language';
 import { useSelector } from 'react-redux';
-import PasswordLock from 'assets/animations/PasswordLock';
+import PasswordLock from 'assets/animations/password-success/PasswordLock';
 import Lottie from 'lottie-react';
 export default function ChangePasswordSuccess() {
   const lang = useSelector(

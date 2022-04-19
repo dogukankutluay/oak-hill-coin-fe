@@ -721,7 +721,7 @@ export const FlagTr = ({ className }) => {
   );
 };
 
-export const FlagEn = ({ className }) => {
+export const FlagEn = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

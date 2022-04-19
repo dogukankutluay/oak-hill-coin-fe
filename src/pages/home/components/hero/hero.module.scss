@@ -2,16 +2,20 @@
 @import 'assets/styles/_variables.scss';
 .hero {
   display: flex;
-  @extend %wrapper;
+
   font-family: redhatRegular;
-  margin-top: 1rem;
   color: white;
+
   svg {
     pointer-events: none;
   }
-  &_left {
+  &_container {
+    @extend %wrapper;
+    display: flex;
     position: relative;
+    z-index: 1;
   }
+
   &_lottie {
     width: 400px;
     height: 400px;
@@ -33,6 +37,7 @@
       z-index: 2;
     }
   }
+
   &_svgs {
     margin-left: -4rem;
   }
@@ -73,6 +78,7 @@
     }
   }
 }
+
 .white_cloud,
 .soft_cap {
   position: relative;

@@ -1,0 +1,45 @@
+@import 'assets/styles/_global.module.scss';
+.detail {
+  @extend %wrapper;
+  display: flex;
+  margin-top: 8rem;
+  flex-direction: column;
+  align-items: center;
+  &_container {
+    display: flex;
+  }
+  &_card {
+    font-family: redhatRegular;
+    color: white;
+    h1,
+    h2 {
+      font-size: 1.875rem;
+      line-height: 2rem;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    h1 {
+      font-family: redhatBold;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+    &:last-child {
+      h1,
+      h2,
+      p {
+        text-align: right;
+      }
+    }
+  }
+  &_img {
+    width: 50%;
+  }
+}
