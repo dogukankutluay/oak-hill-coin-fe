@@ -4,6 +4,7 @@ import Details from './components/details';
 import Header from './components/header';
 import Hero from './components/hero';
 import LearnMore from './components/learn-more';
+import OurToken from './components/our-token';
 import style from './home.module.scss';
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <LearnMore />
       <Details />
+      <OurToken />
     </div>
   );
 }

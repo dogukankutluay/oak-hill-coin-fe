@@ -1,0 +1,49 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.token {
+  background: linear-gradient(180deg, #ffffff 0%, #2b8965 221.01%);
+  font-family: redhatRegular;
+  &_wrapper {
+    @extend %wrapper;
+    text-align: center;
+    color: #313131;
+    h1 {
+      font-family: redhatBold;
+      font-weight: 700;
+      font-size: 3.75rem;
+      padding-top: 4rem;
+      margin-top: 3rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      line-height: 50px;
+      margin-top: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      max-width: 60%;
+      margin: 4rem auto;
+      text-transform: uppercase;
+    }
+  }
+  &_infos {
+    display: flex;
+    h1 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      line-height: 50px;
+      color: #82d89a;
+      margin-bottom: 2rem;
+      span {
+        color: #313131;
+        margin-left: 20px;
+        font-size: 1.875rem;
+        margin-left: 7rem;
+      }
+    }
+  }
+  &_description {
+    font-size: 1.875rem !important;
+  }
+}
