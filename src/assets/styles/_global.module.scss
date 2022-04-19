@@ -1,6 +1,31 @@
+@import 'assets/styles/_variables.scss';
 %container {
   width: min(90%, 1200px);
   display: flex;
   min-height: 600px;
   border-radius: 40px;
+}
+%wrapper {
+  width: min(1000px, 95%);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+%btn {
+  border-radius: 25px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-family: redhatRegular;
+  padding-block: 0.5rem;
+  user-select: none;
+}
+%btn-primary {
+  @extend %btn;
+  background: linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

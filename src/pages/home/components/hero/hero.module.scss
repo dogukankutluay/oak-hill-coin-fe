@@ -1,0 +1,90 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.hero {
+  display: flex;
+  @extend %wrapper;
+  font-family: redhatRegular;
+  margin-top: 1rem;
+  color: white;
+  svg {
+    pointer-events: none;
+  }
+  &_left {
+    position: relative;
+  }
+  &_lottie {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: 'Oak Hill Launchpad';
+      top: 55%;
+      left: 15%;
+      z-index: 100;
+      font-size: 2rem;
+    }
+    &_bg {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      margin-left: 150px;
+      margin-top: 120px;
+      z-index: 2;
+    }
+  }
+  &_svgs {
+    margin-left: -4rem;
+  }
+  &_body {
+    margin-left: 2rem;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      font-family: redhatBold;
+      color: white;
+      span {
+        &:first-child {
+          color: #9ed4b6;
+        }
+        color: #66dd98;
+      }
+    }
+    p {
+      margin-top: 2rem;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+  &_buttons {
+    display: flex;
+    gap: 1.875rem;
+    margin-top: 1.5rem;
+    a {
+      display: block;
+      width: 100%;
+      @extend %btn-primary;
+      &:nth-child(2) {
+        background: #a1b8a5;
+      }
+    }
+  }
+}
+.white_cloud,
+.soft_cap {
+  position: relative;
+  z-index: 2;
+}
+.sun {
+  margin-left: -50px;
+}
+.white_cloud {
+  margin-bottom: 20px;
+}
+.soft_cap {
+  margin-left: -50px;
+  margin-bottom: 40px;
+}
