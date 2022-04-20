@@ -1,0 +1,42 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.tokenomic {
+  background: linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);
+}
+.wrapper {
+  @extend %wrapper;
+  text-align: center;
+  color: #fff;
+}
+.container {
+  display: flex;
+  font-family: redhatRegular;
+  justify-content: space-between;
+  b {
+    font-family: redhatBold;
+    font-weight: 700;
+  }
+  p {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+}
+.chartSide {
+  display: flex;
+  flex-direction: column;
+}
+.title,
+.subtitle {
+  font-family: redhatRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 40px;
+}
+.subtitle {
+  padding-top: 5rem;
+}
+.title {
+  font-weight: 700;
+  padding-bottom: 4rem;
+}

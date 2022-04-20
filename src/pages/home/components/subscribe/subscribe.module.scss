@@ -1,0 +1,60 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+
+.subscribe {
+  background: radial-gradient(
+    156.59% 339.99% at 50% 43.67%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 97.27%
+  );
+  font-family: redhatRegular;
+
+  &_wrapper {
+    @extend %wrapper;
+    display: flex;
+    align-items: center;
+  }
+  &_description {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+
+      color: #313131;
+    }
+  }
+  &_form {
+    display: flex;
+    background: #ffffff;
+    border-radius: 25px;
+    max-width: 80%;
+    min-width: 50%;
+    padding: 0.5rem 1.5rem;
+    align-items: center;
+    input {
+      width: 100%;
+      outline: none;
+      &::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        color: #b6b6b6;
+      }
+      border: none;
+    }
+    button {
+      @extend %btn-primary;
+      font-family: redhatRegular;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      padding: 0.5rem 2.5rem;
+    }
+  }
+}

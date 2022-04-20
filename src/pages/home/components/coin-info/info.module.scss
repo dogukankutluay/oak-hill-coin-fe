@@ -1,0 +1,196 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.info {
+  background: linear-gradient(180deg, #ffffff 0%, #2b8965 221.01%);
+  &_wrapper {
+    @extend %wrapper;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+  }
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: redhatRegular;
+  color: #313131;
+  width: 100%;
+
+  h2,
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 14px;
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+  button {
+    @extend %btn-primary;
+    font-size: 1.125rem;
+    padding: 0.5rem 1.5rem;
+    min-height: 40px;
+    text-align: center;
+  }
+  &:nth-child(2) {
+    margin-top: -10rem;
+  }
+  svg,
+  img {
+    height: 70px;
+  }
+}
+.btn_lottie {
+  width: 30px;
+  height: 30px;
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  button {
+    width: 100%;
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+  }
+}
+.bg {
+  width: 100%;
+}
+// countdown section
+
+.countdown_wrapper {
+  @extend %wrapper;
+  padding-block: 5rem;
+}
+.countdown_container {
+  display: flex;
+  gap: 5%;
+  align-items: flex-end;
+}
+.card {
+  min-width: 300px;
+  min-height: 180px;
+  color: #fff;
+  background: linear-gradient(
+    179.58deg,
+    #2e7544 0.36%,
+    rgba(46, 117, 68, 0) 97.23%
+  );
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+  padding: 0.875rem 1.5rem;
+  box-sizing: border-box;
+  &_title {
+    font-family: redhatBold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  &_body {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    span {
+      font-family: redhatBold;
+      font-style: normal;
+      font-weight: 700;
+      color: #82d89a;
+
+      font-size: 80px;
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+    }
+    h3 {
+      font-style: normal;
+      font-family: redhatLight;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 26px;
+    }
+  }
+  &_footer {
+    font-family: redhatLight;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &_countdown {
+    font-family: redhatRegular;
+    color: white;
+    font-style: normal;
+    margin-top: 2.5rem;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.card_side {
+  margin-right: 2.5rem;
+}
+.content {
+  h1 {
+    font-family: redhatBold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: #313131;
+  }
+  &_body {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  span {
+    font-family: redhatBold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 106px;
+    color: #025c23;
+  }
+  h2 {
+    font-family: redhatRegular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #313131;
+  }
+  p {
+    font-family: redhatRegular;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 26px;
+
+    color: #313131;
+  }
+  h3 {
+    font-family: redhatLight;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #313131;
+  }
+}

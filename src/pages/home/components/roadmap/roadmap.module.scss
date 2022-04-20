@@ -1,0 +1,25 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.roadmap {
+  border-bottom-left-radius: 66px;
+  border-bottom-right-radius: 66px;
+  padding-top: 4.5rem;
+  h1,
+  h2 {
+    font-family: redhatRegular;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+  }
+  h1 {
+    font-weight: 700;
+    font-family: redhatBold;
+  }
+}
+.wrapper {
+  @extend %wrapper;
+}

@@ -1,0 +1,96 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.team {
+  background-color: #fff;
+  padding: 2rem;
+}
+.page_title {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  font-family: redhatRegular;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+}
+.wrapper {
+  @extend %wrapper;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+.animatedBtn {
+  margin: 1rem 0;
+  background: linear-gradient(63.43deg, #4f8761 0%, #3db7bd 50%, #b3dfbf 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.btn,
+.btn_active {
+  font-family: redhatBold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.btn_active {
+  background: linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  color: #fff;
+}
+.btn {
+  color: #a4afb0;
+}
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_body {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0px 0.8rem;
+  color: #313131;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 100px;
+    aspect-ratio: 1;
+    margin-right: 0.2rem;
+  }
+  h1,
+  p {
+    line-height: 30px;
+    letter-spacing: 0em;
+    font-size: 1.25rem;
+    text-align: left;
+  }
+  p {
+    font-family: redhatRegular;
+    font-weight: 400;
+  }
+  h1 {
+    font-family: redhatBold;
+    font-weight: 700;
+  }
+}
