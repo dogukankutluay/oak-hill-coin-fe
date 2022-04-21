@@ -3,10 +3,13 @@
 .token {
   background: linear-gradient(180deg, #ffffff 0%, #2b8965 221.01%);
   position: relative;
+  padding-top: 3rem;
   &_leftLeave,
   &_rightLeave {
     position: absolute;
     top: 0;
+    width: 400px;
+    height: 400px;
   }
 
   &_leftLeave {
@@ -68,4 +71,8 @@
     font-size: 1.875rem !important;
     font-family: redhatRegular;
   }
+}
+.title,
+.subtitle {
+  color: #313131 !important;
 }

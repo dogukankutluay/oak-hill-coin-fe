@@ -8,8 +8,8 @@ export default function OurToken() {
       <LeaveSvg className={style.token_leftLeave} />
       <LeaveSvg className={style.token_rightLeave} />
       <div className={style.token_wrapper}>
-        <h1>Our Token</h1>
-        <h2>What is Oak Hill Coin?</h2>
+        <h1 className={style.title}>Our Token</h1>
+        <h2 className={style.subtitle}>What is Oak Hill Coin?</h2>
         <p>
           Oak Hill Coin is the world's first blockchain-based investment
           platform’s cryptocurrency.
