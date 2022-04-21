@@ -1,4 +1,54 @@
 .home {
   position: relative;
-  background: linear-gradient(63.43deg, #367D4D 0%, #00B0B9 50%, #82D89A 100%);
+  &_intro {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &_leftTree,
+  &_rightTree {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  &_leftTree {
+    top: 0;
+    left: 0;
+  }
+  &_rightTree {
+    right: 0;
+    transform: scaleX(-1);
+  }
+}
+
+.mountain {
+  position: absolute;
+  overflow: hidden;
+  max-width: 99vw;
+  z-index: -2;
+  right: 0;
+  margin-top: 15%;
+}
+.details {
+  position: relative;
+  &_bg {
+    position: absolute;
+    background: linear-gradient(180deg, #16222e 0%, #2b8965 221.01%);
+    width: 100%;
+    z-index: -2;
+    height: 100%;
+    top: 0;
+  }
+  &_leftLeave,
+  &_rightLeave {
+    position: absolute;
+    z-index: -1;
+  }
+  &_leftLeave {
+    left: 0;
+    bottom: 0;
+  }
+  &_rightLeave {
+    right: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+  }
 }

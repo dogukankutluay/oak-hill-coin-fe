@@ -1,8 +1,12 @@
+import { LeaveSvg } from 'assets/icons/home';
 import React from 'react';
 import style from './token.module.scss';
+
 export default function OurToken() {
   return (
     <div className={style.token}>
+      <LeaveSvg className={style.token_leftLeave} />
+      <LeaveSvg className={style.token_rightLeave} />
       <div className={style.token_wrapper}>
         <h1>Our Token</h1>
         <h2>What is Oak Hill Coin?</h2>

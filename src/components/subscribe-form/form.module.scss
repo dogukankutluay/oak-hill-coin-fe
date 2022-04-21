@@ -1,0 +1,35 @@
+@import 'assets/styles/_global.module.scss';
+@import 'assets/styles/_variables.scss';
+.subscribe_form {
+  display: flex;
+  background: #ffffff;
+  border-radius: 25px;
+  max-width: 80%;
+  min-width: 50%;
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+  font-family: redhatRegular;
+  input {
+    width: 100%;
+    margin-right: 0.2rem;
+    outline: none;
+    padding: 0.5rem 0px;
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #b6b6b6;
+    }
+    border: none;
+  }
+  button {
+    @extend %btn-primary;
+    font-family: redhatRegular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0.5rem 2.5rem;
+  }
+}

@@ -5,6 +5,8 @@ import WorldAnimation from 'assets/animations/hero/WorldLottie';
 import style from './hero.module.scss';
 import {
   HardCapSvg,
+  HeroBg,
+  MountainSvg,
   SoftCapSvg,
   SunSvg,
   WhiteCloudSvg,
@@ -14,6 +16,7 @@ import { OakhillMainIcon } from 'assets/icons';
 export default function Hero() {
   return (
     <section className={style.hero}>
+      <HeroBg className={style.hero_bg} />
       <div className={style.hero_container}>
         <div className={style.hero_left}>
           <OakhillMainIcon className={style.hero_lottie_bg} />

@@ -1,6 +1,7 @@
 @import 'assets/styles/_global.module.scss';
 @import 'assets/styles/_variables.scss';
 .more {
+  position: relative;
   &_wrapper {
     @extend %wrapper;
     color: white;

@@ -2,11 +2,27 @@
 @import 'assets/styles/_variables.scss';
 .token {
   background: linear-gradient(180deg, #ffffff 0%, #2b8965 221.01%);
+  position: relative;
+  &_leftLeave,
+  &_rightLeave {
+    position: absolute;
+    top: 0;
+  }
 
+  &_leftLeave {
+    left: 0;
+    transform: scaleY(-1);
+  }
+  &_rightLeave {
+    right: 0;
+    transform: scale(-1, -1);
+  }
   &_wrapper {
     @extend %wrapper;
     text-align: center;
     color: #313131;
+    position: relative;
+    z-index: 1;
     h1,
     h2 {
       font-family: redhatRegular;
@@ -23,11 +39,12 @@
       font-family: redhatBold;
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       max-width: 72%;
       margin: 0 auto;
       padding: 4rem 0;
       text-transform: uppercase;
+      font-family: redhatRegular;
     }
   }
   &_infos {

@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './subscribe.module.scss';
 import { CoinLogo } from 'assets/icons/coin-info';
+import SubscribeForm from 'components/subscribe-form';
 export default function Subscribe() {
   return (
     <div className={style.subscribe}>
@@ -11,11 +12,9 @@ export default function Subscribe() {
             Keem up to date with our progress. Subscribe for e-mail updates.
           </p>
         </div>
-        <div className={style.subscribe_form}>
-          <input type="text" placeholder="Your E-mail Address" />
-          <button>Submit</button>
-        </div>
+        <SubscribeForm />
       </div>
+      <div className={style.subscribe_bg}></div>
     </div>
   );
 }

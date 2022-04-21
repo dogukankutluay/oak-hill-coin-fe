@@ -7,21 +7,24 @@ import LottieCommunity from 'assets/animations/about/LottieCommunity';
 export default function About() {
   return (
     <div className={style.about}>
-      <article className={style.card}>
-        <Lottie {...blockChaninOptions} />
-        <h2>Blockchain Based</h2>
-        <h1>Funding Launchpad</h1>
-      </article>
-      <article className={style.card}>
-        <Lottie {...globalOptions} />
-        <h2>Project Funding Launchpad</h2>
-        <h1>Seed to Global</h1>
-      </article>
-      <article className={style.card}>
-        <Lottie {...communityOptions} />
-        <h2>Biggest Funding Community</h2>
-        <h1>17 000+ VC & Invesment Funds</h1>
-      </article>
+      <div className={style.about_wrapper}>
+        <article className={style.card}>
+          <Lottie {...blockChaninOptions} />
+          <h2>Blockchain Based</h2>
+          <h1>Funding Launchpad</h1>
+        </article>
+        <article className={style.card}>
+          <Lottie {...globalOptions} />
+          <h2>Project Funding Launchpad</h2>
+          <h1>Seed to Global</h1>
+        </article>
+        <article className={style.card}>
+          <Lottie {...communityOptions} />
+          <h2>Biggest Funding Community</h2>
+          <h1>17 000+ VC & Invesment Funds</h1>
+        </article>
+      </div>
+      <div className={style.about_bg}></div>
     </div>
   );
 }
