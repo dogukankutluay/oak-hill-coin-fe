@@ -2,6 +2,8 @@
 @import 'assets/styles/_variables.scss';
 .tokenomic {
   background: linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 .wrapper {
   @extend %wrapper;

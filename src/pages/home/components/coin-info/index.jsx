@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CoinLogo, CoinInfoBg } from 'assets/icons/coin-info';
 import Lottie from 'lottie-react';
 import ReadAnimation from 'assets/animations/coin-info/ReadLottie';
 import DownloadAnimation from 'assets/animations/coin-info/DownloadLottie';
 import style from './info.module.scss';
 import { default as cn } from 'classnames';
+
 export default function CoinInfo() {
+  const [date, setDate] = useState(getDate());
+
+  useEffect(() => {
+    const interval = () => {
+      setDate(getDate());
+    };
+    setInterval(interval, 1000);
+    clearInterval(interval);
+  }, []);
   return (
     <div className={style.info}>
       <div className={style.info_wrapper}>
@@ -75,9 +85,7 @@ export default function CoinInfo() {
               </div>
               <h2 className={style.card_footer}>April 20 - May 20 2022</h2>
             </div>
-            <h1 className={style.card_countdown}>
-              Monday, 18 of April of 2022
-            </h1>
+            <h1 className={style.card_countdown}>{date}</h1>
           </div>
           <article className={style.content}>
             <h1>Pre Sale</h1>
@@ -123,4 +131,34 @@ const downloadAnimationOptions = {
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
   },
+};
+
+const getDate = () => {
+  const days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  const date = new Date();
+  return `${days[date.getDay()]}, ${date.getDate()} of ${
+    months[date.getMonth()]
+  } of ${date.getFullYear()}`;
 };

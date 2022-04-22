@@ -42,6 +42,7 @@
   line-height: 30px;
   padding: 0.5rem;
   box-sizing: border-box;
+  user-select: none;
 }
 .btn_active {
   background: linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);

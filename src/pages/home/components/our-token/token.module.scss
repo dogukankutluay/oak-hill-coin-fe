@@ -14,11 +14,11 @@
 
   &_leftLeave {
     left: 0;
-    transform: scaleY(-1);
+    transform: scaleY(-1) !important;
   }
   &_rightLeave {
     right: 0;
-    transform: scale(-1, -1);
+    transform: scale(-1, -1) !important;
   }
   &_wrapper {
     @extend %wrapper;

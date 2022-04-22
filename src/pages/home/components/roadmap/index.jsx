@@ -2,6 +2,7 @@ import React from 'react';
 import style from './roadmap.module.scss';
 import RoadmapLottie from 'assets/animations/roadmap/Roadmap.json';
 import Lottie from 'lottie-react';
+import { LeaveSvg } from 'assets/icons/home';
 export default function Roadmap() {
   return (
     <div className={style.roadmap} id="roadmap">
@@ -10,6 +11,8 @@ export default function Roadmap() {
       <div className={style.wrapper}>
         <Lottie {...roadmapLottieOptions} />
       </div>
+      <LeaveSvg className={style.roadmap_leftLeave} />
+      <LeaveSvg className={style.roadmap_rightLeave} />
     </div>
   );
 }

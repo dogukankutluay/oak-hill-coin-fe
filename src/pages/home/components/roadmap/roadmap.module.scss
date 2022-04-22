@@ -4,6 +4,7 @@
   border-bottom-left-radius: 66px;
   border-bottom-right-radius: 66px;
   padding-top: 4.5rem;
+  position: relative;
   h1,
   h2 {
     font-family: redhatRegular;
@@ -18,6 +19,20 @@
   h1 {
     font-weight: 700;
     font-family: redhatBold;
+  }
+  &_leftLeave,
+  &_rightLeave {
+    position: absolute;
+    bottom: -30px;
+    width: 350px;
+    height: 350px;
+  }
+  &_leftLeave {
+    left: 0;
+  }
+  &_rightLeave {
+    right: 0;
+    transform: scaleX(-1);
   }
 }
 .wrapper {

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, Wing } from 'assets/icons/learn-more';
 import style from './more.module.scss';
 import Lottie from 'lottie-react';
-import ProjectIdeas from 'assets/animations/learn-more/ProjectIdeas';
-import ProjectPresenting from 'assets/animations/learn-more/ProjectPresenting';
+import { cards } from './data';
+import { default as cn } from 'lottie-react';
 import Sphere from 'assets/animations/learn-more/Sphere';
 export default function LearnMore() {
+  const [index, setIndex] = useState(0);
   return (
     <div className={style.more} id="learn-more">
       <Wing className={style.wing} />
@@ -19,63 +20,64 @@ export default function LearnMore() {
           </p>
         </div>
         <div className={style.more_body}>
-          <article className={style.more_card}>
+          {/* First card */}
+          <article
+            className={cn(style.more_card, 'animate__animated animate__fadeIn')}
+          >
             <div className={style.lottie_container}>
-              <Lottie {...projectIdeasOptions} />
-              <span>01</span>
+              <Lottie
+                className={style.lottie_container_lottie}
+                {...animationOptions}
+                animationData={cards[index].animationData}
+              />
+              <span>{cards[index]?.index}</span>
             </div>
-            <h1>Seed Project Idea</h1>
-            <p>
-              When you have project idea which is in the seed level and
-              preparing to grow as big as longest trees, Oak Hill Launchpad is
-              ready listen about your project.
-            </p>
+            <h1>{cards[index].title}</h1>
+            <p>{cards[index].description}</p>
           </article>
+          {/* Sphere card */}
           <article className={style.more_card}>
-            <Lottie {...sphereOptions} className={style.more_card_sphere} />
+            <Lottie
+              {...animationOptions}
+              animationData={Sphere}
+              className={style.more_card_sphere}
+            />
           </article>
-          <article className={style.more_card}>
+          {/* Second card */}
+          <article
+            className={cn(
+              style.more_card,
+              'animate__animated animate__fadeInOut'
+            )}
+          >
             <div className={style.lottie_container}>
-              <Lottie {...projectPresentingOptions} />
-              <span>02</span>
+              <Lottie
+                className={style.lottie_container_lottie}
+                {...animationOptions}
+                animationData={cards[index + 1].animationData}
+              />
+              <span>{cards[index + 1]?.index}</span>
             </div>
-            <h1>Seed Project Idea</h1>
-            <p>
-              When you have project idea which is in the seed level and
-              preparing to grow as big as longest trees, Oak Hill Launchpad is
-              ready listen about your project.
-            </p>
+            <h1>{cards[index + 1].title}</h1>
+            <p>{cards[index + 1]?.description}</p>
           </article>
         </div>
         <div className={style.more_arrows}>
-          <ArrowLeft />
-          <ArrowRight />
+          <ArrowLeft onClick={() => setIndex(index > 0 ? index - 1 : 0)} />
+          <ArrowRight
+            onClick={() =>
+              setIndex(index < cards.length - 2 ? index + 1 : index)
+            }
+          />
         </div>
       </div>
     </div>
   );
 }
 
-const projectIdeasOptions = {
+const animationOptions = {
   loop: true,
   autoplay: true,
-  animationData: ProjectIdeas,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
-const projectPresentingOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: ProjectPresenting,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
-const sphereOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: Sphere,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
   },
