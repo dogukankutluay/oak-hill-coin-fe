@@ -46,7 +46,7 @@ export default function CoinInfo() {
       </div>
       <CoinInfoBg className={style.bg} />
       {/* Countdown section */}
-      <div className={style.countdown_wrapper}>
+      <div className={style.countdown_wrapper} id="ico-schedule">
         <div className={style.countdown_container}>
           <div className={style.card_side}>
             <div className={style.card}>

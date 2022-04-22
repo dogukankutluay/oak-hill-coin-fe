@@ -13,22 +13,22 @@ export default function Header() {
           </a>
         </li>
         <li className={style.header_link}>
-          <a href="#">About Launchpad</a>
+          <a href="#about">About Launchpad</a>
         </li>
         <li className={style.header_link}>
-          <a href="#">Our Token</a>
+          <a href="#our-token">Our Token</a>
         </li>
         <li className={style.header_link}>
-          <a href="#">ICO Schedule</a>
+          <a href="#ico-schedule">ICO Schedule</a>
         </li>
         <li className={style.header_link}>
-          <a href="#">Tokenomics</a>
+          <a href="#tokenomic">Tokenomics</a>
         </li>
         <li className={style.header_link}>
-          <a href="#">Roadmap</a>
+          <a href="#roadmap">Roadmap</a>
         </li>
         <li className={style.header_link}>
-          <a href="#">Team</a>
+          <a href="#team">Team</a>
         </li>
         <li className={style.buttons}>
           <Link to={'/login'} className={style.loginBtn}>

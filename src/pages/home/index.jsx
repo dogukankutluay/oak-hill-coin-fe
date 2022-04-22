@@ -14,7 +14,7 @@ import Subscribe from './components/subscribe';
 import Team from './components/team';
 import Tokenomic from './components/tokenomic';
 import style from './home.module.scss';
-
+import { default as cn } from 'classnames';
 export default function Home() {
   return (
     <div className={style.home}>
@@ -23,15 +23,30 @@ export default function Home() {
         <Tree className={style.home_rightTree} />
         <Header />
         <div className={style.body}>
-          <MountainSvg className={style.mountain} />
+          <MountainSvg
+            className={cn(
+              style.mountain,
+              'animate__animated animate__fadeInUp'
+            )}
+          />
           <Hero />
           <About />
         </div>
         <div className={style.details}>
           <LearnMore />
           <Details />
-          <LeaveSvg className={style.details_leftLeave} />
-          <LeaveSvg className={style.details_rightLeave} />
+          <LeaveSvg
+            className={cn(
+              style.details_leftLeave,
+              'animate__animated animate__pulse'
+            )}
+          />
+          <LeaveSvg
+            className={cn(
+              style.details_rightLeave,
+              'animate__animated animate__pulse'
+            )}
+          />
           <div className={style.details_bg}></div>
         </div>
       </div>

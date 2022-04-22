@@ -7,7 +7,8 @@
   &_rightTree {
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 0;
+    max-width: 40%;
   }
   &_leftTree {
     top: 0;
@@ -40,9 +41,9 @@
   &_leftLeave,
   &_rightLeave {
     position: absolute;
-    z-index: -1;
-    width: 400px;
-    height: 400px;
+    z-index: 1;
+    width: 350px;
+    height: 350px;
   }
   &_leftLeave {
     left: 0;

@@ -7,7 +7,7 @@ import ProjectPresenting from 'assets/animations/learn-more/ProjectPresenting';
 import Sphere from 'assets/animations/learn-more/Sphere';
 export default function LearnMore() {
   return (
-    <div className={style.more}>
+    <div className={style.more} id="learn-more">
       <Wing className={style.wing} />
       <div className={style.more_wrapper}>
         <div className={style.more_head}>

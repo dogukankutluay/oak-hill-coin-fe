@@ -4,7 +4,7 @@ import TokenomicChart from './../chart';
 import Roadmap from '../roadmap';
 export default function Tokenomic() {
   return (
-    <div className={style.tokenomic}>
+    <div className={style.tokenomic} id="tokenomic">
       <div className={style.wrapper}>
         <h2 className={style.subtitle}>Token Details</h2>
         <h1 className={style.title}>TOKENOMICS</h1>

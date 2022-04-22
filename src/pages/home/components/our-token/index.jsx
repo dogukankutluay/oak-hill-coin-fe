@@ -4,7 +4,7 @@ import style from './token.module.scss';
 
 export default function OurToken() {
   return (
-    <div className={style.token}>
+    <div className={style.token} id="our-token">
       <LeaveSvg className={style.token_leftLeave} />
       <LeaveSvg className={style.token_rightLeave} />
       <div className={style.token_wrapper}>

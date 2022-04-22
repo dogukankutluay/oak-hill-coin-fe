@@ -3,7 +3,7 @@ import style from './team.module.scss';
 import TeamBg from 'assets/icons/team/teams_bg.svg';
 export default function Team() {
   return (
-    <div className={style.team}>
+    <div className={style.team} id="team">
       <div className={style.wrapper}>
         <div style={bg}></div>
         <h1 className={style.page_title}>Our Team</h1>

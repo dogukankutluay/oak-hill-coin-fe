@@ -6,7 +6,7 @@ import LottieGlobal from 'assets/animations/about/LottieGlobal';
 import LottieCommunity from 'assets/animations/about/LottieCommunity';
 export default function About() {
   return (
-    <div className={style.about}>
+    <div className={style.about} id="about">
       <div className={style.about_wrapper}>
         <article className={style.card}>
           <Lottie {...blockChaninOptions} />

@@ -5,7 +5,7 @@
   position: relative;
   font-family: redhatRegular;
   color: white;
-  padding-top: 110px;
+  padding-top: 80px;
   svg {
     pointer-events: none;
   }
@@ -33,16 +33,19 @@
       position: absolute;
       width: 100px;
       height: 100px;
-      margin-left: 150px;
-      margin-top: 120px;
+      left: 150px;
+      top: 100px;
+      z-index: 1;
     }
   }
 
   &_svgs {
     margin-left: -4rem;
+    display: flex;
   }
   &_body {
     margin-left: 2rem;
+    margin-top: 2rem;
     h1 {
       font-size: 3.5rem;
       font-weight: 700;
@@ -83,21 +86,56 @@
 .soft_cap {
   position: relative;
 }
-.sun {
-  margin-left: -50px;
-}
-.white_cloud {
-  margin-bottom: 20px;
-}
-.soft_cap {
-  margin-left: -50px;
-  margin-bottom: 40px;
+.soft_cap,
+.hard_cap {
+  position: relative;
+  user-select: none;
+  z-index: 1;
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  h1,
+  p {
+    font-family: redhatRegular;
+    position: absolute;
+  }
+  h1 {
+    top: 15px;
+    left: 75px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.3018px;
+    line-height: 16px;
+    color: #025c23;
+    width: max-content;
+  }
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.574px;
+    line-height: 23px;
+    left: 55px;
+    top: 30px;
+    color: #ffffff;
+  }
 }
 
+.soft_cap {
+  margin-left: -50px;
+}
+.hard_cap {
+  margin-left: 180px;
+  margin-top: 70px;
+}
 .hero_bg {
   position: absolute;
   max-width: 100%;
   z-index: -3;
   top: 0;
+  margin: 0 auto;
   margin-top: -200px;
 }

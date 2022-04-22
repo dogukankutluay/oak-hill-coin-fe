@@ -4,7 +4,7 @@ import { CoinLogo } from 'assets/icons/coin-info';
 import SubscribeForm from 'components/subscribe-form';
 export default function Subscribe() {
   return (
-    <div className={style.subscribe}>
+    <div className={style.subscribe} id="reminder">
       <div className={style.subscribe_wrapper}>
         <div className={style.subscribe_description}>
           <CoinLogo />
