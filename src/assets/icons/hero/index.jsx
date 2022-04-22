@@ -244,3 +244,71 @@ export const HeroBg = (props) => {
     </svg>
   );
 };
+
+export const TreePiece = (props) => {
+  return (
+    <svg
+      width="1920"
+      height="674"
+      viewBox="0 0 1920 674"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g filter="url(#filter0_d_556_17130)">
+        <path
+          d="M1920.19 139.127V242.603C1738.09 242.603 1651.41 633.303 1390.77 633.303C1130.14 633.303 1164.83 397.839 573.906 397.839C245.356 397.839 -1 103.476 -1 103.476V0C-1 0 245.356 294.547 573.86 294.364C1184.42 293.998 1125.52 543.557 1386.15 543.557C1646.79 543.557 1738.09 139.127 1920.19 139.127Z"
+          fill="url(#paint0_linear_556_17130)"
+        />
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_556_17130"
+          x="-21"
+          y="0"
+          width="1961.19"
+          height="673.303"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="20" />
+          <feGaussianBlur stdDeviation="10" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.223529 0 0 0 0 0.313726 0 0 0 0 0.368627 0 0 0 1 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_556_17130"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_556_17130"
+            result="shape"
+          />
+        </filter>
+        <linearGradient
+          id="paint0_linear_556_17130"
+          x1="1091.6"
+          y1="83.5448"
+          x2="1117.47"
+          y2="584.466"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#9FD192" />
+          <stop offset="0.7811" stop-color="#2B8B68" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};

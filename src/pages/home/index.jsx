@@ -1,5 +1,5 @@
-import { MountainSvg } from 'assets/icons/hero';
-import { LeaveSvg, Tree } from 'assets/icons/home';
+import { MountainSvg, TreePiece } from 'assets/icons/hero';
+import { LeaveSvg, LeftTree, RightTree } from 'assets/icons/home';
 import React from 'react';
 import About from './components/about';
 import Buy from './components/buy';
@@ -19,14 +19,30 @@ export default function Home() {
   return (
     <div className={style.home}>
       <div className={style.home_intro}>
-        <Tree className={style.home_leftTree} />
-        <Tree className={style.home_rightTree} />
+        <LeftTree
+          className={cn(
+            style.home_leftTree,
+            'animate__animated animate__pulse delay-150'
+          )}
+        />
+        <RightTree
+          className={cn(
+            style.home_rightTree,
+            'animate__animated animate__pulse delay-150'
+          )}
+        />
         <Header />
         <div className={style.body}>
           <MountainSvg
             className={cn(
               style.mountain,
-              'animate__animated animate__fadeInUp'
+              'animate__animated animate__fadeInUp delay-100'
+            )}
+          />
+          <TreePiece
+            className={cn(
+              style.tree_piece,
+              'animate__animated animate__slideInUp delay-600'
             )}
           />
           <Hero />
@@ -35,18 +51,8 @@ export default function Home() {
         <div className={style.details}>
           <LearnMore />
           <Details />
-          <LeaveSvg
-            className={cn(
-              style.details_leftLeave,
-              'animate__animated animate__pulse'
-            )}
-          />
-          <LeaveSvg
-            className={cn(
-              style.details_rightLeave,
-              'animate__animated animate__pulse'
-            )}
-          />
+          <LeaveSvg className={cn(style.details_leftLeave)} />
+          <LeaveSvg className={cn(style.details_rightLeave)} />
           <div className={style.details_bg}></div>
         </div>
       </div>

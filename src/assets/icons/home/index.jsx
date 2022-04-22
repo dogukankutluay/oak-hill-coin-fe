@@ -1,4 +1,4 @@
-export const Tree = (props) => {
+export const LeftTree = (props) => {
   return (
     <svg
       width="790"
@@ -61,6 +61,37 @@ export const Tree = (props) => {
         >
           <stop stop-color="#2C8864" />
           <stop offset="1" stop-color="#08B3B8" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+export const RightTree = (props) => {
+  return (
+    <svg
+      width="786"
+      height="3144"
+      viewBox="0 0 786 3144"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M504.301 0.199219L531.471 65.6254L481.306 0.199219H406.641C432.305 30.0379 529.281 147.819 552.413 250.954C579.103 370.103 568.632 391.045 568.632 391.045C568.632 391.045 353.876 237.745 322.531 169.308C296.046 111.478 258.748 25.3842 247.866 0.199219H180.661L221.586 92.1106L108.459 0.199219H0.73877C54.6674 36.9501 301.042 209.755 386.315 356.142C482.264 520.871 528.733 632.629 578.282 1073.91C627.831 1515.13 613.869 2071.11 613.869 2071.11C613.869 2071.11 725.285 2967.1 349.222 3143.46H786.263V0.199219H504.301Z"
+        fill="url(#paint0_linear_556_17200)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_556_17200"
+          x1="393.501"
+          y1="0.199219"
+          x2="393.501"
+          y2="3143.46"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#2B8A68" />
+          <stop offset="1" stop-color="#09B3B7" />
         </linearGradient>
       </defs>
     </svg>

@@ -24,14 +24,28 @@ export default function Hero() {
           <OakhillMainIcon
             className={cn(
               style.hero_lottie_bg,
-              'animate__animated animate__zoomIn'
+              'animate__animated animate__zoomIn delay-450'
+            )}
+          />
+          <span
+            className={cn(
+              style.hero_lottie_text,
+              'animate__animated animate__slideInUp delay-450'
+            )}
+          >
+            Oak Hill Launchpad
+          </span>
+          <WhiteCloudSvg
+            className={cn(
+              style.hero_lottie_cloud,
+              'animate__animated animate__slideInLeft delay-550'
             )}
           />
           <Lottie
             {...worldLottie}
             className={cn(
               style.hero_lottie,
-              'animate__animated animate__fadeInLef'
+              'animate__animated animate__fadeInLeft delay-400'
             )}
           />
         </div>
@@ -40,44 +54,51 @@ export default function Hero() {
             <WhiteCloudSvg
               className={cn(
                 style.white_cloud,
-                'animate__animated animate__slideInLeft'
+                'animate__animated animate__slideInLeft delay-550'
               )}
             />
             <SunSvg
               className={cn(
                 style.sun,
-                'animate__animated animate__fadeInDownBig'
+                'animate__animated animate__fadeInDownBig delay-200'
               )}
             />
             <div className={style.soft_cap}>
-              <SoftCapSvg className="animate__animated animate__fadeInRightBig" />
-              <h1 className="animate__animated animate__fadeIn">SOFT CAP</h1>
-              <p className="animate__animated animate__fadeIn">$5.000.000</p>
+              <SoftCapSvg className="animate__animated animate__fadeInRightBig delay-250" />
+              <h1 className="animate__animated animate__fadeIn  delay-350">
+                SOFT CAP
+              </h1>
+              <p className="animate__animated animate__fadeIn delay-350">
+                $5.000.000
+              </p>
             </div>
             <div className={style.hard_cap}>
-              <h1 className="animate__animated animate__fadeIn">HARD CAP</h1>
-              <p className="animate__animated animate__fadeIn">$21.000.000</p>
-              <HardCapSvg className="animate__animated animate__fadeInRightBig" />
+              <h1 className="animate__animated animate__fadeIn delay-350">
+                HARD CAP
+              </h1>
+              <p className="animate__animated animate__fadeIn delay-350">
+                $21.000.000
+              </p>
+              <HardCapSvg className="animate__animated animate__fadeInRightBig delay-250" />
             </div>
           </div>
           <div className={style.hero_body}>
-            <h1 className="animate__animated animate__backInRight">
+            <h1 className="animate__animated animate__backInRight delay-300">
               Your <span>project!</span> <br /> Your <span>crypto!</span>
             </h1>
-
-            <p className="animate__animated animate__slideInRight">
+            <p className="animate__animated animate__slideInRight delay-300">
               FIRST BLOCKCHAIN BASED FUNDING LAUNCHPAD
             </p>
             <div className={style.hero_buttons}>
               <Link
                 to={'/login'}
-                className="animate__animated animate__slideInRight"
+                className="animate__animated animate__slideInRight delay-500"
               >
                 Buy OAKC right now!
               </Link>
               <a
                 href="#learn-more"
-                className="animate__animated animate__slideInRight"
+                className="animate__animated animate__slideInRight delay-500"
               >
                 Learn more
               </a>

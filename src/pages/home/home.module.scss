@@ -19,7 +19,13 @@
     transform: scaleX(-1);
   }
 }
-
+.tree_piece {
+  position: absolute;
+  z-index: -1;
+  margin-top: 13%;
+  max-width: 90vw;
+  overflow: hidden;
+}
 .mountain {
   position: absolute;
   overflow: hidden;
@@ -52,6 +58,5 @@
   &_rightLeave {
     right: 0;
     bottom: 0;
-    transform: scaleX(-1);
   }
 }
