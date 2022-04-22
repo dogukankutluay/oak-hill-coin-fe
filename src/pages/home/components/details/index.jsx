@@ -1,10 +1,16 @@
 import React from 'react';
 import style from './details.module.scss';
+import { default as cn } from 'classnames';
 export default function Details() {
   return (
     <div className={style.detail}>
       <div className={style.detail_container}>
-        <article className={style.detail_card}>
+        <article
+          className={cn(
+            style.detail_card,
+            'animate__animated animate__fadeInLeft'
+          )}
+        >
           <h1>Central Guaranteed </h1>
           <h2>Luxembourg Central Bank</h2>
           <p>
@@ -13,7 +19,12 @@ export default function Details() {
             Luxembourg Central Bank.
           </p>
         </article>
-        <article className={style.detail_card}>
+        <article
+          className={cn(
+            style.detail_card,
+            'animate__animated animate__fadeInRight delay-100'
+          )}
+        >
           <h1>Experience Advisors </h1>
           <h2>Expert of Finance & Funding</h2>
           <p>
@@ -24,7 +35,10 @@ export default function Details() {
         </article>
       </div>
       <img
-        className={style.detail_img}
+        className={cn(
+          style.detail_img,
+          'animate__animated animate__fadeInUp delay-200'
+        )}
         src={require('../../../../assets/images/oak_hill_invest.png')}
       />
     </div>

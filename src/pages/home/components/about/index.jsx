@@ -4,24 +4,46 @@ import Lottie from 'lottie-react';
 import LottieBlockchain from 'assets/animations/about/LottieBlockchain';
 import LottieGlobal from 'assets/animations/about/LottieGlobal';
 import LottieCommunity from 'assets/animations/about/LottieCommunity';
+import { default as cn } from 'classnames';
 export default function About() {
   return (
     <div className={style.about} id="about">
       <div className={style.about_wrapper}>
-        <article className={style.card}>
-          <Lottie {...blockChaninOptions} />
-          <h2>Blockchain Based</h2>
-          <h1>Funding Launchpad</h1>
+        <article className={cn(style.card)}>
+          <Lottie
+            {...blockChaninOptions}
+            className="animate__animated animate__slideInLeft"
+          />
+          <h2 className="animate__animated animate__fadeInLeft delay-50">
+            Blockchain Based
+          </h2>
+          <h1 className="animate__animated animate__fadeInLeft delay-50">
+            Funding Launchpad
+          </h1>
+        </article>
+        <article className={cn(style.card)}>
+          <Lottie
+            {...globalOptions}
+            className="animate__animated animate__slideInUp delay-100"
+          />
+          <h2 className="animate__animated animate__fadeInUp delay-150">
+            Project Funding Launchpad
+          </h2>
+          <h1 className="animate__animated animate__fadeInUp delay-150">
+            Seed to Global
+          </h1>
         </article>
         <article className={style.card}>
-          <Lottie {...globalOptions} />
-          <h2>Project Funding Launchpad</h2>
-          <h1>Seed to Global</h1>
-        </article>
-        <article className={style.card}>
-          <Lottie {...communityOptions} />
-          <h2>Biggest Funding Community</h2>
-          <h1>17 000+ VC & Invesment Funds</h1>
+          <Lottie
+            {...communityOptions}
+            className="animate__animated animate__slideInRight delay-200"
+          />
+          <h2 className="animate__animated animate__fadeInRight delay-250">
+            Biggest Funding Community
+          </h2>
+          <h1 className="animate__animated animate__fadeInRight delay-250">
+            17 000+ VC & Invesment Funds
+          </h1>
         </article>
       </div>
       <div className={style.about_bg}></div>

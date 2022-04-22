@@ -4,11 +4,17 @@ import Lottie from 'lottie-react';
 import ReadAnimation from 'assets/animations/coin-info/ReadLottie';
 import DownloadAnimation from 'assets/animations/coin-info/DownloadLottie';
 import style from './info.module.scss';
+import { default as cn } from 'classnames';
 export default function CoinInfo() {
   return (
     <div className={style.info}>
       <div className={style.info_wrapper}>
-        <section className={style.section}>
+        <section
+          className={cn(
+            style.section,
+            'animate__animated animate__fadeInLeft delay-100'
+          )}
+        >
           <img
             src={require('../../../../assets/images/lite_paper.png')}
             alt="lite_paper"
@@ -16,11 +22,11 @@ export default function CoinInfo() {
           <h2>Check our</h2>
           <h1>Lite paper</h1>
           <div className={style.buttons}>
-            <button>
+            <button className="animate__animated animate__slideInLeft delay-300">
               <Lottie {...readAnimationOptions} className={style.btn_lottie} />
               Read
             </button>
-            <button>
+            <button className="animate__animated animate__slideInLeft delay-300">
               <Lottie
                 {...downloadAnimationOptions}
                 className={style.btn_lottie}
@@ -29,19 +35,28 @@ export default function CoinInfo() {
             </button>
           </div>
         </section>
-        <section className={style.section}>
+        <section
+          className={cn(style.section, 'animate__animated animate__fadeInDown')}
+        >
           <CoinLogo />
           <h2>1 OAKC token price</h2>
           <h1>0.10 USD</h1>
         </section>
-        <section className={style.section}>
+        <section
+          className={cn(
+            style.section,
+            'animate__animated animate__fadeInRight delay-200'
+          )}
+        >
           <img
             src={require('../../../../assets/images/private_sale.png')}
             alt="special_price"
           />
           <h2>Private Sale Special Price</h2>
           <h1>10.000.000 OAKC</h1>
-          <button>Buy OAKC right now!</button>
+          <button className="animate__animated animate__slideInRight delay-400">
+            Buy OAKC right now!
+          </button>
         </section>
       </div>
       <CoinInfoBg className={style.bg} />
