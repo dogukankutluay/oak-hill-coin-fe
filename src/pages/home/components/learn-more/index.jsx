@@ -21,6 +21,7 @@ export default function LearnMore() {
         </div>
         <div className={style.more_body}>
           {/* First card */}
+
           <article
             className={cn(style.more_card, 'animate__animated animate__fadeIn')}
           >

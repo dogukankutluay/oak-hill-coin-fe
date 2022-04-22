@@ -4,12 +4,12 @@
   height: 110px;
   display: flex;
   align-items: center;
-
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
+  user-select: none;
   &_items {
     @extend %wrapper;
     display: flex;

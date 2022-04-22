@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import WorldAnimation from 'assets/animations/hero/WorldLottie';
@@ -19,52 +19,20 @@ export default function Hero() {
       <HeroBg
         className={cn(style.hero_bg, 'animate__animated animate__fadeInDown')}
       />
+
       <div className={style.hero_container}>
         <div className={style.hero_left}>
-          <OakhillMainIcon
-            className={cn(
-              style.hero_lottie_bg,
-              'animate__animated animate__zoomIn delay-450'
-            )}
-          />
-          <span
-            className={cn(
-              style.hero_lottie_text,
-              'animate__animated animate__slideInUp delay-450'
-            )}
-          >
-            Oak Hill Launchpad
-          </span>
-          <WhiteCloudSvg
-            className={cn(
-              style.hero_lottie_cloud,
-              'animate__animated animate__slideInLeft delay-550'
-            )}
-          />
-          <Lottie
-            {...worldLottie}
-            className={cn(
-              style.hero_lottie,
-              'animate__animated animate__fadeInLeft delay-400'
-            )}
-          />
+          <OakhillMainIcon className={style.hero_lottie_bg} />
+          <span className={style.hero_lottie_text}>Oak Hill Launchpad</span>
+          <WhiteCloudSvg className={style.hero_lottie_cloud} />
+          <Lottie {...worldLottie} className={style.hero_lottie} />
         </div>
         <div className={style.hero_right}>
           <div className={style.hero_svgs}>
-            <WhiteCloudSvg
-              className={cn(
-                style.white_cloud,
-                'animate__animated animate__slideInLeft delay-550'
-              )}
-            />
-            <SunSvg
-              className={cn(
-                style.sun,
-                'animate__animated animate__fadeInDownBig delay-200'
-              )}
-            />
+            <WhiteCloudSvg className={style.white_cloud} />
+            <SunSvg className={style.sun} />
             <div className={style.soft_cap}>
-              <SoftCapSvg className="animate__animated animate__fadeInRightBig delay-250" />
+              <SoftCapSvg />
               <h1 className="animate__animated animate__fadeIn  delay-350">
                 SOFT CAP
               </h1>
