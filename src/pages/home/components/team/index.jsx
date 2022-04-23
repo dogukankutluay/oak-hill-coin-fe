@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import style from './team.module.scss';
 import TeamBg from 'assets/icons/team/teams_bg.svg';
-export default function Team({ reference }) {
+import { default as cn } from 'classnames';
+export default function Team({ reference, tab }) {
   const [team, setTeam] = useState(true);
+  const animated = tab === 'team';
   return (
     <div className={style.team} id="team" ref={reference}>
       <div className={style.wrapper}>
         <div style={bg}></div>
-        <h1 className={style.page_title}>Our Team</h1>
-        <div className={style.animatedBtn}>
+        <h1
+          className={cn(
+            style.page_title,
+            animated && 'animate__animated animate__fadeInDown'
+          )}
+        >
+          Our Team
+        </h1>
+        <div
+          className={cn(
+            style.animatedBtn,
+            animated && 'animate__animated animate__fadeInDown delay-50'
+          )}
+        >
           <span
             className={team ? style.btn_active : style.btn}
             onClick={() => setTeam(true)}
@@ -22,7 +36,7 @@ export default function Team({ reference }) {
             Advisor Board
           </span>
         </div>
-        {team ? <TeamMembers /> : <Advisors />}
+        {team ? <TeamMembers animated={animated} /> : <Advisors />}
       </div>
     </div>
   );
@@ -39,11 +53,16 @@ const bg = {
   backgroundSize: 'contain',
 };
 
-const TeamMembers = () => {
+const TeamMembers = ({ animated }) => {
   return (
-    <div className={style.tree}>
+    <div className={cn(style.tree)}>
       <div className={style.tree_body}>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-100'
+          )}
+        >
           <img
             src={require('./members/yildirim_bakir.png')}
             alt="yildirim_bakir"
@@ -55,14 +74,24 @@ const TeamMembers = () => {
         </div>
       </div>
       <div className={style.tree_body}>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-200'
+          )}
+        >
           <img src={require('./members/yilmaz_bakir.png')} alt="yilmaz_bakir" />
           <div>
             <p>Yılmaz BAKIR</p>
             <h1>CTO</h1>
           </div>
         </div>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-200'
+          )}
+        >
           <img
             src={require('./members/abdulrahman_aleid.png')}
             alt="abdulrahman_aleid"
@@ -74,13 +103,23 @@ const TeamMembers = () => {
         </div>
       </div>
       <div className={style.tree_body}>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-300'
+          )}
+        >
           <img src={require('./members/hosni_emam.png')} alt="hosni_emam" />
           <div>
             <p>Hosni Emam</p>
           </div>
         </div>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-300'
+          )}
+        >
           <img
             src={require('./members/murat_birkent.png')}
             alt="murat_birkent"
@@ -89,7 +128,12 @@ const TeamMembers = () => {
             <p>Murat Birkent</p>
           </div>
         </div>
-        <div className={style.member}>
+        <div
+          className={cn(
+            style.member,
+            animated && 'animate__animated animate__fadeIn delay-300'
+          )}
+        >
           <img src={require('./members/milan_rapaic.png')} alt="milan_rapaic" />
           <div>
             <p>Milan Rapaic</p>

@@ -3,20 +3,37 @@ import style from './buy.module.scss';
 import Lottie from 'lottie-react';
 import CoinLottie from 'assets/animations/buy/CoinLottie.json';
 import BackgroundSvg from 'assets/icons/Background.svg';
-export default function Buy({ reference }) {
+import { default as cn } from 'classnames';
+export default function Buy({ reference, tab }) {
+  const animate = tab === 'buy';
   return (
     <div div className={style.buy} style={buyStyle} ref={reference}>
       <div className={style.buy_wrapper}>
-        <div className={style.coinSide}>
+        <div
+          className={cn(
+            style.coinSide,
+            animate && 'animate__animated animate__fadeIn'
+          )}
+        >
           <Lottie {...coinAnimationOptions} />
           <h1>Oak Hill Coin</h1>
         </div>
         <div className={style.content}>
-          <h1>ONLY FOR PRIVATE SALE</h1>
-          <h2>
+          <h1
+            className={animate && 'animate__animated animate__fadeIn delay-100'}
+          >
+            ONLY FOR PRIVATE SALE
+          </h1>
+          <h2
+            className={animate && 'animate__animated animate__fadeIn delay-200'}
+          >
             PRICE: <b>$0.10</b>
           </h2>
-          <button>BUY</button>
+          <button
+            className={animate && 'animate__animated animate__pulse delay-300'}
+          >
+            BUY
+          </button>
         </div>
       </div>
     </div>

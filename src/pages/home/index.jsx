@@ -1,4 +1,4 @@
-import { LeaveSvg, LeftTree, RightTree } from 'assets/icons/home';
+import { LeftTree, RightTree } from 'assets/icons/home';
 import React, { useEffect, useRef, useState } from 'react';
 import About from './components/about';
 import Buy from './components/buy';
@@ -41,7 +41,7 @@ export default function Home() {
       const team = teamRef.current.offsetTop;
       const buy = buyRef.current.offsetTop;
       const contact = contactRef.current.offsetTop;
-      const offset = window.scrollY + 70;
+      const offset = window.scrollY + 370;
       if (offset >= offsetHero && offset < offsetAbout) {
         setTab('hero');
         return 0;
@@ -75,6 +75,9 @@ export default function Home() {
       }
       if (offset >= buy && offset < contact) {
         setTab('buy');
+      }
+      if (offset > contact) {
+        setTab('contact');
       }
     });
   }, []);

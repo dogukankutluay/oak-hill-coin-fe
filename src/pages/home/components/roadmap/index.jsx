@@ -2,17 +2,33 @@ import React from 'react';
 import style from './roadmap.module.scss';
 import RoadmapLottie from 'assets/animations/roadmap/Roadmap.json';
 import Lottie from 'lottie-react';
-import { LeaveSvg } from 'assets/icons/home';
-export default function Roadmap({ reference }) {
+import { default as cn } from 'classnames';
+import { LeftLeave, RightLeave } from 'assets/icons/details';
+export default function Roadmap({ reference, tab }) {
+  const animate = tab === 'roadmap';
   return (
     <div className={style.roadmap} id="roadmap" ref={reference}>
-      <h2>Token Details</h2>
-      <h1>ROADMAP</h1>
+      <h2 className={animate && 'animate__animated animate__fadeIn delay-100'}>
+        Token Details
+      </h2>
+      <h1 className={animate && 'animate__animated animate__fadeIn delay-100'}>
+        ROADMAP
+      </h1>
       <div className={style.wrapper}>
         <Lottie {...roadmapLottieOptions} />
       </div>
-      <LeaveSvg className={style.roadmap_leftLeave} />
-      <LeaveSvg className={style.roadmap_rightLeave} />
+      <LeftLeave
+        className={cn(
+          style.roadmap_leftLeave,
+          animate && 'animate__animated animate__slideInLeft '
+        )}
+      />
+      <RightLeave
+        className={cn(
+          style.roadmap_rightLeave,
+          animate && 'animate__animated animate__slideInRight '
+        )}
+      />
     </div>
   );
 }
