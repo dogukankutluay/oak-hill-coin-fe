@@ -1,4 +1,3 @@
-import { MountainSvg, TreePiece } from 'assets/icons/hero';
 import { LeaveSvg, LeftTree, RightTree } from 'assets/icons/home';
 import React from 'react';
 import About from './components/about';
@@ -33,18 +32,6 @@ export default function Home() {
         />
         <Header />
         <div className={style.body}>
-          <MountainSvg
-            className={cn(
-              style.mountain,
-              'animate__animated animate__fadeInUp delay-100'
-            )}
-          />
-          <TreePiece
-            className={cn(
-              style.tree_piece,
-              'animate__animated animate__slideInUp delay-600'
-            )}
-          />
           <Hero />
           <About />
         </div>

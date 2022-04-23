@@ -5,7 +5,8 @@
   position: relative;
   font-family: redhatRegular;
   color: white;
-  padding-top: 80px;
+  padding-top: 110px;
+
   svg {
     pointer-events: none;
   }
@@ -34,7 +35,7 @@
       width: 100px;
       height: 100px;
       left: 150px;
-      top: 100px;
+      top: 0;
       z-index: 1;
     }
     &_cloud {
@@ -141,13 +142,30 @@
 .hero_bg {
   position: absolute;
   max-width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
   z-index: -3;
   top: 0;
-  margin: 0 auto;
-  margin-top: -200px;
+  left: 0;
 }
 .white_cloud {
   margin-top: 60px;
   margin-right: -20px;
   z-index: 1;
+}
+.tree_piece {
+  position: absolute;
+  z-index: -1;
+  margin-top: 120px;
+  max-width: 100%;
+  min-width: 100%;
+}
+.mountain {
+  position: absolute;
+  min-width: 100%;
+  max-width: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  margin-top: 250px;
 }

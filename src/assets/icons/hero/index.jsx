@@ -154,6 +154,7 @@ export const MountainSvg = (props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
+      preserveAspectRatio="none"
     >
       <g filter="url(#filter0_d_556_17120)">
         <path
@@ -223,6 +224,7 @@ export const HeroBg = (props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
+      preserveAspectRatio="none"
     >
       <path
         d="M1920.27 0V608.684C1738.28 608.684 1651.67 1017.94 1391.18 1017.94C1130.68 1017.94 1165.38 764.015 574.77 764.015C246.485 764.015 0.271484 469.473 0.271484 469.473V0H1920.27Z"
@@ -254,6 +256,7 @@ export const TreePiece = (props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
+      preserveAspectRatio="none"
     >
       <g filter="url(#filter0_d_556_17130)">
         <path

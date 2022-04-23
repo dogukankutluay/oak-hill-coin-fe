@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Wing } from 'assets/icons/learn-more';
 import style from './more.module.scss';
 import Lottie from 'lottie-react';
 import { cards } from './data';
-import { default as cn } from 'lottie-react';
+// import { default as cn } from 'lottie-react';
 import Sphere from 'assets/animations/learn-more/Sphere';
 export default function LearnMore() {
   const [index, setIndex] = useState(0);
@@ -22,12 +22,9 @@ export default function LearnMore() {
         <div className={style.more_body}>
           {/* First card */}
 
-          <article
-            className={cn(style.more_card, 'animate__animated animate__fadeIn')}
-          >
+          <article className={style.more_card}>
             <div className={style.lottie_container}>
               <Lottie
-                className={style.lottie_container_lottie}
                 {...animationOptions}
                 animationData={cards[index].animationData}
               />
@@ -45,19 +42,13 @@ export default function LearnMore() {
             />
           </article>
           {/* Second card */}
-          <article
-            className={cn(
-              style.more_card,
-              'animate__animated animate__fadeInOut'
-            )}
-          >
+          <article className={style.more_card}>
             <div className={style.lottie_container}>
+              <span>{cards[index + 1]?.index}</span>
               <Lottie
-                className={style.lottie_container_lottie}
                 {...animationOptions}
                 animationData={cards[index + 1].animationData}
               />
-              <span>{cards[index + 1]?.index}</span>
             </div>
             <h1>{cards[index + 1].title}</h1>
             <p>{cards[index + 1]?.description}</p>

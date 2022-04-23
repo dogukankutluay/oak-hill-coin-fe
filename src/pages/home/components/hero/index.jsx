@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import WorldAnimation from 'assets/animations/hero/WorldLottie';
@@ -8,10 +8,12 @@ import {
   HeroBg,
   SoftCapSvg,
   SunSvg,
+  TreePiece,
   WhiteCloudSvg,
 } from 'assets/icons/hero';
 import { OakhillMainIcon } from 'assets/icons';
 import { default as cn } from 'classnames';
+import { MountainSvg } from 'assets/icons/hero';
 
 export default function Hero() {
   return (
@@ -19,7 +21,18 @@ export default function Hero() {
       <HeroBg
         className={cn(style.hero_bg, 'animate__animated animate__fadeInDown')}
       />
-
+      <MountainSvg
+        className={cn(
+          style.mountain,
+          'animate__animated animate__fadeInUp delay-100'
+        )}
+      />
+      <TreePiece
+        className={cn(
+          style.tree_piece,
+          'animate__animated animate__slideInUp delay-600'
+        )}
+      />
       <div className={style.hero_container}>
         <div className={style.hero_left}>
           <OakhillMainIcon className={style.hero_lottie_bg} />
@@ -57,6 +70,7 @@ export default function Hero() {
             <p className="animate__animated animate__slideInRight delay-300">
               FIRST BLOCKCHAIN BASED FUNDING LAUNCHPAD
             </p>
+
             <div className={style.hero_buttons}>
               <Link
                 to={'/login'}

@@ -2,7 +2,8 @@
 @import 'assets/styles/_variables.scss';
 .about {
   position: relative;
-  padding-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   &_wrapper {
     @extend %wrapper;
     display: flex;
@@ -16,6 +17,7 @@
     z-index: -2;
     height: 100%;
     transform: rotate(-180deg);
+    transform: scaleY(-1);
   }
 }
 .card {
@@ -29,7 +31,7 @@
     line-height: 3rem;
     letter-spacing: 0em;
   }
-  $space: 200px;
+  $space: 150px;
   h1 {
     font-weight: 700;
   }

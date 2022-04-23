@@ -8,7 +8,7 @@
     position: absolute;
     top: 0;
     z-index: 0;
-    max-width: 40%;
+    max-width: 35%;
   }
   &_leftTree {
     top: 0;
@@ -19,21 +19,7 @@
     transform: scaleX(-1);
   }
 }
-.tree_piece {
-  position: absolute;
-  z-index: -1;
-  margin-top: 13%;
-  max-width: 90vw;
-  overflow: hidden;
-}
-.mountain {
-  position: absolute;
-  overflow: hidden;
-  max-width: 99vw;
-  z-index: -2;
-  right: 0;
-  margin-top: 15%;
-}
+
 .details {
   position: relative;
   &_bg {

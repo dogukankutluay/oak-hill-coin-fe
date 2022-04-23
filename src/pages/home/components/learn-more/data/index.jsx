@@ -1,10 +1,10 @@
 import ProjectIdeas from 'assets/animations/learn-more/ProjectIdeas';
 import ProjectPresenting from 'assets/animations/learn-more/ProjectPresenting';
-import Deal from 'assets/animations/learn-more/Deal';
 import Tokenization from 'assets/animations/learn-more/Tokenization';
-import CarryOut from 'assets/animations/learn-more/CarryOut';
 import ProjectLaunch from 'assets/animations/learn-more/ProjectLaunch';
-import Rocket from 'assets/animations/learn-more/Rocket';
+// import Deal from 'assets/animations/learn-more/Deal';
+// import CarryOut from 'assets/animations/learn-more/CarryOut';
+// import Rocket from 'assets/animations/learn-more/Rocket';
 export const cards = [
   {
     index: '01',

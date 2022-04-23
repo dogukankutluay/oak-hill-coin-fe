@@ -39,6 +39,7 @@ export default function Details() {
           style.detail_img,
           'animate__animated animate__fadeInUp delay-200'
         )}
+        alt="oak_hill_invest"
         src={require('../../../../assets/images/oak_hill_invest.png')}
       />
     </div>

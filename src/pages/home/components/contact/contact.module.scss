@@ -1,7 +1,8 @@
 @import 'assets/styles/_global.module.scss';
 @import 'assets/styles/_variables.scss';
 .contact {
-  background: linear-gradient(0deg, #16222e 0%, rgba(43, 137, 101, 0) 77.18%);
+  background: linear-gradient(0deg, #16222e 0%, rgba(43, 137, 101, 0) 77.18%),
+    linear-gradient(63.43deg, #367d4d 0%, #00b0b9 50%, #82d89a 100%);
   &_wrapper {
     @extend %wrapper;
     display: flex;
@@ -45,6 +46,7 @@
   top: 30%;
   left: 10%;
   text-align: center;
+  user-select: none;
   svg {
     width: 100px;
     height: 100px;
