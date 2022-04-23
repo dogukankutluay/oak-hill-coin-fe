@@ -3,20 +3,19 @@ import { ArrowLeft, ArrowRight, Wing } from 'assets/icons/learn-more';
 import style from './more.module.scss';
 import Lottie from 'lottie-react';
 import { cards } from './data';
-import { default as cn } from 'lottie-react';
+import { default as cn } from 'classnames';
 import Sphere from 'assets/animations/learn-more/Sphere';
 
 export default function LearnMore({ reference, tab }) {
   const [index, setIndex] = useState(0);
   const animate = tab === 'learn-more';
-
   return (
     <div className={style.more} id="learn-more">
       <Wing
-        className={
-          style.more_wing
-          // animate && 'animate__animated animate__fadeInDown'
-        }
+        className={cn(
+          style.more_wing,
+          animate && 'animate__animated animate__fadeInDown'
+        )}
       />
       <div className={style.more_wrapper} ref={reference}>
         <div className={style.more_head}>
@@ -46,14 +45,16 @@ export default function LearnMore({ reference, tab }) {
         <div className={style.more_body}>
           {/* First card */}
 
-          <article className={style.more_card}>
+          <article
+            className={cn(
+              style.more_card,
+              animate && 'animate__animated animate__fadeInLeft delay-150'
+            )}
+          >
             <div className={style.lottie_container}>
               <Lottie
                 {...animationOptions}
                 animationData={cards[index].animationData}
-                className={
-                  animate && 'animate__animated animate__fadeInLeft delay-150'
-                }
               />
               <span>{cards[index]?.index}</span>
             </div>
@@ -61,18 +62,25 @@ export default function LearnMore({ reference, tab }) {
             <p>{cards[index].description}</p>
           </article>
           {/* Sphere card */}
-          <article className={style.more_card}>
+          <article
+            className={cn(
+              style.more_card,
+              animate && 'animate__animated animate__fadeIn delay-150'
+            )}
+          >
             <Lottie
               {...animationOptions}
               animationData={Sphere}
-              className={cn(
-                style.more_card_sphere,
-                animate && 'animate__animated animate__fadeInLeft delay-150'
-              )}
+              className={style.more_card_sphere}
             />
           </article>
           {/* Second card */}
-          <article className={style.more_card}>
+          <article
+            className={cn(
+              style.more_card,
+              animate && 'animate__animated animate__fadeIn delay-150'
+            )}
+          >
             <div className={style.lottie_container}>
               <span>{cards[index + 1]?.index}</span>
               <Lottie

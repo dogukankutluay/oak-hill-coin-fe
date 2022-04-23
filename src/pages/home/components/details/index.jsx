@@ -1,14 +1,16 @@
 import React from 'react';
 import style from './details.module.scss';
 import { default as cn } from 'classnames';
+import { LeftLeave, RightLeave } from 'assets/icons/details';
 export default function Details({ reference, tab }) {
+  const animate = tab === 'learn-more';
   return (
     <div className={style.detail} ref={reference}>
       <div className={style.detail_container}>
         <article
           className={cn(
             style.detail_card,
-            'animate__animated animate__fadeInLeft'
+            animate && 'animate__animated animate__fadeInLeft'
           )}
         >
           <h1>Central Guaranteed </h1>
@@ -22,7 +24,7 @@ export default function Details({ reference, tab }) {
         <article
           className={cn(
             style.detail_card,
-            'animate__animated animate__fadeInRight delay-100'
+            animate && 'animate__animated animate__fadeInRight delay-100'
           )}
         >
           <h1>Experience Advisors </h1>
@@ -37,10 +39,23 @@ export default function Details({ reference, tab }) {
       <img
         className={cn(
           style.detail_img,
-          'animate__animated animate__fadeInUp delay-200'
+          animate && 'animate__animated animate__fadeInUp delay-200'
         )}
         alt="oak_hill_invest"
         src={require('../../../../assets/images/oak_hill_invest.png')}
+      />
+      <LeftLeave
+        className={cn(
+          style.detail_leftLeave,
+          animate && 'animate__animated animate__slideInLeft delay-250'
+        )}
+      />
+
+      <RightLeave
+        className={cn(
+          style.detail_rightLeave,
+          animate && 'animate__animated animate__slideInRight delay-250'
+        )}
       />
     </div>
   );

@@ -69,7 +69,21 @@
   width: 100%;
 }
 // countdown section
-
+.countdown_title,
+.countdown_subtitle {
+  font-family: redhatRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  color: #313131;
+}
+.countdown_subtitle {
+  margin-bottom: 3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
 .countdown_wrapper {
   @extend %wrapper;
   padding-block: 5rem;

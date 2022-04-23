@@ -6,9 +6,9 @@ import DownloadAnimation from 'assets/animations/coin-info/DownloadLottie';
 import style from './info.module.scss';
 import { default as cn } from 'classnames';
 
-export default function CoinInfo({ reference }) {
+export default function CoinInfo({ reference, tab }) {
   const [date, setDate] = useState(getDate());
-
+  const animate = tab === 'coin-info';
   useEffect(() => {
     const interval = () => {
       setDate(getDate());
@@ -22,7 +22,7 @@ export default function CoinInfo({ reference }) {
         <section
           className={cn(
             style.section,
-            'animate__animated animate__fadeInLeft delay-100'
+            animate && 'animate__animated animate__fadeInLeft delay-100'
           )}
         >
           <img
@@ -32,7 +32,11 @@ export default function CoinInfo({ reference }) {
           <h2>Check our</h2>
           <h1>Lite paper</h1>
           <div className={style.buttons}>
-            <button className="animate__animated animate__slideInLeft delay-300">
+            <button
+              className={
+                animate && 'animate__animated animate__slideInLeft delay-300'
+              }
+            >
               <Lottie {...readAnimationOptions} className={style.btn_lottie} />
               Read
             </button>
@@ -46,7 +50,10 @@ export default function CoinInfo({ reference }) {
           </div>
         </section>
         <section
-          className={cn(style.section, 'animate__animated animate__fadeInDown')}
+          className={cn(
+            style.section,
+            animate && 'animate__animated animate__fadeInDown'
+          )}
         >
           <CoinLogo />
           <h2>1 OAKC token price</h2>
@@ -55,7 +62,7 @@ export default function CoinInfo({ reference }) {
         <section
           className={cn(
             style.section,
-            'animate__animated animate__fadeInRight delay-200'
+            animate && 'animate__animated animate__fadeInRight delay-200'
           )}
         >
           <img
@@ -72,8 +79,29 @@ export default function CoinInfo({ reference }) {
       <CoinInfoBg className={style.bg} />
       {/* Countdown section */}
       <div className={style.countdown_wrapper} id="ico-schedule">
+        <h1
+          className={cn(
+            style.countdown_title,
+            animate && 'animate__animated animate__fadeInDown delay-400'
+          )}
+        >
+          Token Details
+        </h1>
+        <h2
+          className={cn(
+            style.countdown_subtitle,
+            animate && 'animate__animated animate__fadeInDown delay-400'
+          )}
+        >
+          ICO Schedule
+        </h2>
         <div className={style.countdown_container}>
-          <div className={style.card_side}>
+          <div
+            className={cn(
+              style.card_side,
+              animate && 'animate__animated animate__slideInLeft delay-450'
+            )}
+          >
             <div className={style.card}>
               <h1 className={style.card_title}>Private Sale</h1>
               <div className={style.card_body}>
@@ -87,7 +115,12 @@ export default function CoinInfo({ reference }) {
             </div>
             <h1 className={style.card_countdown}>{date}</h1>
           </div>
-          <article className={style.content}>
+          <article
+            className={cn(
+              style.content,
+              animate && 'animate__animated animate__fadeInLeft delay-400'
+            )}
+          >
             <h1>Pre Sale</h1>
             <div className={style.content_body}>
               <span>02</span>
@@ -98,7 +131,12 @@ export default function CoinInfo({ reference }) {
             </div>
             <h3>May 20 - June 20 2022</h3>
           </article>
-          <article className={style.content}>
+          <article
+            className={cn(
+              style.content,
+              animate && 'animate__animated animate__fadeInLeft delay-400'
+            )}
+          >
             <h1>Public-Sale</h1>
             <div className={style.content_body}>
               <span>03</span>

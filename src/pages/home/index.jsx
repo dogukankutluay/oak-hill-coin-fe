@@ -101,18 +101,7 @@ export default function Home() {
         <div className={style.details}>
           <LearnMore reference={learnMoreRef} tab={tab} />
           <Details reference={detailsRef} tab={tab} />
-          <LeaveSvg
-            className={cn(
-              style.details_leftLeave,
-              'animate__animated animate__slideInLeft'
-            )}
-          />
-          <LeaveSvg
-            className={cn(
-              style.details_rightLeave,
-              'animate__animated animate__slideInRight'
-            )}
-          />
+
           <div className={style.details_bg}></div>
         </div>
       </div>

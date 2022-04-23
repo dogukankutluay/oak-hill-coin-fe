@@ -42,4 +42,19 @@
   &_img {
     width: 50%;
   }
+  &_leftLeave,
+  &_rightLeave {
+    position: absolute;
+    z-index: 1;
+    width: 350px;
+    height: 350px;
+  }
+  &_leftLeave {
+    left: 0;
+    bottom: 0;
+  }
+  &_rightLeave {
+    right: 0;
+    bottom: 0;
+  }
 }
