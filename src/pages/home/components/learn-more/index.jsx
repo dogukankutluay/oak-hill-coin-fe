@@ -3,18 +3,42 @@ import { ArrowLeft, ArrowRight, Wing } from 'assets/icons/learn-more';
 import style from './more.module.scss';
 import Lottie from 'lottie-react';
 import { cards } from './data';
-// import { default as cn } from 'lottie-react';
+import { default as cn } from 'lottie-react';
 import Sphere from 'assets/animations/learn-more/Sphere';
-export default function LearnMore() {
+
+export default function LearnMore({ reference, tab }) {
   const [index, setIndex] = useState(0);
+  const animate = tab === 'learn-more';
+
   return (
     <div className={style.more} id="learn-more">
-      <Wing className={style.wing} />
-      <div className={style.more_wrapper}>
+      <Wing
+        className={
+          style.more_wing
+          // animate && 'animate__animated animate__fadeInDown'
+        }
+      />
+      <div className={style.more_wrapper} ref={reference}>
         <div className={style.more_head}>
-          <h1>Our Platform</h1>
-          <h2>How it works?</h2>
-          <p>
+          <h1
+            className={
+              animate && 'animate__animated animate__fadeInDown delay-100'
+            }
+          >
+            Our Platform
+          </h1>
+          <h2
+            className={
+              animate && 'animate__animated animate__fadeInDown delay-150'
+            }
+          >
+            How it works?
+          </h2>
+          <p
+            className={
+              animate && 'animate__animated animate__fadeInDown delay-200'
+            }
+          >
             Oakhill Launchpad is the world's first blockchain-based investment
             platform. We have some steps to make amazing things happen!
           </p>
@@ -27,6 +51,9 @@ export default function LearnMore() {
               <Lottie
                 {...animationOptions}
                 animationData={cards[index].animationData}
+                className={
+                  animate && 'animate__animated animate__fadeInLeft delay-150'
+                }
               />
               <span>{cards[index]?.index}</span>
             </div>
@@ -38,7 +65,10 @@ export default function LearnMore() {
             <Lottie
               {...animationOptions}
               animationData={Sphere}
-              className={style.more_card_sphere}
+              className={cn(
+                style.more_card_sphere,
+                animate && 'animate__animated animate__fadeInLeft delay-150'
+              )}
             />
           </article>
           {/* Second card */}

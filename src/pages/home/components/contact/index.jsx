@@ -3,9 +3,9 @@ import SubscribeForm from 'components/subscribe-form';
 import React from 'react';
 import style from './contact.module.scss';
 import * as SocialMedia from 'assets/icons/contact';
-export default function Contact() {
+export default function Contact({ reference }) {
   return (
-    <div className={style.contact}>
+    <div className={style.contact} ref={reference}>
       <div className={style.contact_wrapper}>
         <div className={style.imageSide}>
           <img

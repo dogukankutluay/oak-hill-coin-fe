@@ -35,7 +35,7 @@
       width: 100px;
       height: 100px;
       left: 150px;
-      top: 0;
+      top: 120px;
       z-index: 1;
     }
     &_cloud {
@@ -146,6 +146,7 @@
   min-height: 100vh;
   z-index: -3;
   top: 0;
+
   left: 0;
 }
 .white_cloud {

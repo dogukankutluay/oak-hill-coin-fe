@@ -3,9 +3,9 @@ import style from './buy.module.scss';
 import Lottie from 'lottie-react';
 import CoinLottie from 'assets/animations/buy/CoinLottie.json';
 import BackgroundSvg from 'assets/icons/Background.svg';
-export default function Buy() {
+export default function Buy({ reference }) {
   return (
-    <div div className={style.buy} style={buyStyle}>
+    <div div className={style.buy} style={buyStyle} ref={reference}>
       <div className={style.buy_wrapper}>
         <div className={style.coinSide}>
           <Lottie {...coinAnimationOptions} />

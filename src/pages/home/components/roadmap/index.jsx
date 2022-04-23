@@ -3,9 +3,9 @@ import style from './roadmap.module.scss';
 import RoadmapLottie from 'assets/animations/roadmap/Roadmap.json';
 import Lottie from 'lottie-react';
 import { LeaveSvg } from 'assets/icons/home';
-export default function Roadmap() {
+export default function Roadmap({ reference }) {
   return (
-    <div className={style.roadmap} id="roadmap">
+    <div className={style.roadmap} id="roadmap" ref={reference}>
       <h2>Token Details</h2>
       <h1>ROADMAP</h1>
       <div className={style.wrapper}>

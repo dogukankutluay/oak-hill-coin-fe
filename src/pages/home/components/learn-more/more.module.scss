@@ -7,8 +7,14 @@
     color: white;
     font-family: redhatRegular;
   }
+  &_wing {
+    position: relative;
+    margin-block: -50px;
+    z-index: -1;
+  }
   &_head {
-    text-align: center;
+    text-align: center !important;
+
     h1,
     h2 {
       font-size: 30px;
@@ -21,7 +27,6 @@
     }
     h2 {
       font-weight: 700;
-      text-align: center;
     }
     p {
       max-width: 70%;
@@ -68,11 +73,7 @@
     }
   }
 }
-.wing {
-  position: relative;
-  margin-block: -50px;
-  z-index: -1;
-}
+
 .lottie_container {
   display: flex;
   flex-direction: row-reverse;
@@ -85,6 +86,7 @@
     line-height: 79px;
     letter-spacing: 0em;
     color: #82d89a80;
+    user-select: none;
   }
   &_lottie {
     width: 150px;

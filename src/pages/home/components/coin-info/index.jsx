@@ -6,7 +6,7 @@ import DownloadAnimation from 'assets/animations/coin-info/DownloadLottie';
 import style from './info.module.scss';
 import { default as cn } from 'classnames';
 
-export default function CoinInfo() {
+export default function CoinInfo({ reference }) {
   const [date, setDate] = useState(getDate());
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function CoinInfo() {
     clearInterval(interval);
   }, []);
   return (
-    <div className={style.info}>
+    <div className={style.info} ref={reference}>
       <div className={style.info_wrapper}>
         <section
           className={cn(

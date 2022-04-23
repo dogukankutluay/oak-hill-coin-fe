@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import style from './team.module.scss';
 import TeamBg from 'assets/icons/team/teams_bg.svg';
-export default function Team() {
+export default function Team({ reference }) {
   const [team, setTeam] = useState(true);
   return (
-    <div className={style.team} id="team">
+    <div className={style.team} id="team" ref={reference}>
       <div className={style.wrapper}>
         <div style={bg}></div>
         <h1 className={style.page_title}>Our Team</h1>

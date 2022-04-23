@@ -2,9 +2,9 @@ import React from 'react';
 import style from './tokenomic.module.scss';
 import TokenomicChart from './../chart';
 import Roadmap from '../roadmap';
-export default function Tokenomic() {
+export default function Tokenomic({ reference }) {
   return (
-    <div className={style.tokenomic} id="tokenomic">
+    <div className={style.tokenomic} id="tokenomic" ref={reference}>
       <div className={style.wrapper}>
         <h2 className={style.subtitle}>Token Details</h2>
         <h1 className={style.title}>TOKENOMICS</h1>

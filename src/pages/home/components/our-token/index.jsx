@@ -2,9 +2,9 @@ import { LeaveSvg } from 'assets/icons/home';
 import React from 'react';
 import style from './token.module.scss';
 import { default as cn } from 'classnames';
-export default function OurToken() {
+export default function OurToken({ reference }) {
   return (
-    <div className={style.token} id="our-token">
+    <div className={style.token} id="our-token" ref={reference}>
       <LeaveSvg
         className={cn(
           style.token_leftLeave,

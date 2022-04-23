@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './details.module.scss';
 import { default as cn } from 'classnames';
-export default function Details() {
+export default function Details({ reference, tab }) {
   return (
-    <div className={style.detail}>
+    <div className={style.detail} ref={reference}>
       <div className={style.detail_container}>
         <article
           className={cn(
