@@ -19,7 +19,12 @@
     transform: scaleX(-1);
   }
 }
-
+@media (max-width: '1200px') {
+  .home_leftTree,
+  .home_rightTree {
+    max-width: 22%;
+  }
+}
 .details {
   position: relative;
   &_bg {

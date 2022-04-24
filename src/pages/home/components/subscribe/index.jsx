@@ -22,7 +22,7 @@ export default function Subscribe({ reference, tab }) {
             Keem up to date with our progress. Subscribe for e-mail updates.
           </p>
         </div>
-        <SubscribeForm />
+        <SubscribeForm className={style.subscribe_form} />
       </div>
       <div className={style.subscribe_bg}></div>
     </div>

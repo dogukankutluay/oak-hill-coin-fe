@@ -39,3 +39,17 @@
     }
   }
 }
+@media (max-width: '1000px') {
+  .subscribe_wrapper {
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    box-sizing: border-box;
+  }
+  .subscribe_description {
+    min-width: 90%;
+  }
+  .subscribe_form {
+    min-width: 100%;
+  }
+}

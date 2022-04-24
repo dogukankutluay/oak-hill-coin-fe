@@ -14,6 +14,7 @@
   display: flex;
   font-family: redhatRegular;
   justify-content: space-between;
+  align-items: center;
   b {
     font-family: redhatBold;
     font-weight: 700;
@@ -26,6 +27,8 @@
 .chartSide {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .title,
 .subtitle {
@@ -41,4 +44,36 @@
 .title {
   font-weight: 700;
   padding-bottom: 4rem;
+}
+@media (max-width: '1000px') {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .chartInfo {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: '600px') {
+  .container {
+    b {
+      font-family: redhatBold;
+      font-weight: 700;
+    }
+    p {
+      text-align: left;
+      font-size: 1.25rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .title,
+    .subtitle {
+      font-family: redhatRegular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 30px;
+    }
+  }
 }

@@ -9,8 +9,9 @@
   }
   &_wing {
     position: relative;
-    margin-block: -50px;
+    margin-top: -60px;
     z-index: -1;
+    max-width: 60%;
   }
   &_head {
     text-align: center !important;
@@ -90,5 +91,64 @@
   }
   &_lottie {
     width: 150px;
+  }
+}
+@media (max-width: '1200px') {
+  .more_body {
+    margin-inline: 1rem;
+  }
+}
+@media (max-width: '1000px') {
+  .more_wing {
+    margin-top: -100px;
+  }
+}
+@media (max-width: '750px') {
+  .more_body {
+    article {
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+      max-width: 70%;
+      margin: 0 auto;
+      h1 {
+        font-size: 27px;
+      }
+      p {
+        text-align: left;
+        margin-top: 0.8rem;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .more_arrows {
+    gap: 6rem;
+  }
+}
+@media (max-width: '600px') {
+  .more_head {
+    text-align: center !important;
+
+    h1,
+    h2 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+    }
+    h1 {
+      font-weight: 400;
+    }
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      max-width: 90%;
+      margin: 1rem auto;
+      font-size: 1rem;
+    }
   }
 }

@@ -3,10 +3,11 @@
 .about {
   position: relative;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   &_wrapper {
     @extend %wrapper;
     display: flex;
+    justify-content: center;
   }
   &_bg {
     position: absolute;
@@ -46,3 +47,52 @@
     text-align: right;
   }
 }
+@media (max-width: '1200px') {
+  .card {
+    width: 30%;
+    h1,
+    h2 {
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+    }
+  }
+  .about {
+    padding-top: 0rem;
+  }
+}
+@media (max-width: '900px') {
+  .about {
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: '600px') {
+  .card {
+    width: 30%;
+    h1,
+    h2 {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+  }
+}
+@media (max-width: '400px') {
+  .card {
+    width: 32%;
+    margin-inline: 0.5rem;
+    h1,
+    h2 {
+      font-size: 0.7rem;
+      line-height: 1.4rem;
+    }
+  }
+}
+// @media (max-width: '900px') {
+//   .about_wrapper {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .about {
+//     margin-top: -10rem;
+//   }
+// }

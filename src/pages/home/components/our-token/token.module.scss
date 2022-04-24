@@ -74,3 +74,72 @@
 .subtitle {
   color: #313131 !important;
 }
+@media (max-width: '1200px') {
+  .token_wrapper {
+    p {
+      max-width: 80%;
+      font-size: 1.25rem;
+    }
+  }
+  .token_description {
+    font-size: 1.5rem !important;
+    font-family: redhatRegular;
+  }
+  .token_leftLeaf,
+  .token_rightLeaf {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: '750px') {
+  .token_infos {
+    h1 {
+      line-height: 20px;
+      justify-content: flex-start;
+      span {
+        color: #313131;
+        margin-left: 20px;
+        font-size: 1.2rem;
+        margin-left: 4rem;
+      }
+    }
+  }
+
+  .token_leftLeaf,
+  .token_rightLeaf {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: '500px') {
+  .token_leftLeaf,
+  .token_rightLeaf {
+    width: 100px;
+    height: 100px;
+  }
+  .token_infos {
+    h1 {
+      line-height: 20px;
+      justify-content: flex-start;
+      span {
+        color: #313131;
+        margin-left: 20px;
+        font-size: 1rem;
+        margin-left: 3.5rem;
+      }
+    }
+  }
+}
+@media (max-width: '400px') {
+  .token_infos {
+    h1 {
+      line-height: 20px;
+      justify-content: flex-start;
+      span {
+        color: #313131;
+        font-size: 1rem;
+        margin-left: 3rem;
+      }
+    }
+  }
+}

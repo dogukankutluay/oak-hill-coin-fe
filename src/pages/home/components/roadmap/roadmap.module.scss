@@ -4,6 +4,7 @@
   border-bottom-left-radius: 66px;
   border-bottom-right-radius: 66px;
   padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
   position: relative;
   h1,
   h2 {
@@ -36,4 +37,32 @@
 }
 .wrapper {
   @extend %wrapper;
+}
+@media (max-width: '1200px') {
+  .roadmap_leftLeave,
+  .roadmap_rightLeave {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: '750px') {
+  .roadmap_leftLeave,
+  .roadmap_rightLeave {
+    width: 150px;
+    height: 150px;
+  }
+  .roadmap {
+    h1,
+    h2 {
+      font-size: 27px;
+      line-height: 32px;
+    }
+  }
+}
+@media (max-width: '500px') {
+  .roadmap_leftLeave,
+  .roadmap_rightLeave {
+    width: 100px;
+    height: 100px;
+  }
 }

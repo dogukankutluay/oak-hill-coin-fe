@@ -58,3 +58,35 @@
     bottom: 0;
   }
 }
+@media (max-width: '1200px') {
+  .detail_container {
+    margin-inline: 1rem;
+  }
+  .detail_leftLeave,
+  .detail_rightLeave {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: '750px') {
+  .detail_container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .detail_leftLeave,
+  .detail_rightLeave {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: '500px') {
+  .detail_container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .detail_leftLeave,
+  .detail_rightLeave {
+    width: 100px;
+    height: 100px;
+  }
+}

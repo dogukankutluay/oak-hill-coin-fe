@@ -29,8 +29,8 @@ export default function OurToken({ reference, tab }) {
         </h1>
         <h2
           className={cn(
-            animate && style.subtitle,
-            'animate__animated animate__fadeInUp delay-200'
+            style.subtitle,
+            animate && 'animate__animated animate__fadeInUp delay-200'
           )}
         >
           What is Oak Hill Coin?

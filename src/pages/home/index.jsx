@@ -34,6 +34,7 @@ export default function Home() {
   let scrollPrevious = 0;
   useEffect(() => {
     window.addEventListener('scroll', () => {
+      //prevent scrolling back
       if (scrollPrevious > window.scrollY) {
         return 0;
       }
