@@ -104,7 +104,8 @@ export default function Contact({ reference, tab }) {
           </div>
           <SubscribeForm
             className={
-              animate && 'animate__animated animate__slideInRight delay-400'
+              (style.subscribe_form,
+              animate && 'animate__animated animate__slideInRight delay-400')
             }
           />
         </div>

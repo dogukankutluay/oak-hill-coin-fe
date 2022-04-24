@@ -18,24 +18,37 @@ export default function LearnMore({ reference, tab }) {
     )
       return 0;
     //remove existing animations
-    leftRef.current.classList.remove('animate__fadeInLeft');
-    rightRef.current.classList.remove('animate__fadeInRight');
-    centerRef.current.classList.remove('animate__fadeIn');
-    leftRef.current.classList.add('animate__fadeOut');
-    rightRef.current.classList.add('animate__fadeOut');
+
+    leftRef.current.classList.remove(
+      'animate__fadeInLeft',
+      'animate__animated'
+    );
+    rightRef.current.classList.remove(
+      'animate__fadeInRight',
+      'animate__animated'
+    );
+    centerRef.current.classList.remove('animate__fadeIn', 'animate__animated');
+    //add new animations
+    leftRef.current.classList.add('animate__animated', 'animate__fadeOut');
+    rightRef.current.classList.add('animate__animated', 'animate__fadeOut');
+    centerRef.current.classList.add('animate__fadeOut', 'animate__animated');
+
     setTimeout(() => {
       leftRef.current.classList.remove('animate__fadeOut');
       rightRef.current.classList.remove('animate__fadeOut');
+      centerRef.current.classList.remove('animate__fadeOut');
       leftRef.current.classList.add('animate__fadeInLeft');
       rightRef.current.classList.add('animate__fadeInRight');
       centerRef.current.classList.add('animate__fadeIn');
     }, 1);
-    if (direction === 'left') {
-      setIndex(index - 1);
+    setTimeout(() => {
+      if (direction === 'left') {
+        setIndex(index - 1);
+        return 0;
+      }
 
-      return 0;
-    }
-    setIndex(index + 1);
+      setIndex(index + 1);
+    }, 2);
   };
   return (
     <div className={style.more} id="learn-more">
