@@ -56,13 +56,13 @@ const bg = {
 const TeamMembers = ({ animated }) => {
   return (
     <div className={cn(style.tree)}>
-      <div className={style.tree_body}>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-100'
-          )}
-        >
+      <div
+        className={cn(
+          style.tree_body,
+          animated && 'animate__animated animate__fadeIn'
+        )}
+      >
+        <div className={style.member}>
           <img
             src={require('./members/yildirim_bakir.png')}
             alt="yildirim_bakir"
@@ -73,25 +73,20 @@ const TeamMembers = ({ animated }) => {
           </div>
         </div>
       </div>
-      <div className={style.tree_body}>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-200'
-          )}
-        >
+      <div
+        className={cn(
+          style.tree_body,
+          animated && 'animate__animated animate__fadeIn delay-100'
+        )}
+      >
+        <div className={style.member}>
           <img src={require('./members/yilmaz_bakir.png')} alt="yilmaz_bakir" />
           <div>
             <p>Yılmaz BAKIR</p>
             <h1>CTO</h1>
           </div>
         </div>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-200'
-          )}
-        >
+        <div className={style.member}>
           <img
             src={require('./members/abdulrahman_aleid.png')}
             alt="abdulrahman_aleid"
@@ -102,24 +97,19 @@ const TeamMembers = ({ animated }) => {
           </div>
         </div>
       </div>
-      <div className={style.tree_body}>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-300'
-          )}
-        >
+      <div
+        className={cn(
+          style.tree_body,
+          animated && 'animate__animated animate__fadeIn delay-200'
+        )}
+      >
+        <div className={style.member}>
           <img src={require('./members/hosni_emam.png')} alt="hosni_emam" />
           <div>
             <p>Hosni Emam</p>
           </div>
         </div>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-300'
-          )}
-        >
+        <div className={style.member}>
           <img
             src={require('./members/murat_birkent.png')}
             alt="murat_birkent"
@@ -128,12 +118,7 @@ const TeamMembers = ({ animated }) => {
             <p>Murat Birkent</p>
           </div>
         </div>
-        <div
-          className={cn(
-            style.member,
-            animated && 'animate__animated animate__fadeIn delay-300'
-          )}
-        >
+        <div className={style.member}>
           <img src={require('./members/milan_rapaic.png')} alt="milan_rapaic" />
           <div>
             <p>Milan Rapaic</p>
@@ -147,7 +132,7 @@ const TeamMembers = ({ animated }) => {
 const Advisors = () => {
   return (
     <div className={style.tree}>
-      <div className={style.tree_body}>
+      <div className={cn(style.tree_body, 'animate__animated animate__fadeIn')}>
         <div className={style.member}>
           <img src={require('./members/Mr-Feihu-Yu 1.png')} alt="feihu_yu" />
           <div>
@@ -173,7 +158,12 @@ const Advisors = () => {
           </div>
         </div>
       </div>
-      <div className={style.tree_body}>
+      <div
+        className={cn(
+          style.tree_body,
+          'animate__animated animate__fadeIn delay-100'
+        )}
+      >
         <div className={style.member}>
           <img src={require('./members/Goran-Kazic 1.png')} alt="goran_kazic" />
           <div>
@@ -199,7 +189,12 @@ const Advisors = () => {
           </div>
         </div>
       </div>
-      <div className={style.tree_body}>
+      <div
+        className={cn(
+          style.tree_body,
+          'animate__animated animate__fadeIn delay-200'
+        )}
+      >
         <div className={style.member}>
           <img
             src={require('./members/Ahmed Ramadan 1.png')}
