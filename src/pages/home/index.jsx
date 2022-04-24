@@ -31,8 +31,15 @@ export default function Home() {
   const detailsContainerRef = useRef();
   const roadmapRef = useRef();
   // console.log(tab);
+  let scrollPrevious = 0;
   useEffect(() => {
     window.addEventListener('scroll', () => {
+      if (scrollPrevious > window.scrollY) {
+        return 0;
+      }
+      scrollPrevious = window.scrollY;
+
+      const offset = window.scrollY + 550;
       const offsetHero = heroRef.current?.offsetTop;
       const offsetAbout = aboutRef.current?.offsetTop;
       const offsetLearnMore =
@@ -48,7 +55,6 @@ export default function Home() {
       const team = teamRef.current.offsetTop;
       const buy = buyRef.current.offsetTop;
       const contact = contactRef.current.offsetTop;
-      const offset = window.scrollY + 550;
 
       if (offset >= offsetHero && offset < offsetAbout) {
         setTab('hero');

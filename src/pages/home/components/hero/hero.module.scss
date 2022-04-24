@@ -6,7 +6,6 @@
   font-family: redhatRegular;
   color: white;
   padding-top: 110px;
-
   svg {
     pointer-events: none;
   }
@@ -54,6 +53,7 @@
   &_body {
     margin-left: 2rem;
     margin-top: 2rem;
+    position: relative;
     h1 {
       font-size: 3.5rem;
       font-weight: 700;

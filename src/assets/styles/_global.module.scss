@@ -6,11 +6,12 @@
   border-radius: 40px;
 }
 %wrapper {
-  width: min(1000px, 95%);
+  width: min(1000px, 80%);
   margin: 0 auto;
   box-sizing: border-box;
 }
-
+@media (max-width: '1000px') {
+}
 %btn {
   border-radius: 25px;
   margin: 0 auto;
