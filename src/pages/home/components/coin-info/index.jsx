@@ -9,6 +9,7 @@ import { default as cn } from 'classnames';
 export default function CoinInfo({ reference, tab }) {
   const [date, setDate] = useState(getDate());
   const animate = tab === 'coin-info';
+  const animateSchedule = tab === 'schedule';
   useEffect(() => {
     const interval = () => {
       setDate(getDate());
@@ -17,8 +18,8 @@ export default function CoinInfo({ reference, tab }) {
     clearInterval(interval);
   }, []);
   return (
-    <div className={style.info} ref={reference}>
-      <div className={style.info_wrapper}>
+    <div className={style.info}>
+      <div className={style.info_wrapper} ref={reference.coinInfoRef}>
         <section
           className={cn(
             style.section,
@@ -78,11 +79,15 @@ export default function CoinInfo({ reference, tab }) {
       </div>
       <CoinInfoBg className={style.bg} />
       {/* Countdown section */}
-      <div className={style.countdown_wrapper} id="ico-schedule">
+      <div
+        className={style.countdown_wrapper}
+        id="ico-schedule"
+        ref={reference.icoScheduleRef}
+      >
         <h1
           className={cn(
             style.countdown_title,
-            animate && 'animate__animated animate__fadeInDown delay-400'
+            animateSchedule && 'animate__animated animate__fadeInDown '
           )}
         >
           Token Details
@@ -90,7 +95,7 @@ export default function CoinInfo({ reference, tab }) {
         <h2
           className={cn(
             style.countdown_subtitle,
-            animate && 'animate__animated animate__fadeInDown delay-400'
+            animateSchedule && 'animate__animated animate__fadeInDown '
           )}
         >
           ICO Schedule
@@ -99,7 +104,8 @@ export default function CoinInfo({ reference, tab }) {
           <div
             className={cn(
               style.card_side,
-              animate && 'animate__animated animate__slideInLeft delay-450'
+              animateSchedule &&
+                'animate__animated animate__slideInLeft delay-200'
             )}
           >
             <div className={style.card}>
@@ -118,7 +124,8 @@ export default function CoinInfo({ reference, tab }) {
           <article
             className={cn(
               style.content,
-              animate && 'animate__animated animate__fadeInLeft delay-400'
+              animateSchedule &&
+                'animate__animated animate__fadeInLeft delay-150'
             )}
           >
             <h1>Pre Sale</h1>
@@ -134,7 +141,8 @@ export default function CoinInfo({ reference, tab }) {
           <article
             className={cn(
               style.content,
-              animate && 'animate__animated animate__fadeInLeft delay-400'
+              animateSchedule &&
+                'animate__animated animate__fadeInLeft delay-100'
             )}
           >
             <h1>Public-Sale</h1>

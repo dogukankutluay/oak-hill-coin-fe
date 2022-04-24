@@ -5,12 +5,12 @@ import SubscribeForm from 'components/subscribe-form';
 // import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { default as cn } from 'classnames';
 export default function Subscribe({ reference, tab }) {
-  const animate = tab === 'subscribe';
+  const animate = tab === 'schedule';
   return (
     <div
       className={cn(
         style.subscribe,
-        animate && 'animate__animated animate__fadeIn delay-100'
+        animate && 'animate__animated animate__fadeIn delay-250'
       )}
       id="reminder"
       ref={reference}

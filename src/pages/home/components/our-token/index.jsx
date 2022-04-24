@@ -1,20 +1,20 @@
-import { LeaveSvg } from 'assets/icons/home';
 import React from 'react';
 import style from './token.module.scss';
 import { default as cn } from 'classnames';
+import { LeafLeftRotated, LeafRightRotated } from 'assets/icons/our-token';
 export default function OurToken({ reference, tab }) {
   const animate = tab === 'our-token';
   return (
     <div className={style.token} id="our-token" ref={reference}>
-      <LeaveSvg
+      <LeafLeftRotated
         className={cn(
-          style.token_leftLeave,
+          style.token_leftLeaf,
           animate && 'animate__animated animate__slideInLeft'
         )}
       />
-      <LeaveSvg
+      <LeafRightRotated
         className={cn(
-          style.token_rightLeave,
+          style.token_rightLeaf,
           animate && 'animate__animated animate__slideInRight delay-100'
         )}
       />

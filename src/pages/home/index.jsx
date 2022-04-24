@@ -22,53 +22,63 @@ export default function Home() {
   const detailsRef = useRef();
   const ourTokenRef = useRef();
   const coinInfoRef = useRef();
+  const icoScheduleRef = useRef();
   const subscribeRef = useRef();
   const tokenomicRef = useRef();
   const teamRef = useRef();
   const buyRef = useRef();
   const contactRef = useRef();
+  const detailsContainerRef = useRef();
+  const roadmapRef = useRef();
   console.log(tab);
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const offsetHero = heroRef.current?.offsetTop;
       const offsetAbout = aboutRef.current?.offsetTop;
-      const offsetLearnMore = learnMoreRef.current?.offsetTop;
-      const details = detailsRef.current?.offsetTop;
+      const offsetLearnMore =
+        learnMoreRef.current?.offsetTop + detailsContainerRef.current.offsetTop;
+      const details =
+        detailsRef.current?.offsetTop + detailsContainerRef.current.offsetTop;
       const ourToken = ourTokenRef.current.offsetTop;
       const coinInfo = coinInfoRef.current.offsetTop;
+      const icoSchedule = icoScheduleRef.current.offsetTop;
       const subscribe = subscribeRef.current.offsetTop;
       const tokenomic = tokenomicRef.current.offsetTop;
+      const roadmapOffset = roadmapRef.current.offsetTop;
       const team = teamRef.current.offsetTop;
       const buy = buyRef.current.offsetTop;
       const contact = contactRef.current.offsetTop;
       const offset = window.scrollY + 370;
+
       if (offset >= offsetHero && offset < offsetAbout) {
         setTab('hero');
-        return 0;
       }
       if (offset >= offsetAbout && offset < offsetLearnMore) {
         setTab('about');
-
-        return 0;
       }
       if (offset >= offsetLearnMore && offset < details) {
-        setTab('about');
-        return 0;
+        setTab('learn-more');
       }
       if (offset >= details && offset < ourToken) {
-        setTab('learn-more');
+        setTab('details');
       }
       if (offset >= ourToken && offset < coinInfo) {
         setTab('our-token');
       }
-      if (offset >= coinInfo && offset < subscribe) {
+      if (offset >= coinInfo && offset < icoSchedule) {
         setTab('coin-info');
+      }
+      if (offset >= icoSchedule && offset < subscribe) {
+        setTab('schedule');
       }
       if (offset >= subscribe && offset < tokenomic) {
         setTab('subscribe');
       }
-      if (offset >= tokenomic && offset < team) {
+      if (offset >= tokenomic && offset < roadmapOffset) {
         setTab('tokenomic');
+      }
+      if (offset >= roadmapOffset && offset < team) {
+        setTab('roadmap');
       }
       if (offset >= team && offset < buy) {
         setTab('team');
@@ -101,18 +111,17 @@ export default function Home() {
           <Hero reference={heroRef} tab={tab} />
           <About reference={aboutRef} tab={tab} />
         </div>
-        <div className={style.details}>
+        <div className={style.details} ref={detailsContainerRef}>
           <LearnMore reference={learnMoreRef} tab={tab} />
           <Details reference={detailsRef} tab={tab} />
-
           <div className={style.details_bg}></div>
         </div>
       </div>
-      {/*  */}
+
       <OurToken reference={ourTokenRef} tab={tab} />
-      <CoinInfo reference={coinInfoRef} tab={tab} />
+      <CoinInfo reference={{ coinInfoRef, icoScheduleRef }} tab={tab} />
       <Subscribe reference={subscribeRef} tab={tab} />
-      <Tokenomic reference={tokenomicRef} tab={tab} />
+      <Tokenomic reference={{ tokenomicRef, roadmapRef }} tab={tab} />
       <Team reference={teamRef} tab={tab} />
       <Buy reference={buyRef} tab={tab} />
       <Contact reference={contactRef} tab={tab} />

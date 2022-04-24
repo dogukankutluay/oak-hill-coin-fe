@@ -4,26 +4,24 @@
   background: linear-gradient(180deg, #ffffff 0%, #2b8965 221.01%);
   position: relative;
   padding-top: 3rem;
-  &_leftLeave,
-  &_rightLeave {
+  &_leftLeaf,
+  &_rightLeaf {
     position: absolute;
     top: 0;
     width: 350px;
     height: 350px;
   }
 
-  &_leftLeave {
+  &_leftLeaf {
     left: 0;
-    transform: scaleY(-1) !important;
   }
-  &_rightLeave {
+  &_rightLeaf {
     right: 0;
-    transform: scale(-1, -1) !important;
   }
   &_wrapper {
     @extend %wrapper;
     text-align: center;
-    color: #313131;
+    color: #313131 !important;
     position: relative;
     z-index: 1;
     h1,

@@ -6,7 +6,11 @@ import { default as cn } from 'classnames';
 export default function Tokenomic({ reference, tab }) {
   const animate = tab === 'tokenomic';
   return (
-    <div className={style.tokenomic} id="tokenomic" ref={reference}>
+    <div
+      className={style.tokenomic}
+      id="tokenomic"
+      ref={reference.tokenomicRef}
+    >
       <div className={style.wrapper}>
         <h2
           className={cn(
@@ -72,7 +76,7 @@ export default function Tokenomic({ reference, tab }) {
           </div>
         </div>
       </div>
-      <Roadmap />
+      <Roadmap reference={reference.roadmapRef} tab={tab} />
     </div>
   );
 }

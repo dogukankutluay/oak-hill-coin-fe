@@ -3,7 +3,7 @@ import style from './details.module.scss';
 import { default as cn } from 'classnames';
 import { LeftLeave, RightLeave } from 'assets/icons/details';
 export default function Details({ reference, tab }) {
-  const animate = tab === 'learn-more';
+  const animate = tab === 'details';
   return (
     <div className={style.detail} ref={reference}>
       <div className={style.detail_container}>
