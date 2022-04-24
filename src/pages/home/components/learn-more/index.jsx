@@ -78,7 +78,7 @@ export default function LearnMore({ reference, tab }) {
           <article
             className={cn(
               style.more_card,
-              animate && 'animate__animated animate__fadeIn delay-150'
+              animate && 'animate__animated animate__fadeInRight delay-150'
             )}
           >
             <div className={style.lottie_container}>
@@ -92,7 +92,12 @@ export default function LearnMore({ reference, tab }) {
             <p>{cards[index + 1]?.description}</p>
           </article>
         </div>
-        <div className={style.more_arrows}>
+        <div
+          className={cn(
+            style.more_arrows,
+            animate && 'animate__animated animate__slideInUp delay-250'
+          )}
+        >
           <ArrowLeft onClick={() => setIndex(index > 0 ? index - 1 : 0)} />
           <ArrowRight
             onClick={() =>

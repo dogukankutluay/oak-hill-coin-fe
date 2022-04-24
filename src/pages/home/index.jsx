@@ -30,7 +30,7 @@ export default function Home() {
   const contactRef = useRef();
   const detailsContainerRef = useRef();
   const roadmapRef = useRef();
-  console.log(tab);
+  // console.log(tab);
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const offsetHero = heroRef.current?.offsetTop;
@@ -48,7 +48,7 @@ export default function Home() {
       const team = teamRef.current.offsetTop;
       const buy = buyRef.current.offsetTop;
       const contact = contactRef.current.offsetTop;
-      const offset = window.scrollY + 370;
+      const offset = window.scrollY + 550;
 
       if (offset >= offsetHero && offset < offsetAbout) {
         setTab('hero');
@@ -71,9 +71,7 @@ export default function Home() {
       if (offset >= icoSchedule && offset < subscribe) {
         setTab('schedule');
       }
-      if (offset >= subscribe && offset < tokenomic) {
-        setTab('subscribe');
-      }
+
       if (offset >= tokenomic && offset < roadmapOffset) {
         setTab('tokenomic');
       }
