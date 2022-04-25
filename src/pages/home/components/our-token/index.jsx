@@ -6,10 +6,11 @@ export default function OurToken({ reference, tab }) {
 
   return (
     <div className={style.token} id="our-token" ref={reference}>
+      {<div className={animate ? style.bg_light : style.bg_dark}></div>}
       <LeafLeftRotated
         className={cn(
           style.token_leftLeaf,
-          animate && 'animate__animated animate__slideInLeft'
+          animate && 'animate__animated animate__slideInLeft delay-100'
         )}
       />
       <LeafRightRotated
