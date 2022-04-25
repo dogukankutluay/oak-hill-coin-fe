@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './team.module.scss';
 import TeamBg from 'assets/icons/team/teams_bg.svg';
 import { default as cn } from 'classnames';
 export default function Team({ reference, tab }) {
   const [team, setTeam] = useState(true);
   const animated = tab === 'team';
-  const [animatedOnce, setAnimated] = useState(false);
 
-  useEffect(() => {
-    if (animated) {
-      setAnimated(true);
-    }
-  }, [animated]);
   return (
     <div className={style.team} id="team" ref={reference}>
       <div className={style.wrapper}>
@@ -43,11 +37,7 @@ export default function Team({ reference, tab }) {
             Advisor Board
           </span>
         </div>
-        {team ? (
-          <TeamMembers animated={animated} animatedOnce={animatedOnce} />
-        ) : (
-          <Advisors />
-        )}
+        {team ? <TeamMembers animated={animated} /> : <Advisors />}
       </div>
     </div>
   );
@@ -64,9 +54,10 @@ const bg = {
   backgroundSize: 'contain',
 };
 
-const TeamMembers = ({ animated, animatedOnce }) => {
+const TeamMembers = () => {
+  let animated = true;
   return (
-    <div className={cn(style.tree)} style={{ opacity: animatedOnce ? 1 : 0 }}>
+    <div className={cn(style.tree)}>
       <div
         className={cn(
           style.tree_body,
