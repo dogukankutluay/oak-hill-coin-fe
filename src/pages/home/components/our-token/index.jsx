@@ -1,9 +1,9 @@
-import React from 'react';
 import style from './token.module.scss';
 import { default as cn } from 'classnames';
 import { LeafLeftRotated, LeafRightRotated } from 'assets/icons/our-token';
 export default function OurToken({ reference, tab }) {
   const animate = tab === 'our-token';
+
   return (
     <div className={style.token} id="our-token" ref={reference}>
       <LeafLeftRotated

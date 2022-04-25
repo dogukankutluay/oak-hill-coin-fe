@@ -4,17 +4,24 @@ import React from 'react';
 import style from './contact.module.scss';
 import * as SocialMedia from 'assets/icons/contact';
 import { default as cn } from 'classnames';
+import WorldPng from 'assets/images/contact_world.png';
 export default function Contact({ reference, tab }) {
   const animate = tab === 'contact';
   return (
     <div className={style.contact} ref={reference}>
       <div className={style.contact_wrapper}>
-        <div className={style.imageSide}>
-          <img
-            src={require('assets/images/contact_world.png')}
-            alt="contact_us"
-            className={animate && 'animate__animated animate__zoomIn'}
-          />
+        <div
+          className={cn(
+            style.imageSide,
+            animate && 'animate__animated animate__zoomIn'
+          )}
+          style={{
+            background: `url(${WorldPng})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
           <div
             className={cn(
               style.imageCenter,
@@ -103,10 +110,10 @@ export default function Contact({ reference, tab }) {
             </a>
           </div>
           <SubscribeForm
-            className={
-              (style.subscribe_form,
-              animate && 'animate__animated animate__slideInRight delay-400')
-            }
+            className={cn(
+              style.subscribe_form,
+              animate && 'animate__animated animate__slideInRight delay-400'
+            )}
           />
         </div>
       </div>

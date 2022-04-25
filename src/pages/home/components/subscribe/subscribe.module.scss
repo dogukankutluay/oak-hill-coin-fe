@@ -47,9 +47,16 @@
     box-sizing: border-box;
   }
   .subscribe_description {
-    min-width: 90%;
+    min-width: 80%;
   }
   .subscribe_form {
+    min-width: 80%;
+  }
+}
+@media (max-width: '520px') {
+  .subscribe_description,
+  .subscribe_form {
     min-width: 100%;
+    margin-block: 1rem;
   }
 }

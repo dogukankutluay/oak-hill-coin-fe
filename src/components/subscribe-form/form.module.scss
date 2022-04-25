@@ -4,7 +4,6 @@
   display: flex;
   background: #ffffff;
   border-radius: 25px;
-  min-width: 80%;
   padding: 0.5rem 1.5rem;
   align-items: center;
   font-family: redhatRegular;
@@ -30,5 +29,23 @@
     font-size: 20px;
     line-height: 26px;
     padding: 0.5rem 2.5rem;
+  }
+}
+@media (max-width: '500px') {
+  .subscribe_form {
+    button {
+      padding: 0.4rem 1.5rem;
+      font-size: 1rem;
+    }
+    input {
+      &::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #b6b6b6;
+      }
+      border: none;
+    }
   }
 }

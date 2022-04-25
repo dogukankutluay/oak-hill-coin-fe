@@ -31,14 +31,14 @@ export default function Home() {
   const detailsContainerRef = useRef();
   const roadmapRef = useRef();
   // console.log(tab);
-  let scrollPrevious = 0;
+  // let scrollPrevious = 0;
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      //prevent scrolling back
-      if (scrollPrevious > window.scrollY) {
-        return 0;
-      }
-      scrollPrevious = window.scrollY;
+      // //prevent scrolling back
+      // if (scrollPrevious > window.scrollY) {
+      //   return 0;
+      // }
+      // scrollPrevious = window.scrollY;
 
       const offset = window.scrollY + 550;
       const offsetHero = heroRef.current?.offsetTop;

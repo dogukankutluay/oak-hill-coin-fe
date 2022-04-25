@@ -14,7 +14,9 @@ export default function LearnMore({ reference, tab }) {
   const handleCarousel = (direction) => {
     if (
       (direction === 'left' && index <= 0) ||
-      (direction === 'right' && index >= cards.length - 2)
+      (direction === 'right' &&
+        index >=
+          (window.innerWidth >= 750 ? cards.length - 2 : cards.length - 1))
     )
       return 0;
     //remove existing animations
@@ -129,10 +131,10 @@ export default function LearnMore({ reference, tab }) {
               <span>{cards[index + 1]?.index}</span>
               <Lottie
                 {...animationOptions}
-                animationData={cards[index + 1].animationData}
+                animationData={cards[index + 1]?.animationData}
               />
             </div>
-            <h1>{cards[index + 1].title}</h1>
+            <h1>{cards[index + 1]?.title}</h1>
             <p>{cards[index + 1]?.description}</p>
           </article>
         </div>

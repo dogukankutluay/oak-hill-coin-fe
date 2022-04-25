@@ -46,6 +46,7 @@
   font-weight: 400;
   opacity: 0;
   color: white;
+
   transition: opacity ease 1450ms;
   &.text-1 {
     transition-delay: 800ms;
@@ -176,10 +177,23 @@
 }
 
 #wrap {
-  width: 100%;
+  max-width: 100%;
   //border: 1px solid #3a3a3a;
 }
 .chart {
   width: 400px;
   aspect-ratio: 1;
+}
+@media (max-width: '600px') {
+  #wrap {
+  }
+  .text-head {
+    font-size: 16px;
+    font-weight: 600;
+    color: white !important;
+  }
+  .text-lbl {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
 }
