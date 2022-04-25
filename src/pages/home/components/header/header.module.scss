@@ -12,6 +12,7 @@
   user-select: none;
   margin: 0 auto;
   padding-inline: 1rem;
+  transition: 0.5s;
   &_items {
     @extend %wrapper;
     display: flex;

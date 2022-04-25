@@ -31,16 +31,18 @@ export default function Home() {
   const detailsContainerRef = useRef();
   const roadmapRef = useRef();
   // console.log(tab);
-  // let scrollPrevious = 0;
+  let scrollPrevious = 0;
+  const [scroll, setScroll] = useState(window.scrollY);
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      // //prevent scrolling back
-      // if (scrollPrevious > window.scrollY) {
-      //   return 0;
-      // }
-      // scrollPrevious = window.scrollY;
+      setScroll(window.scrollY);
+      //prevent scrolling back
+      if (scrollPrevious > window.scrollY) {
+        return 0;
+      }
+      scrollPrevious = window.scrollY;
 
-      const offset = window.scrollY + 550;
+      const offset = window.scrollY + window.innerHeight / 1.5;
       const offsetHero = heroRef.current?.offsetTop;
       const offsetAbout = aboutRef.current?.offsetTop;
       const offsetLearnMore =
@@ -111,7 +113,7 @@ export default function Home() {
             'animate__animated animate__pulse delay-150'
           )}
         />
-        <Header />
+        <Header scroll={scroll} />
         <div className={style.body}>
           <Hero reference={heroRef} tab={tab} />
           <About reference={aboutRef} tab={tab} />
@@ -123,7 +125,7 @@ export default function Home() {
         </div>
       </div>
 
-      <OurToken reference={ourTokenRef} tab={tab} />
+      <OurToken reference={ourTokenRef} tab={tab} scroll={scroll} />
       <CoinInfo reference={{ coinInfoRef, icoScheduleRef }} tab={tab} />
       <Subscribe reference={subscribeRef} tab={tab} />
       <Tokenomic reference={{ tokenomicRef, roadmapRef }} tab={tab} />

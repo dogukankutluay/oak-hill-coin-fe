@@ -4,7 +4,7 @@ import style from './header.module.scss';
 import { Link } from 'react-router-dom';
 import { HamburgerMenu } from 'assets/icons/header';
 import { default as cn } from 'classnames';
-export default function Header() {
+export default function Header({ scroll }) {
   const [width, setWidth] = useState(window.innerWidth);
   const [active, setActive] = useState(false);
   useEffect(() => {
@@ -15,7 +15,19 @@ export default function Header() {
     return () => window.removeEventListener('resize', handleResize);
   });
   return (
-    <header className={style.header}>
+    <header
+      className={style.header}
+      style={
+        scroll >= 100
+          ? {
+              height: '90px',
+              transition: '1s',
+              background:
+                'radial-gradient(101.2% 100% at 50% 0%, #397173 0%, #75A487 100%)',
+            }
+          : null
+      }
+    >
       {width <= 915 && (
         <HamburgerMenu
           className={style.header_hamburger}

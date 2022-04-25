@@ -1,12 +1,32 @@
 import style from './token.module.scss';
 import { default as cn } from 'classnames';
 import { LeafLeftRotated, LeafRightRotated } from 'assets/icons/our-token';
-export default function OurToken({ reference, tab }) {
+export default function OurToken({ reference, tab, scroll }) {
   const animate = tab === 'our-token';
 
   return (
-    <div className={style.token} id="our-token" ref={reference}>
-      {<div className={animate ? style.bg_light : style.bg_dark}></div>}
+    <div
+      className={style.token}
+      id="our-token"
+      ref={reference}
+      style={{
+        background:
+          scroll + window.innerHeight / 1.5 > reference?.current?.offsetTop
+            ? 'white'
+            : '#205147',
+        transition: 'background 0.7s ease',
+        WebkitTransition: 'all 1s ease',
+        MozTransition: 'all 1s ease',
+      }}
+    >
+      {/* <div
+
+      className=  {
+        scroll + window.innerHeight / 1.5 > reference?.current?.offsetTop
+          ? style.bg_light
+          : style.bg_dark
+      }
+      ></div> */}
       <LeafLeftRotated
         className={cn(
           style.token_leftLeaf,

@@ -36,7 +36,7 @@ export default function Team({ reference, tab }) {
             Advisor Board
           </span>
         </div>
-        {team ? <TeamMembers animated={animated} /> : <Advisors />}
+        {team ? <TeamMembers animated={animated || team} /> : <Advisors />}
       </div>
     </div>
   );
