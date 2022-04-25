@@ -141,3 +141,19 @@
     }
   }
 }
+@media (max-width: '400px') {
+  .member {
+    img {
+      width: 40px;
+      aspect-ratio: 1;
+      margin-right: 0.2rem;
+    }
+    h1,
+    p {
+      line-height: 12px;
+      letter-spacing: 0em;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+  }
+}
