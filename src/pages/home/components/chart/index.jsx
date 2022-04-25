@@ -66,7 +66,7 @@ export default function TokenomicChart() {
           5%
         </text>
         <text class="text-7 text-lbl" x="335" y="135">
-          Platform Development
+          Platform Dev.
         </text>
 
         <circle class="pie-8" r="100" cx="210" cy="200" />
