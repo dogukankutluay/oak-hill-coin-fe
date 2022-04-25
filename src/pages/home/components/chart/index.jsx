@@ -12,7 +12,7 @@ export default function TokenomicChart() {
           35%
         </text>
         <text class="text-1 text-lbl" x="115" y="60">
-          Kitchen
+          Private Sale
         </text>
 
         <circle class="pie-2" r="100" cx="210" cy="200" />
@@ -21,7 +21,7 @@ export default function TokenomicChart() {
           18%
         </text>
         <text class="text-2 text-lbl" x="10" y="275">
-          Bathroom
+          Pre Sale
         </text>
 
         <circle class="pie-3" r="100" cx="210" cy="200" />
@@ -30,7 +30,7 @@ export default function TokenomicChart() {
           12%
         </text>
         <text class="text-3 text-lbl" x="105" y="385">
-          Living Area
+          Public Sale
         </text>
 
         <circle class="pie-4" r="100" cx="210" cy="200" />
@@ -39,7 +39,7 @@ export default function TokenomicChart() {
           12%
         </text>
         <text class="text-4 text-lbl" x="245" y="385">
-          Everything
+          Team&founders
         </text>
 
         <circle class="pie-5" r="100" cx="210" cy="200" />
@@ -48,7 +48,7 @@ export default function TokenomicChart() {
           11%
         </text>
         <text class="text-5 text-lbl" x="335" y="285">
-          Basement
+          Advisors
         </text>
 
         <circle class="pie-6" r="100" cx="210" cy="200" />
@@ -57,7 +57,7 @@ export default function TokenomicChart() {
           6%
         </text>
         <text class="text-6 text-lbl" x="350" y="195">
-          Bedroom(s)
+          IT department
         </text>
 
         <circle class="pie-7" r="100" cx="210" cy="200" />
@@ -66,7 +66,7 @@ export default function TokenomicChart() {
           5%
         </text>
         <text class="text-7 text-lbl" x="335" y="135">
-          Outdoor
+          Partnerships
         </text>
 
         <circle class="pie-8" r="100" cx="210" cy="200" />
@@ -75,10 +75,7 @@ export default function TokenomicChart() {
           1%
         </text>
         <text class="text-8 text-lbl" x="290" y="65">
-          None - my home
-        </text>
-        <text class="text-8 text-lbl" x="310" y="80">
-          is perfect!
+          Platform <br /> Development
         </text>
 
         <circle

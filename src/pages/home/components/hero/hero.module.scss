@@ -164,8 +164,8 @@
 }
 .mountain {
   position: absolute;
-  min-width: 100%;
   max-width: 100%;
+  min-width: 100%;
   z-index: -2;
   top: 0;
   left: 0;
@@ -222,7 +222,7 @@
     }
   }
 }
-@media (max-width: '900px') {
+@media (max-width: '950px') {
   .hero_left {
     display: none;
   }
@@ -242,6 +242,9 @@
   }
 }
 @media (max-width: '600px') {
+  .mountain {
+    margin-left: 30px;
+  }
   .hero_body {
     text-align: center;
     h1 {
@@ -261,9 +264,13 @@
   .hero_buttons {
     flex-direction: column;
     gap: 0.7rem;
-
     margin: 0 auto;
     margin-top: 1rem;
     max-width: 70%;
   }
+  .hard_cap {
+    margin-left: 40px;
+  }
+}
+@media (max-width: '400px') {
 }
