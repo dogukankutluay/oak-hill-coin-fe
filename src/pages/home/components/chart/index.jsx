@@ -9,16 +9,16 @@ export default function TokenomicChart() {
         <circle class="pie-1" r="100" cx="210" cy="200" />
         <line class="line-1" x1="165" y1="100" x2="144" y2="65" />
         <text class="text-1 text-head" x="110" y="40">
-          35%
+          30%
         </text>
         <text class="text-1 text-lbl" x="115" y="60">
-          Private Sale
+          Public Sale
         </text>
 
         <circle class="pie-2" r="100" cx="210" cy="200" />
         <line class="line-2" x1="105" y1="230" x2="65" y2="240" />
         <text class="text-2 text-head" x="10" y="255">
-          18%
+          20%
         </text>
         <text class="text-2 text-lbl" x="10" y="275">
           Pre Sale
@@ -27,10 +27,10 @@ export default function TokenomicChart() {
         <circle class="pie-3" r="100" cx="210" cy="200" />
         <line class="line-3" x1="165" y1="300" x2="150" y2="338" />
         <text class="text-3 text-head" x="115" y="365">
-          12%
+          15%
         </text>
         <text class="text-3 text-lbl" x="105" y="385">
-          Public Sale
+          Team & Founders
         </text>
 
         <circle class="pie-4" r="100" cx="210" cy="200" />
@@ -39,25 +39,25 @@ export default function TokenomicChart() {
           12%
         </text>
         <text class="text-4 text-lbl" x="245" y="385">
-          Team&founders
+          Partnerships
         </text>
 
         <circle class="pie-5" r="100" cx="210" cy="200" />
         <line class="line-5" x1="310" y1="240" x2="350" y2="255" />
         <text class="text-5 text-head" x="350" y="265">
-          11%
+          10%
         </text>
         <text class="text-5 text-lbl" x="335" y="285">
-          Advisors
+          Private Sale
         </text>
 
         <circle class="pie-6" r="100" cx="210" cy="200" />
         <line class="line-6" x1="320" y1="180" x2="355" y2="170" />
         <text class="text-6 text-head" x="360" y="175">
-          6%
+          5%
         </text>
         <text class="text-6 text-lbl" x="350" y="195">
-          IT department
+          Advisors
         </text>
 
         <circle class="pie-7" r="100" cx="210" cy="200" />
@@ -66,16 +66,16 @@ export default function TokenomicChart() {
           5%
         </text>
         <text class="text-7 text-lbl" x="335" y="135">
-          Partnerships
+          Platform Development
         </text>
 
         <circle class="pie-8" r="100" cx="210" cy="200" />
         <line class="line-8" x1="289" y1="122" x2="315" y2="95" />
         <text class="text-8 text-head" x="320" y="45">
-          1%
+          3%
         </text>
         <text class="text-8 text-lbl" x="290" y="65">
-          Platform <br /> Development
+          IT Development
         </text>
 
         <circle
