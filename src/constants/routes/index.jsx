@@ -3,7 +3,7 @@ import Login from 'pages/login';
 import LoginVerify from 'pages/login-verify';
 import LoginSuccess from 'pages/login-success';
 import Register from 'pages/register';
-import RegisterVerify from 'pages/register-verify';
+import Verify from 'pages/verify';
 import RegisterSuccess from 'pages/register-success';
 import Reset from 'pages/reset';
 import ChangePassword from 'pages/change-password';
@@ -21,12 +21,12 @@ const AllRoutes = [
     exact: true,
     protected: false,
   },
-  {
-    path: '/login-verify',
-    component: LoginVerify,
-    exact: true,
-    protected: false,
-  },
+  // {
+  //   path: '/login-verify',
+  //   component: LoginVerify,
+  //   exact: true,
+  //   protected: false,
+  // },
   {
     path: '/login-success',
     component: LoginSuccess,
@@ -40,8 +40,8 @@ const AllRoutes = [
     protected: false,
   },
   {
-    path: '/register-verify',
-    component: RegisterVerify,
+    path: '/verify/:type',
+    component: Verify,
     exact: true,
     protected: false,
   },

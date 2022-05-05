@@ -6,13 +6,11 @@ import Form, { Input } from 'components/form';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Subtitle, Title } from 'components/text';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 import { useSelector } from 'react-redux';
 
-export default function RegisterVerify() {
-  const lang = useSelector(
-    (state) => languages[state.preferences.lang]
-  ).registerVerify;
+export default function Verify() {
+  const lang = useSelector((state) => languages[state.preferences.lang]).verify;
   document.title = lang.pageTitle;
   return (
     <Background>

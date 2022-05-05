@@ -30,3 +30,16 @@
     }
   }
 }
+.textSuccess,
+.textError {
+  font-size: 1.2rem;
+  display: block;
+  font-family: redhatRegular;
+  line-height: 1.5;
+}
+.textSuccess {
+  color: green;
+}
+.textError {
+  color: lightcoral;
+}

@@ -5,7 +5,7 @@ import { default as cn } from 'classnames';
 import { FlagEn, FlagTr } from 'assets/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeLanguage } from 'redux/actions/preferencesAction';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 export default function Navbar() {
   const activeLang = useSelector((state) => state.preferences.lang);
   const [language, setLanguage] = useState(activeLang);

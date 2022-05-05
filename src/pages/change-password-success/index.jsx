@@ -5,7 +5,7 @@ import Footer from 'components/footer';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Title } from 'components/text';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 import { useSelector } from 'react-redux';
 import PasswordLock from 'assets/animations/password-success/PasswordLock';
 import Lottie from 'lottie-react';

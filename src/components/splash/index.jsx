@@ -1,11 +1,11 @@
 import { OakHillIcon, SplashBg } from 'assets/icons';
 import Background from 'components/background';
 import Button from 'components/button';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import style from './splash.module.scss';
-export default function Splash() {
+export default function Splash({ setSplash }) {
   const lang = useSelector((state) => languages[state.preferences.lang]).splash;
   document.title = lang.pageTitle;
   return (
@@ -23,7 +23,7 @@ export default function Splash() {
         <p className="animate__animated animate__fadeIn delay-400">
           {lang.description}
         </p>
-        <Button>{lang.btnConfirm}</Button>
+        <Button onClick={() => setSplash(false)}>{lang.btnConfirm}</Button>
       </div>
     </Background>
   );

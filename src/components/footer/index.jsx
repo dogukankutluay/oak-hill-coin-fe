@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import style from './footer.module.scss';
 import { default as cn } from 'classnames';
 import { useSelector } from 'react-redux';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 export default function Footer() {
   const lang = useSelector((state) => languages[state.preferences.lang]).footer;
 

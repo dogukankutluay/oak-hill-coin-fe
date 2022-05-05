@@ -40,3 +40,11 @@ export const Description = (props) => {
     </span>
   );
 };
+
+export const Info = ({ children, success }) => {
+  return (
+    <span className={success ? style.textSuccess : style.textError}>
+      {children}
+    </span>
+  );
+};

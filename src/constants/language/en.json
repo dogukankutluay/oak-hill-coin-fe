@@ -41,11 +41,13 @@
     "direct": "Log in",
     "firstname": "Firstname",
     "lastname": "Lastname",
+    "phone": "Phone",
     "mail": "E-mail",
     "password": "Password",
     "passwordConfirm": "Re-enter password",
     "firstnameHolder": "Enter your firstname",
     "lastnameHolder": "Enter your lastname",
+    "phoneHolder": "Enter your phone number",
     "mailHolder": "Enter your email",
     "passwordHolder": "Enter your password",
     "passwordConfirmHolder": "Re enter your password",
@@ -53,7 +55,7 @@
     "btnForgot": "Forgot password",
     "btnCreateAccount": "Create account"
   },
-  "registerVerify": {
+  "verify": {
     "pageTitle": "Verify",
     "subtitle": "READY TO LAUNCH",
     "title": "Verification Code",
@@ -73,9 +75,9 @@
     "pageTitle": "Reset",
     "subtitle": "READY TO LAUNCH",
     "title": "Forgot password",
-    "description": "Please check your email for verification code.",
-    "verification": "Verification Code",
-    "verificationHolder": "Please enter verification code",
+    "description": "Please enter your email for verification code. ",
+    "verification": "E-mail",
+    "verificationHolder": "Please enter your email address",
     "btnBack": "Back",
     "btnConfirm": "Confirm"
   },

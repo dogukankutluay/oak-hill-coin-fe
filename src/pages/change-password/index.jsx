@@ -7,7 +7,7 @@ import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Subtitle, Title } from 'components/text';
 import { useSelector } from 'react-redux';
-import languages from 'constants/routes/language';
+import languages from 'constants/language';
 
 export default function ChangePassword() {
   const lang = useSelector(

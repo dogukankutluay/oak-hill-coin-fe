@@ -6,14 +6,69 @@ import Footer from 'components/footer';
 import Form, { Checkbox, Input } from 'components/form';
 import Logo from 'components/logo';
 import Navbar from 'components/navbar';
-import { Description, Subtitle, Title } from 'components/text';
-import React from 'react';
+import { Description, Info, Subtitle, Title } from 'components/text';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import languages from 'constants/routes/language';
+import { Link, useNavigate } from 'react-router-dom';
+import languages from 'constants/language';
+import { auth } from 'requests';
+import useResponse from 'helpers/useResponse';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Splash from 'components/splash';
+const FORM_INITIAL = {
+  email: '',
+  password: '',
+};
 export default function Login() {
   const lang = useSelector((state) => languages[state.preferences.lang]).login;
   document.title = lang.pageTitle;
+  const navigate = useNavigate();
+  const [form, setForm] = useState(FORM_INITIAL);
+  const [captcha, setCaptcha] = useState(false);
+  const [response, setResponse, RESPONSE_INITIAL] = useResponse();
+  const [splash, setSplash] = useState(true);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!captcha) {
+      setResponse({
+        success: false,
+        message: 'please verify you are not a robot',
+      });
+      return 0;
+    }
+    setResponse(RESPONSE_INITIAL);
+    try {
+      const { data } = await auth.login(form);
+      setResponse({
+        ...response,
+        success: data.success,
+        message: data.message,
+      });
+      if (data.success) {
+        navigate('/');
+      }
+    } catch (error) {
+      console.log(error.response.data);
+      setResponse({
+        ...response,
+        success: false,
+        message: error.response.data.message || 'an error occured',
+      });
+    }
+  };
+
+  const handleValue = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleCaptcha = (value) => {
+    if (value) {
+      setCaptcha(true);
+    }
+  };
+
+  if (splash) {
+    return <Splash setSplash={setSplash} />;
+  }
   return (
     <Background>
       <Container>
@@ -34,15 +89,32 @@ export default function Login() {
               {lang.description}
               <Link to={'/register'}>{lang.direct} </Link>{' '}
             </Description>
-            <Input title={lang.mail} placeholder={lang.mailHolder} />
+            <Input
+              title={lang.mail}
+              placeholder={lang.mailHolder}
+              name="email"
+              value={form.email}
+              onChange={handleValue}
+            />
             <Input
               type="password"
               title={lang.password}
               placeholder={lang.passwordHolder}
+              name="password"
+              value={form.password}
+              onChange={handleValue}
             />
             <Checkbox title={lang.checkbox} />
-            <Button variant="secondary">{lang.btnForgot}</Button>
-            <Button>{lang.btnSignin}</Button>
+            <ReCAPTCHA
+              onChange={handleCaptcha}
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              className="animate__animated animate__fadeIn delay-350"
+            />
+            <Info success={response.success}>{response.message}</Info>
+            <Button variant="secondary" to={'/reset'}>
+              {lang.btnForgot}
+            </Button>
+            <Button onClick={handleLogin}>{lang.btnSignin}</Button>
           </Form>
           <Footer />
         </Row>
