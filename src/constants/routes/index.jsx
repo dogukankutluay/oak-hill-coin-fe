@@ -1,6 +1,5 @@
-import Home from 'pages/home';
+// import Home from 'pages/home';
 import Login from 'pages/login';
-import LoginVerify from 'pages/login-verify';
 import LoginSuccess from 'pages/login-success';
 import Register from 'pages/register';
 import Verify from 'pages/verify';
@@ -8,12 +7,48 @@ import RegisterSuccess from 'pages/register-success';
 import Reset from 'pages/reset';
 import ChangePassword from 'pages/change-password';
 import ChangePasswordSuccess from 'pages/change-password-success';
+import Dashboard from 'pages/dashboard';
+import BuyToken from 'pages/buy-token';
+import DepositAddresses from 'pages/deposit-addresses';
+import IcoDistrubution from 'pages/ico-distribution';
+import Wallet from 'pages/wallet';
+import Profile from 'pages/profile';
 const AllRoutes = [
   {
     path: '/',
-    component: Home,
+    component: Dashboard,
     exact: true,
-    protected: false,
+    protected: true,
+  },
+  {
+    path: '/buy-token',
+    component: BuyToken,
+    exact: true,
+    protected: true,
+  },
+  {
+    path: '/deposit',
+    component: DepositAddresses,
+    exact: true,
+    protected: true,
+  },
+  {
+    path: '/ico-distribution',
+    component: IcoDistrubution,
+    exact: true,
+    protected: true,
+  },
+  {
+    path: '/wallet',
+    component: Wallet,
+    exact: true,
+    protected: true,
+  },
+  {
+    path: '/profile',
+    component: Profile,
+    exact: true,
+    protected: true,
   },
   {
     path: '/login',

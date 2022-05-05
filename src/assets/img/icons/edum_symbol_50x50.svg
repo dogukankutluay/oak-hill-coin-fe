@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_1" data-name="Group 1" transform="translate(-81.333 -85.721)">
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="50" height="50" transform="translate(81.333 85.721)" fill="#000e2b" opacity="0"/>
+    <g id="Symbol" transform="translate(-623.062 -198.612)">
+      <path id="Hexagon" d="M742.126,288.333H717.664l-12.269,21.018,12.252,21.018h24.479l12.269-21.018Zm-1.212,39.914H718.86l-11.014-18.9,11.031-18.9h22.037l11.014,18.9Z" transform="translate(0 0)" fill="#f7f7fc"/>
+      <path id="EM" d="M770.31,321.472h-1.245l-14.79,25.621v-.019l-.793,1.372L746.507,336.5l7.539-12.909h5.661l-7.9,13.673,1.225,2.109,10.339-17.9H752.832L744.056,336.5l8.776,15.031h1.316l.044-.083.009,0h0l15.492-26.826,2.851,4.873-11.495,19.912h-.017l-1.226,2.123h2.47l1.6-2.776,9.888-17.149,2.851,4.893-4.584,7.885-4.129,7.146h2.4l8.776-15.031Z" transform="translate(-31.676 -27.151)" fill="#f7f7fc"/>
+    </g>
+  </g>
+</svg>
