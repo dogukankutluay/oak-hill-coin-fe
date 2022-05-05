@@ -8,13 +8,14 @@ import Logo from 'components/logo';
 import Navbar from 'components/navbar';
 import { Description, Info, Subtitle, Title } from 'components/text';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import languages from 'constants/language';
 import { auth } from 'requests';
 import useResponse from 'helpers/useResponse';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Splash from 'components/splash';
+import { login } from 'redux/actions/userAction';
 const FORM_INITIAL = {
   email: '',
   password: '',
@@ -22,6 +23,7 @@ const FORM_INITIAL = {
 export default function Login() {
   const lang = useSelector((state) => languages[state.preferences.lang]).login;
   document.title = lang.pageTitle;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [form, setForm] = useState(FORM_INITIAL);
   const [captcha, setCaptcha] = useState(false);
@@ -45,14 +47,14 @@ export default function Login() {
         message: data.message,
       });
       if (data.success) {
+        dispatch(login({ token: data.token }));
         navigate('/');
       }
     } catch (error) {
-      console.log(error.response.data);
       setResponse({
         ...response,
         success: false,
-        message: error.response.data.message || 'an error occured',
+        message: error.response?.data?.message || 'an error occured',
       });
     }
   };

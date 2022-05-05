@@ -51,6 +51,8 @@
     "phoneHolder": "Telefon numaranızı giriniz",
     "passwordHolder": "Şifrenizi giriniz",
     "passwordConfirmHolder": "Şifrenizi tekrar giriniz",
+    "walletNo": "Cüzdan numarası",
+    "walletNoHolder": "Cüzdan numaranızı giriniz",
     "checkbox": "Oakhill Coin üyelik sözleşmesini kabul ediyorum",
     "btnForgot": "Şifremi unuttum",
     "btnCreateAccount": "Hesap oluştur"

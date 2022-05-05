@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { logout } from 'redux/actions/userAction';
+import { useDispatch } from 'react-redux';
+
 export default function TopInfo() {
+  const dispatch = useDispatch();
+  const exit = () => {
+    dispatch(logout());
+  };
   return (
     <div className="headtopinfoarea">
       <div class="headtopinfoarea-balancelist">
@@ -30,10 +37,10 @@ export default function TopInfo() {
             </Link>
           </li>
           <li className="headbtnlogout">
-            <Link to="/login" title="Logout">
+            <a href="#" to="/login" title="Logout" onClick={exit}>
               <em className="ti ti-power-off" />
               <span>Logout</span>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

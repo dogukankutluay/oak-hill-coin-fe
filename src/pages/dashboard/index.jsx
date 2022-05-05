@@ -12,6 +12,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from 'react';
 
 export default function Dashboard() {
+  document.title = 'Oak Hill';
   return (
     <div className="krace">
       <div className="kracebody">

@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://life.kafpay.com/api/v1/';
+export const BASE_URL = 'http://localhost:8080/api/v1/';
 const METHODS = {
   GET: 'GET',
   POST: 'POST',
@@ -12,6 +12,7 @@ export const API_CONFIG = {
       url: `${BASE_URL}auth/confirmRegister`,
       method: METHODS.GET,
     },
+    getProfile: { url: `${BASE_URL}auth/getProfile`, method: METHODS.GET },
     forgotPassword: {
       url: `${BASE_URL}auth/forgotPassword`,
       method: METHODS.GET,
@@ -23,6 +24,16 @@ export const API_CONFIG = {
     changePassword: {
       url: `${BASE_URL}auth/changePassword`,
       method: METHODS.POST,
+    },
+  },
+  deposit: {
+    createDeposit: { url: `${BASE_URL}deposit`, method: METHODS.POST },
+    getDeposit: { url: `${BASE_URL}deposit`, method: METHODS.GET },
+    getDepositLog: { url: `${BASE_URL}deposit/log`, method: METHODS.GET },
+    buyDeposit: { url: `${BASE_URL}deposit`, method: METHODS.PUT },
+    checkDeposit: {
+      url: `${BASE_URL}deposit/check/address`,
+      method: METHODS.GET,
     },
   },
 };

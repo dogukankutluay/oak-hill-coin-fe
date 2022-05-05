@@ -51,6 +51,8 @@
     "mailHolder": "Enter your email",
     "passwordHolder": "Enter your password",
     "passwordConfirmHolder": "Re enter your password",
+    "walletNo": "Wallet No",
+    "walletNoHolder": "Enter your wallet number",
     "checkbox": "I have aggreed terms associated to Oakhill Coin",
     "btnForgot": "Forgot password",
     "btnCreateAccount": "Create account"

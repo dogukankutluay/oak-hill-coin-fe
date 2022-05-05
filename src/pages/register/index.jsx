@@ -15,12 +15,13 @@ import { Link } from 'react-router-dom';
 import { auth } from 'requests';
 import style from './register.module.scss';
 const FORM_INITIAL = {
-  firstname: '',
-  lastname: '',
+  name: '',
+  surname: '',
   phone: '',
   email: '',
   password: '',
   passwordVerify: '',
+  walletNo: '',
 };
 export default function Register() {
   const lang = useSelector(
@@ -38,7 +39,12 @@ export default function Register() {
     setResponse(RESPONSE_INITIAL);
     try {
       const { data } = await auth.register(form);
-      setResponse({ success: data.success || false, message: data.message });
+      if (data.success) {
+        setResponse({
+          success: true,
+          message: 'Register success! please check your mail for confirmation!',
+        });
+      }
     } catch (error) {
       setResponse({
         success: false,
@@ -73,15 +79,15 @@ export default function Register() {
               <Input
                 title={lang.firstname}
                 placeholder={lang.firstnameHolder}
-                name="firstname"
-                value={form.firstname}
+                name="name"
+                value={form.name}
                 onChange={handleValue}
               />{' '}
               <Input
                 title={lang.lastname}
                 placeholder={lang.lastnameHolder}
-                name="lastname"
-                value={form.lastname}
+                name="surname"
+                value={form.surname}
                 onChange={handleValue}
               />
             </div>
@@ -116,9 +122,19 @@ export default function Register() {
               value={form.passwordVerify}
               onChange={handleValue}
             />
+            <Input
+              type="text"
+              title={lang.walletNo}
+              placeholder={lang.walletNoHolder}
+              name="walletNo"
+              value={form.walletNo}
+              onChange={handleValue}
+            />
             <Checkbox title={lang.checkbox} />
             <Info success={response.success}>{response.message}</Info>
-            <Button variant="secondary">{lang.btnForgot}</Button>
+            <Button to="/reset" variant="secondary">
+              {lang.btnForgot}
+            </Button>
             <Button onClick={handleForm}>{lang.btnCreateAccount}</Button>
           </Form>
           <Footer />

@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-
 // const salesTime = {
 //   day: 20,
 //   hour: 21,

@@ -4,6 +4,7 @@ import { API_CONFIG } from 'constants/api';
 export const auth = {
   login: (payload) => axios({ ...API_CONFIG.auth.login, data: payload }),
   register: (payload) => axios({ ...API_CONFIG.auth.register, data: payload }),
+  getProfile: (payload) => axios({ ...API_CONFIG.auth.getProfile, ...payload }),
   confirmRegister: ({ code, phone }) =>
     axios({
       ...API_CONFIG.auth.confirmRegister,
