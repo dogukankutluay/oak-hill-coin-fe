@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function PersonalData() {
+  const user = useSelector((state) => state.user.userInfo);
+  const [userInfo, setUserInfo] = useState(user);
+  const handleChange = (e) => {
+    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+  };
   return (
     <div id="personal-data" className=" fade show active">
       <form
@@ -21,9 +27,9 @@ export default function PersonalData() {
                   id="full-name"
                   className="input-bordered required"
                   type="text"
-                  name="full-name"
-                  defaultValue="Stefan Harary"
-                  disabled
+                  name="name"
+                  value={userInfo?.name}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -38,9 +44,9 @@ export default function PersonalData() {
                   id="email-address"
                   className="input-bordered required"
                   type="text"
-                  name="email-address"
-                  defaultValue="info@softnio.com"
-                  disabled
+                  name="email"
+                  value={userInfo?.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -55,8 +61,9 @@ export default function PersonalData() {
                   id="mobile-number"
                   className="input-bordered required"
                   type="text"
-                  name="mobile-number"
-                  disabled
+                  name="phone"
+                  value={userInfo?.phone}
+                  onChange={handleChange}
                 />
               </div>
             </div>

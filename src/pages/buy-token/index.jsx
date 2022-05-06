@@ -1,10 +1,31 @@
 import Header from 'components/header';
-import Sidebar from 'components/sidebar';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
-import React from 'react';
+import { coinPrice } from 'constants/coin';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { deposit } from 'requests';
 
 export default function BuyToken() {
+  const [amount, setAmount] = useState(0);
+  const token = useSelector((state) => state.user.token);
+  const handleAmount = (e) => {
+    setAmount(e.target.value);
+  };
+
+  const buyCoins = async (e) => {
+    e.preventDefault();
+    const { data } = await deposit.buyDeposit({
+      headers: { authorization: `Bearer ${token}` },
+      data: {
+        usdt: amount,
+        ggcPrice: coinPrice.toString(),
+      },
+    });
+    if (data.success) {
+      window.location.reload();
+    }
+  };
   return (
     <div className="krace">
       {/* KRACE Body Area Start */}
@@ -167,7 +188,7 @@ export default function BuyToken() {
                                   <span className="pay-title mb-2">
                                     <span className="pay-cur">Option-01</span>
                                   </span>
-                                  <span>1 OAKC = 0.10 USDT</span>
+                                  <span>1 OAKC = {coinPrice} USDT</span>
                                   <span className="mt-2">
                                     Tokens will be locked for 12 month then 100%
                                     of them will be released at the end of
@@ -209,7 +230,8 @@ export default function BuyToken() {
                                     className="input-bordered required inputfilter-cyrpto"
                                     type="text"
                                     placeholder="Amount"
-                                    defaultValue
+                                    value={amount}
+                                    onChange={handleAmount}
                                   />
                                 </div>
                               </div>
@@ -217,7 +239,9 @@ export default function BuyToken() {
                             <div className="token-received">
                               <div className="token-eq-sign" />
                               <div className="token-received-amount">
-                                <h5 className="token-amount">0</h5>
+                                <h5 className="token-amount">
+                                  {parseFloat(amount / coinPrice).toFixed(3)}
+                                </h5>
                                 <div className="token-symbol text-orange font-mid mt-1">
                                   Total OAKC
                                 </div>
@@ -263,6 +287,7 @@ export default function BuyToken() {
                             <button
                               className="btn btn-success btn-between w-100"
                               type="submit"
+                              onClick={buyCoins}
                             >
                               Buy OAKC
                               <em className="ti ti-arrow-right" />

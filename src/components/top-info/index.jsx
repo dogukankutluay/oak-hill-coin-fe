@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from 'redux/actions/userAction';
 import { useDispatch } from 'react-redux';
+import { coinPrice } from 'constants/coin';
 
 export default function TopInfo() {
   const dispatch = useDispatch();
+
   const exit = () => {
     dispatch(logout());
   };
@@ -13,7 +15,7 @@ export default function TopInfo() {
       <div class="headtopinfoarea-balancelist">
         <span class="card-sub-title text-orange mr-1">Oakin Price</span>
         <span class="card-sub-title text-dark">
-          1 USDT = <span>100.000.000 Oakin</span>
+          1 USDT = <span>{1 / coinPrice} Oakin</span>
         </span>
       </div>
       <div className="headtopinfoarea-buttonlist">

@@ -1,9 +1,35 @@
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { deposit } from 'requests';
 
 export default function DepositAddresses() {
+  const token = useSelector((state) => state.user.token);
+  const [addresses, setAddresses] = useState([]);
+  const createDeposit = async (e) => {
+    try {
+      const { data } = await deposit.createDeposit({
+        headers: { authorization: `Bearer ${token}` },
+      });
+      if (data.success) {
+        window.location.reload();
+      }
+    } catch (error) {}
+  };
+
+  const getAddresses = async () => {
+    try {
+      const { data } = await deposit.getDeposit({
+        headers: { authorization: `Bearer ${token}` },
+      });
+      setAddresses(data.deposits);
+    } catch (error) {}
+  };
+  useEffect(() => {
+    getAddresses();
+  }, []);
   return (
     <div className="krace">
       {/* KRACE Body Area Start */}
@@ -32,6 +58,7 @@ export default function DepositAddresses() {
                       data-toggle="modal"
                       data-target="#withdrawmodal"
                       style={{ display: 'flex' }}
+                      onClick={createDeposit}
                     >
                       <img
                         src={require('assets/img/Plus-Icon.svg').default}
@@ -56,29 +83,43 @@ export default function DepositAddresses() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="data-item">
-                          <td className="data-col dt-token">
-                            <span className="lead token-amount">
-                              TM2ADwsLGWnbWcK19WjX9LW4MG1kzAf4rF
-                            </span>
-                            <small className="d-block mt-1">
-                              *** Please Use This Address For Only{' '}
-                              <b>TRON CHAIN</b> Deposits
-                            </small>
-                          </td>
-                          <td className="data-col dt-token">
-                            <span className="lead">USDT</span>
-                          </td>
-                          <td className="data-col text-right">
-                            <div className="relative d-inline-block d-md-none">
-                              <a
-                                href="#"
-                                className="btn btn-light-alt btn-xs btn-icon toggle-tigger"
-                              >
-                                <em className="ti ti-more-alt" />
-                              </a>
-                              <div className="toggle-class dropdown-content dropdown-content-center-left pd-2x">
-                                <ul className="data-action-list">
+                        {addresses.map((address, index) => {
+                          return (
+                            <tr className="data-item">
+                              <td className="data-col dt-token">
+                                <span className="lead token-amount">
+                                  {address.address}
+                                </span>
+                                <small className="d-block mt-1">
+                                  *** Please Use This Address For Only{' '}
+                                  <b>TRON CHAIN</b> Deposits
+                                </small>
+                              </td>
+                              <td className="data-col dt-token">
+                                <span className="lead">USDT</span>
+                              </td>
+                              <td className="data-col text-right">
+                                <div className="relative d-inline-block d-md-none">
+                                  <a
+                                    href="#"
+                                    className="btn btn-light-alt btn-xs btn-icon toggle-tigger"
+                                  >
+                                    <em className="ti ti-more-alt" />
+                                  </a>
+                                  <div className="toggle-class dropdown-content dropdown-content-center-left pd-2x">
+                                    <ul className="data-action-list">
+                                      <li>
+                                        <a
+                                          href="#"
+                                          className="btn btn-danger-alt btn-xs btn-icon"
+                                        >
+                                          <em className="ti ti-trash" />
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <ul className="data-action-list d-none d-md-inline-flex">
                                   <li>
                                     <a
                                       href="#"
@@ -88,108 +129,10 @@ export default function DepositAddresses() {
                                     </a>
                                   </li>
                                 </ul>
-                              </div>
-                            </div>
-                            <ul className="data-action-list d-none d-md-inline-flex">
-                              <li>
-                                <a
-                                  href="#"
-                                  className="btn btn-danger-alt btn-xs btn-icon"
-                                >
-                                  <em className="ti ti-trash" />
-                                </a>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr className="data-item">
-                          <td className="data-col dt-addresesses">
-                            <div className="fake-class">
-                              <span className="lead tnx-id">
-                                TDoZds2EjjX3ovCBLqUxDcSz6QgraEsrxA
-                              </span>
-                            </div>
-                          </td>
-                          <td className="data-col dt-token">
-                            <span className="lead">USDT</span>
-                          </td>
-                          <td className="data-col text-right">
-                            <div className="relative d-inline-block d-md-none">
-                              <a
-                                href="#"
-                                className="btn btn-light-alt btn-xs btn-icon toggle-tigger"
-                              >
-                                <em className="ti ti-more-alt" />
-                              </a>
-                              <div className="toggle-class dropdown-content dropdown-content-center-left pd-2x">
-                                <ul className="data-action-list">
-                                  <li>
-                                    <a
-                                      href="#"
-                                      className="btn btn-danger-alt btn-xs btn-icon"
-                                    >
-                                      <em className="ti ti-trash" />
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <ul className="data-action-list d-none d-md-inline-flex">
-                              <li>
-                                <a
-                                  href="#"
-                                  className="btn btn-danger-alt btn-xs btn-icon"
-                                >
-                                  <em className="ti ti-trash" />
-                                </a>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr className="data-item">
-                          <td className="data-col dt-addresesses">
-                            <div className="fake-class">
-                              <span className="lead tnx-id">
-                                TDoZds2EjjX3ovCBLqUxDcSz6QgraEsrxA
-                              </span>
-                            </div>
-                          </td>
-                          <td className="data-col dt-token">
-                            <span className="lead">USDT</span>
-                          </td>
-                          <td className="data-col text-right">
-                            <div className="relative d-inline-block d-md-none">
-                              <a
-                                href="#"
-                                className="btn btn-light-alt btn-xs btn-icon toggle-tigger"
-                              >
-                                <em className="ti ti-more-alt" />
-                              </a>
-                              <div className="toggle-class dropdown-content dropdown-content-center-left pd-2x">
-                                <ul className="data-action-list">
-                                  <li>
-                                    <a
-                                      href="#"
-                                      className="btn btn-danger-alt btn-xs btn-icon"
-                                    >
-                                      <em className="ti ti-trash" />
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <ul className="data-action-list d-none d-md-inline-flex">
-                              <li>
-                                <a
-                                  href="#"
-                                  className="btn btn-danger-alt btn-xs btn-icon"
-                                >
-                                  <em className="ti ti-trash" />
-                                </a>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
+                              </td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                     {/* Table */}

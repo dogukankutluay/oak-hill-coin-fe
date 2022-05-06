@@ -10,10 +10,28 @@ export const auth = {
       ...API_CONFIG.auth.confirmRegister,
       params: { code, phone },
     }),
+  confirmEmail: (payload) =>
+    axios({
+      ...API_CONFIG.auth.confirmEmail,
+      ...payload,
+    }),
   forgotPassword: (payload) =>
     axios({ ...API_CONFIG.auth.forgotPassword, params: { ...payload } }),
   confirmForgotPassword: (payload) =>
     axios({ ...API_CONFIG.auth.confirmForgotPassword, params: { ...payload } }),
-  changePassword: (payload) =>
-    axios({ ...API_CONFIG.auth.changePassword, data: payload }),
+  resetPassword: (payload) =>
+    axios({ ...API_CONFIG.auth.resetPassword, ...payload }),
+};
+
+export const deposit = {
+  createDeposit: (payload) =>
+    axios({ ...API_CONFIG.deposit.createDeposit, ...payload }),
+  getDeposit: (payload) =>
+    axios({ ...API_CONFIG.deposit.getDeposit, ...payload }),
+  getDepositLog: (payload) =>
+    axios({ ...API_CONFIG.deposit.getDepositLog, ...payload }),
+  buyDeposit: (payload) =>
+    axios({ ...API_CONFIG.deposit.buyDeposit, ...payload }),
+  checkDeposit: (payload) =>
+    axios({ ...API_CONFIG.deposit.checkDeposit, ...payload }),
 };

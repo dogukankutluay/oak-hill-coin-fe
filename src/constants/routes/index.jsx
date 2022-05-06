@@ -83,7 +83,7 @@ const AllRoutes = [
   {
     path: '/register-success',
     component: RegisterSuccess,
-    exact: true,
+    exact: false,
     protected: false,
   },
   {
@@ -95,7 +95,7 @@ const AllRoutes = [
   {
     path: '/change-password',
     component: ChangePassword,
-    exact: true,
+    exact: false,
     protected: false,
   },
   {

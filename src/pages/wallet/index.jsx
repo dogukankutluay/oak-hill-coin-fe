@@ -1,9 +1,22 @@
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { deposit } from 'requests';
 
 export default function Wallet() {
+  const [orders, setOrders] = useState([]);
+  const token = useSelector((state) => state.user.token);
+  const getOrders = async () => {
+    // const { data } = await deposit.getDepositLog({
+    //   headers: { authorization: `Bearer ${token}` },
+    // });
+  };
+  useEffect(() => {
+    getOrders();
+  }, []);
+
   return (
     <div className="krace">
       {/* KRACE Body Area Start */}

@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+const FORM = {
+  oldPassword: '',
+  password: '',
+};
 export default function Password() {
+  const [form, setForm] = useState(FORM);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   return (
     <div id="password" className="">
       <form
@@ -21,7 +32,8 @@ export default function Password() {
                   id="old-pass"
                   className="input-bordered required"
                   type="password"
-                  name="old-pass"
+                  name="password"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -68,7 +80,9 @@ export default function Password() {
         </div>
         <div className="gaps-1x" />
         <div className="d-sm-flex justify-content-between align-items-center">
-          <button className="btn btn-primary">Update</button>
+          <button className="btn btn-primary" onClick={handleSubmit}>
+            Update
+          </button>
           <div className="gaps-2x d-sm-none" />
           <span className="text-success">
             <em className="ti ti-check-box" /> Changed Password

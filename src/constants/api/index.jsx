@@ -21,8 +21,12 @@ export const API_CONFIG = {
       url: `${BASE_URL}auth/confirmForgotPassword`,
       method: METHODS.GET,
     },
-    changePassword: {
-      url: `${BASE_URL}auth/changePassword`,
+    confirmEmail: {
+      url: `${BASE_URL}auth/confirmEmail`,
+      method: METHODS.GET,
+    },
+    resetPassword: {
+      url: `${BASE_URL}auth/resetPassword`,
       method: METHODS.POST,
     },
   },
