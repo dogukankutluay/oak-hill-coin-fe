@@ -2,7 +2,7 @@ import Header from 'components/header';
 import React from 'react';
 import Password from './tabs/Password';
 import PersonalData from './tabs/PersonalData';
-import Settings from './tabs/Settings';
+// import Settings from './tabs/Settings';
 import { useState } from 'react';
 import UserWelcome from 'components/user-welcome';
 import TopInfo from 'components/top-info';
@@ -43,7 +43,7 @@ export default function Profile() {
                           Personal Data
                         </a>
                       </li>
-                      <li className="nav-item">
+                      {/* <li className="nav-item">
                         <a
                           className={`nav-link ${tab === 1 && 'active'}`}
                           href="#settings"
@@ -52,13 +52,13 @@ export default function Profile() {
                         >
                           Settings
                         </a>
-                      </li>
+                      </li> */}
                       <li className="nav-item">
                         <a
-                          className={`nav-link ${tab === 2 && 'active'}`}
+                          className={`nav-link ${tab === 1 && 'active'}`}
                           href="#password"
                           data-toggle="tab"
-                          onClick={() => setTab(2)}
+                          onClick={() => setTab(1)}
                         >
                           Password
                         </a>
@@ -66,8 +66,8 @@ export default function Profile() {
                     </ul>
                     <div className="tab-content">
                       {tab === 0 && <PersonalData />}
-                      {tab === 1 && <Settings />}
-                      {tab === 2 && <Password />}
+                      {/* {tab === 1 && <Settings />} */}
+                      {tab === 1 && <Password />}
                     </div>
                   </div>
                 </div>

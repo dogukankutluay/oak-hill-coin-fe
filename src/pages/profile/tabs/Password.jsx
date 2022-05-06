@@ -1,13 +1,36 @@
+import { Info } from 'components/text';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { auth } from 'requests';
 
 const FORM = {
-  oldPassword: '',
+  newPassword: '',
   password: '',
+  passwordConfirm: '',
 };
 export default function Password() {
   const [form, setForm] = useState(FORM);
+  const email = useSelector((state) => state.user.userInfo.email);
+  const [response, setResponse] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setResponse(null);
+    if (form.newPassword !== form.passwordConfirm)
+      return setResponse({
+        success: false,
+        message: 'New passwords did not match!',
+      });
+
+    try {
+      const { data } = await auth.changePassword({ data: { ...form, email } });
+      if (data.success) {
+        window.location.reload();
+      }
+      setResponse(data);
+    } catch (error) {
+      setResponse(error.response?.data);
+      console.log(error.response.data);
+    }
   };
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,6 +57,7 @@ export default function Password() {
                   type="password"
                   name="password"
                   onChange={handleChange}
+                  value={form.password}
                 />
               </div>
             </div>
@@ -50,7 +74,9 @@ export default function Password() {
                   id="new-pass"
                   className="input-bordered required"
                   type="password"
-                  name="new-pass"
+                  name="newPassword"
+                  onChange={handleChange}
+                  value={form.newPassword}
                 />
               </div>
             </div>
@@ -65,12 +91,15 @@ export default function Password() {
                   id="confirm-pass"
                   className="input-bordered required"
                   type="password"
-                  name="confirm-pass"
+                  name="passwordConfirm"
+                  value={form.passwordConfirm}
+                  onChange={handleChange}
                 />
               </div>
             </div>
           </div>
         </div>
+        <Info success={response?.success}>{response?.message}</Info>
         <div className="note note-plane note-info pdb-1x">
           <em className="fas fa-info-circle" />
           <p>
