@@ -6,7 +6,7 @@ export default function Sidebar() {
       <div className="navbar-innr">
         <ul className="navbar-menu">
           <li>
-            <Link to={'/'}>
+            <Link to={'/dashboard'}>
               <em className="ikon ikon-dashboard" /> Dashboard
             </Link>
           </li>

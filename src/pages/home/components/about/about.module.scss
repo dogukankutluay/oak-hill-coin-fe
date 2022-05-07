@@ -23,7 +23,6 @@
 }
 .card {
   width: 100%;
-  color: white;
   text-align: center;
   h1,
   h2 {
@@ -31,6 +30,7 @@
     font-size: 1.5rem;
     line-height: 3rem;
     letter-spacing: 0em;
+    color: white !important;
   }
   $space: 150px;
   h1 {

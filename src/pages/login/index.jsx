@@ -48,7 +48,7 @@ export default function Login() {
       });
       if (data.success) {
         dispatch(login({ token: data.token }));
-        navigate('/');
+        navigate('/dashboard');
       }
     } catch (error) {
       setResponse({

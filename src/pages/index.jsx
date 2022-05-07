@@ -1,10 +1,10 @@
 import AllRoutes from 'constants/routes';
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { auth } from 'requests';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/actions/userAction';
-import Login from './login';
+import Home from './home';
 export default function Pages() {
   const [access, setAccess] = useState(false);
   const token = useSelector((state) => state.user.token);
@@ -37,7 +37,7 @@ export default function Pages() {
     <Routes>
       {AllRoutes.map((route, index) => (
         <Route
-          element={route.protected && !access ? <Login /> : <route.component />}
+          element={route.protected && !access ? <Home /> : <route.component />}
           key={index}
           exact={route.exact}
           path={route.path}

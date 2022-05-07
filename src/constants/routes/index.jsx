@@ -1,4 +1,4 @@
-// import Home from 'pages/home';
+import Home from 'pages/home';
 import Login from 'pages/login';
 import LoginSuccess from 'pages/login-success';
 import Register from 'pages/register';
@@ -16,6 +16,12 @@ import Profile from 'pages/profile';
 const AllRoutes = [
   {
     path: '/',
+    component: Home,
+    exact: true,
+    protected: false,
+  },
+  {
+    path: '/dashboard',
     component: Dashboard,
     exact: true,
     protected: true,

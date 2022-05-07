@@ -52,8 +52,8 @@ export default function DepositAddresses() {
                     <h2 className="page-title">Deposit Addresses</h2>
                   </div>
                   <div className="mt-3 mt-sm-0">
-                    <a
-                      href="#"
+                    <button
+                      href=""
                       className="btn btn-danger btn-sm btn-block w-100"
                       data-toggle="modal"
                       data-target="#withdrawmodal"
@@ -66,7 +66,7 @@ export default function DepositAddresses() {
                         style={{ width: 20, marginInline: '0.1rem' }}
                       />{' '}
                       Create New Deposit Address
-                    </a>
+                    </button>
                   </div>
                 </div>
                 {/* HeadTitle */}
@@ -100,33 +100,24 @@ export default function DepositAddresses() {
                               </td>
                               <td className="data-col text-right">
                                 <div className="relative d-inline-block d-md-none">
-                                  <a
-                                    href="#"
-                                    className="btn btn-light-alt btn-xs btn-icon toggle-tigger"
-                                  >
+                                  <button className="btn btn-light-alt btn-xs btn-icon toggle-tigger">
                                     <em className="ti ti-more-alt" />
-                                  </a>
+                                  </button>
                                   <div className="toggle-class dropdown-content dropdown-content-center-left pd-2x">
                                     <ul className="data-action-list">
                                       <li>
-                                        <a
-                                          href="#"
-                                          className="btn btn-danger-alt btn-xs btn-icon"
-                                        >
+                                        <button className="btn btn-danger-alt btn-xs btn-icon">
                                           <em className="ti ti-trash" />
-                                        </a>
+                                        </button>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
                                 <ul className="data-action-list d-none d-md-inline-flex">
                                   <li>
-                                    <a
-                                      href="#"
-                                      className="btn btn-danger-alt btn-xs btn-icon"
-                                    >
+                                    <button className="btn btn-danger-alt btn-xs btn-icon">
                                       <em className="ti ti-trash" />
-                                    </a>
+                                    </button>
                                   </li>
                                 </ul>
                               </td>
@@ -157,7 +148,7 @@ export default function DepositAddresses() {
                         </h4>
                         <p>
                           In order to buying{' '}
-                          <a href="#">
+                          <a href="">
                             <strong>EDUM Tokens</strong>
                           </a>
                           , you need to deposit your account

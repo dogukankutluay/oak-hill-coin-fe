@@ -34,7 +34,7 @@ export default function RegisterSuccess() {
     }
   };
   const direct = () => {
-    navigate('/');
+    navigate('/dashboard');
   };
   useEffect(() => {
     confirmEmail();

@@ -1,7 +1,9 @@
 import Sidebar from 'components/sidebar';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 export default function Header() {
+  const user = useSelector((state) => state.user.userInfo);
   return (
     <header className="header">
       <div className="topbar is-sticky">
@@ -35,7 +37,8 @@ export default function Header() {
                 <h6 className="card-sub-title">Tokens Balance</h6>
                 <span className="lead">
                   {' '}
-                  1000.00000000 <span>Oakin</span>
+                  {user?.tokenBalance}
+                  <span style={{ marginLeft: '0.2rem' }}>Oakin</span>
                 </span>
               </div>
             </div>
@@ -43,7 +46,10 @@ export default function Header() {
               <h6 className="card-sub-title">Your Contribution</h6>
               <ul className="token-balance-list">
                 <li className="token-balance-sub">
-                  <span className="lead"> 900.00000000</span>
+                  <span className="lead" style={{ marginRight: '0.2rem' }}>
+                    {' '}
+                    {user?.usdtBalance}
+                  </span>
                   <span>USDT</span>
                 </li>
               </ul>

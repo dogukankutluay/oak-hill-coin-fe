@@ -21,7 +21,6 @@ const FORM_INITIAL = {
   email: '',
   password: '',
   passwordVerify: '',
-  walletNo: '',
 };
 export default function Register() {
   const lang = useSelector(
@@ -44,6 +43,7 @@ export default function Register() {
           success: true,
           message: 'Register success! please check your mail for confirmation!',
         });
+        setForm(FORM_INITIAL);
       }
     } catch (error) {
       setResponse({
@@ -122,14 +122,7 @@ export default function Register() {
               value={form.passwordVerify}
               onChange={handleValue}
             />
-            <Input
-              type="text"
-              title={lang.walletNo}
-              placeholder={lang.walletNoHolder}
-              name="walletNo"
-              value={form.walletNo}
-              onChange={handleValue}
-            />
+
             <Checkbox title={lang.checkbox} />
             <Info success={response.success}>{response.message}</Info>
             <Button to="/reset" variant="secondary">

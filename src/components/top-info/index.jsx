@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logout } from 'redux/actions/userAction';
 import { useDispatch } from 'react-redux';
 import { coinPrice } from 'constants/coin';
 
 export default function TopInfo() {
   const dispatch = useDispatch();
-
   const exit = () => {
     dispatch(logout());
   };
@@ -39,10 +38,10 @@ export default function TopInfo() {
             </Link>
           </li>
           <li className="headbtnlogout">
-            <a href="#" to="/login" title="Logout" onClick={exit}>
+            <Link to="/" title="Logout" onClick={exit}>
               <em className="ti ti-power-off" />
               <span>Logout</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
