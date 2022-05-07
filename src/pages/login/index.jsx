@@ -109,9 +109,10 @@ export default function Login() {
             <Checkbox title={lang.checkbox} />
             <ReCAPTCHA
               onChange={handleCaptcha}
-              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              sitekey="6Levxs8fAAAAACzVBbp6cJIO08FYvpm-z2DbOICk"
               className="animate__animated animate__fadeIn delay-350"
             />
+
             <Info success={response.success}>{response.message}</Info>
             <Button variant="secondary" to={'/reset'}>
               {lang.btnForgot}

@@ -1,6 +1,6 @@
 import AllRoutes from 'constants/routes';
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { auth } from 'requests';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/actions/userAction';
@@ -10,7 +10,7 @@ export default function Pages() {
   const token = useSelector((state) => state.user.token);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const getUser = async () => {
     try {
       const { data } = await auth.getProfile({
@@ -27,6 +27,7 @@ export default function Pages() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     getUser();
   }, [token]);
