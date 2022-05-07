@@ -1,4 +1,5 @@
 import Header from 'components/header';
+import { Info } from 'components/text';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
 import { coinPrice } from 'constants/coin';
@@ -9,21 +10,29 @@ import { deposit } from 'requests';
 export default function BuyToken() {
   const [amount, setAmount] = useState(0);
   const token = useSelector((state) => state.user.token);
+  const [response, setResponse] = useState(null);
   const handleAmount = (e) => {
     setAmount(e.target.value);
   };
 
   const buyCoins = async (e) => {
     e.preventDefault();
-    const { data } = await deposit.buyDeposit({
-      headers: { authorization: `Bearer ${token}` },
-      data: {
-        usdt: amount,
-        ggcPrice: coinPrice.toString(),
-      },
-    });
-    if (data.success) {
-      window.location.reload();
+    try {
+      const { data } = await deposit.buyDeposit({
+        headers: { authorization: `Bearer ${token}` },
+        data: {
+          usdt: parseFloat(amount),
+          ggcPrice: parseFloat(coinPrice),
+        },
+      });
+      setResponse(data);
+      if (data.success) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    } catch (error) {
+      setResponse(error.response.data);
     }
   };
   return (
@@ -254,6 +263,9 @@ export default function BuyToken() {
                               Minimum 100 USDT
                             </span>
                           </div>
+                          <Info success={response?.success}>
+                            {response?.message}
+                          </Info>
                           <div className="note note-plane note-danger note-sm pdt-1x pl-0">
                             <p>
                               Your Contribution will be calculated based on

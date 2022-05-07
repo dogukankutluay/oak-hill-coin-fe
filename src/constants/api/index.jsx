@@ -3,6 +3,7 @@ const METHODS = {
   GET: 'GET',
   POST: 'POST',
   CREATE: 'CREATE',
+  PUT: 'PUT',
 };
 export const API_CONFIG = {
   auth: {
