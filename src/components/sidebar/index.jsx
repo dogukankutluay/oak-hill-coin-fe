@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleNavbar } from 'redux/actions/preferencesAction';
 export default function Sidebar() {
+  const navbarStatus = useSelector((state) => state.preferences.navbar);
+  const dispatch = useDispatch();
+  const changeNavbar = () => {
+    setTimeout(() => {
+      dispatch(handleNavbar(!navbarStatus));
+    }, 100);
+  };
   return (
-    <div className="navbar">
+    <div className={`navbar navbar-mobile ${navbarStatus ? 'active' : ''}`}>
       <div className="navbar-innr">
-        <ul className="navbar-menu">
+        <ul className="navbar-menu" onClick={changeNavbar}>
           <li>
             <Link to={'/dashboard'}>
               <em className="ikon ikon-dashboard" /> Dashboard
@@ -35,12 +44,12 @@ export default function Sidebar() {
               <em className="ikon ikon-user" /> Profile
             </Link>
           </li>
-          <li className="d-lg-none">
+          {/* <li className="d-lg-none">
             <Link to="KYC-Application.html">
               <em className="ti ti-files" />
               KYC Application
             </Link>
-          </li>
+          </li> */}
           <li className="d-lg-none">
             <Link to="/login" className="text-orange">
               <em className="ti ti-power-off text-orange" /> Logout

@@ -109,7 +109,7 @@ export default function Login() {
             <Checkbox title={lang.checkbox} />
             <ReCAPTCHA
               onChange={handleCaptcha}
-              sitekey="6Levxs8fAAAAACzVBbp6cJIO08FYvpm-z2DbOICk"
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
               className="animate__animated animate__fadeIn delay-350"
             />
 
