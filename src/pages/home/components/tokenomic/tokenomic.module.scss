@@ -29,6 +29,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  h1 {
+    color: #fff !important;
+  }
 }
 .title,
 .subtitle {
@@ -40,10 +43,12 @@
 }
 .subtitle {
   padding-top: 5rem;
+  color: #fff !important;
 }
 .title {
   font-weight: 700;
   padding-bottom: 4rem;
+  color: #fff !important;
 }
 @media (max-width: '1000px') {
   .container {
