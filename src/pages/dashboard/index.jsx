@@ -2,6 +2,7 @@ import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
+import { getActiveSchedule } from 'constants/coin';
 import {
   CarouselProvider,
   Slider,
@@ -14,6 +15,7 @@ import React from 'react';
 
 export default function Dashboard() {
   document.title = 'Oak Hill';
+  const currentSale = getActiveSchedule();
   return (
     <div className="krace">
       <div className="kracebody">
@@ -138,7 +140,7 @@ export default function Dashboard() {
                       <div className="card-innr">
                         <div className="card-head">
                           <h5 className="card-title card-title-sm">
-                            PRIVATE SALE
+                            {currentSale.title}
                           </h5>
                         </div>
                         <div className="token-rate-wrap row">
@@ -148,7 +150,10 @@ export default function Dashboard() {
                               1 OAKC
                             </h5>
                             <h3 className="font-mid text-dark">
-                              = <span>$0,10</span>
+                              ={' '}
+                              <span>
+                                ${parseFloat(currentSale.coinPrice).toFixed(2)}
+                              </span>
                             </h3>
                           </div>
                         </div>
@@ -216,11 +221,15 @@ export default function Dashboard() {
                         </div>
                         <div className="token-rate-wrap">
                           <div className="token-rate">
-                            <h5 className="card-sub-title">PRIVATE ICO SALE</h5>
-                            <div>Start at May 10 2022 00:00 AM (UTC +0)</div>
-                            <div>End at June 10, 2022 23:59 am (UTC +0)</div>
+                            <h5 className="card-sub-title">
+                              {currentSale.title}
+                            </h5>
+                            <div>{currentSale.start}</div>
+                            <div>{currentSale.end}</div>
                             <div>Min purchase -100 Usdt</div>
-                            <div>Token Distribute -10.000.000</div>
+                            <div>
+                              Token Distribute -{currentSale.tokenDistribute}
+                            </div>
                           </div>
                         </div>
                       </div>

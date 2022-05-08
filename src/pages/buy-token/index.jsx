@@ -3,7 +3,7 @@ import Header from 'components/header';
 import { Info } from 'components/text';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
-import { coinPrice } from 'constants/coin';
+import { getActiveSchedule } from 'constants/coin';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { deposit } from 'requests';
@@ -15,15 +15,21 @@ export default function BuyToken() {
   const handleAmount = (e) => {
     setAmount(e.target.value);
   };
-
+  const currentSale = getActiveSchedule();
   const buyCoins = async (e) => {
     e.preventDefault();
+    if (amount < 100) {
+      return setResponse({
+        success: false,
+        message: 'Minimum amout must be 100 dollars',
+      });
+    }
     try {
       const { data } = await deposit.buyDeposit({
         headers: { authorization: `Bearer ${token}` },
         data: {
           usdt: parseFloat(amount),
-          ggcPrice: parseFloat(coinPrice),
+          ggcPrice: parseFloat(currentSale.coinPrice),
         },
       });
       setResponse(data);
@@ -198,7 +204,9 @@ export default function BuyToken() {
                                   <span className="pay-title mb-2">
                                     <span className="pay-cur">Option-01</span>
                                   </span>
-                                  <span>1 OAKC = {coinPrice} USDT</span>
+                                  <span>
+                                    1 OAKC = {currentSale.coinPrice} USDT
+                                  </span>
                                   <span className="mt-2">
                                     Tokens will be locked for 12 month then 100%
                                     of them will be released at the end of
@@ -250,7 +258,9 @@ export default function BuyToken() {
                               <div className="token-eq-sign" />
                               <div className="token-received-amount">
                                 <h5 className="token-amount">
-                                  {parseFloat(amount / coinPrice).toFixed(3)}
+                                  {parseFloat(
+                                    amount / currentSale.coinPrice
+                                  ).toFixed(3)}
                                 </h5>
                                 <div className="token-symbol text-orange font-mid mt-1">
                                   Total OAKC

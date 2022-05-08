@@ -1,3 +1,4 @@
+import { getActiveSchedule } from 'constants/coin';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 const salesStart = {
@@ -17,33 +18,22 @@ const salesEnd = {
   second: 0,
 };
 export default function UserWelcome() {
-  const [remaining, setRemaining] = useState(calculateRemaining());
-
   const user = useSelector((state) => state.user)?.userInfo?.name;
   const [countdown, setCountdown] = useState(false);
-
+  const currentSale = getActiveSchedule();
+  const [remaining, setRemaining] = useState(
+    calculateRemaining(currentSale.endDate)
+  );
   useEffect(() => {
     const remainingInterval = () => {
-      setRemaining(calculateRemaining());
+      setRemaining(calculateRemaining(currentSale.endDate));
     };
     const current = new Date().getTime();
-    const start = new Date(
-      salesStart.year,
-      salesStart.month - 1,
-      salesStart.day,
-      salesStart.hour,
-      salesStart.minute,
-      salesStart.second
-    ).getTime();
-    const end = new Date(
-      salesEnd.year,
-      salesEnd.month - 1,
-      salesEnd.day,
-      salesEnd.hour,
-      salesEnd.minute,
-      salesEnd.second
-    ).getTime();
-    if (start < current && end > current) {
+
+    if (
+      currentSale.startDate.getTime() < current &&
+      currentSale.endDate > current
+    ) {
       setCountdown(true);
       setInterval(remainingInterval, 1000);
     }
@@ -103,19 +93,11 @@ export default function UserWelcome() {
   );
 }
 
-const calculateRemaining = () => {
-  const date = new Date(
-    salesEnd.year,
-    salesEnd.month - 1,
-    salesEnd.day,
-    salesEnd.hour,
-    salesEnd.minute,
-    salesEnd.second
-  );
+const calculateRemaining = (endTime) => {
   const current = new Date();
 
   const elapsedSeconds = Math.floor(
-    (date.getTime() - current.getTime()) / 1000
+    (endTime.getTime() - current.getTime()) / 1000
   );
   const day = Math.floor(elapsedSeconds / (60 * 60 * 24));
   const hour = Math.floor((elapsedSeconds / (60 * 60)) % 24);

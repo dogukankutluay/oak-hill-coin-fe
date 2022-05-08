@@ -2,10 +2,12 @@ import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
+import { coinSchedule, getActiveSchedule } from 'constants/coin';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function IcoDistrubution() {
+  const currentSale = getActiveSchedule();
   return (
     <div className="krace">
       {/* KRACE Body Area Start */}
@@ -58,10 +60,13 @@ export default function IcoDistrubution() {
                       <div className="pdb-1x">
                         <div className="mb-3">
                           <h6 className="text-orange d-block text-uppercase mb-1">
-                            Option 1 - <span className="font-bold">$0.10</span>
+                            Option 1 -{' '}
+                            <span className="font-bold">
+                              ${currentSale.coinPrice}
+                            </span>
                           </h6>
                           <ul>
-                            <li>1 OAKC = 0.10 USDT</li>
+                            <li>1 OAKC ={currentSale.coinPrice} USDT</li>
                             <li>
                               Tokens will be locked for 12 month then 100% of
                               them will be released at the end of period.
@@ -70,104 +75,44 @@ export default function IcoDistrubution() {
                         </div>
                       </div>
                     </div>
-                    <div className="schedule-item">
-                      <div className="row">
-                        <div className="col-xl-12">
-                          <div className="pdb-1x">
-                            <h6 className="schedule-title">
-                              <span>Private ICO Sale</span>
-                              <span className="badge badge-success ucap badge-xs">
-                                Running
-                              </span>
-                            </h6>
+                    {coinSchedule.map((schedule, index) => {
+                      return (
+                        <div className="schedule-item" key={index}>
+                          <div className="row">
+                            <div className="col-xl-12">
+                              <div className="pdb-1x">
+                                <h6 className="schedule-title">
+                                  <span>{schedule.title}</span>
+                                  {calculateStatus(schedule, currentSale)}
+                                </h6>
+                              </div>
+                            </div>
+                            <div className="col-xl-7">
+                              <div className="pdb-1x">
+                                <span className>
+                                  Private ICO Price: ${schedule.coinPrice}
+                                </span>
+                                <span>{schedule.start}</span>
+                                <span>{schedule.end}</span>
+                                <span>
+                                  Token Distribute: {schedule.tokenDistribute}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-xl-5">
+                              <div className="pdb-1x">
+                                <span className="text-nowrap">
+                                  Min purchase - $100
+                                </span>
+                                <span className="text-nowrap">
+                                  Token Distribute - 45.000.000
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div className="col-xl-7">
-                          <div className="pdb-1x">
-                            <span className>Private ICO Price: $0.10</span>
-                            <span>Start at May 10, 2022 00:00 AM (UTC +0)</span>
-                            <span>End at June 10, 2022 11:59 PM (UTC +0)</span>
-                            <span>Token Distribute: 10.000.000</span>
-                          </div>
-                        </div>
-                        <div className="col-xl-5">
-                          <div className="pdb-1x">
-                            <span className="text-nowrap">
-                              Min purchase - $100
-                            </span>
-                            <span className="text-nowrap">
-                              Token Distribute - 45.000.000
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="schedule-item">
-                      <div className="row">
-                        <div className="col-xl-12">
-                          <div className="pdb-1x">
-                            <h6 className="schedule-title">
-                              <span>Pre ICO Sale</span>
-                              <span className="badge badge-disabled ucap badge-xs">
-                                Upcoming
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="col-xl-7">
-                          <div className="pdb-1x">
-                            <span className>Pre ICO Price: $0.20</span>
-                            <span>
-                              Start at June 10, 2022 00:00 AM (UTC +0)
-                            </span>
-                            <span>End at July 10, 2022 11:59 PM (UTC +0)</span>
-                            <span>Token Distribute: 20.000.000</span>
-                          </div>
-                        </div>
-                        <div className="col-xl-5">
-                          <div className="pdb-1x">
-                            <span className="text-nowrap">
-                              Min purchase - $100
-                            </span>
-                            <span className="text-nowrap">
-                              Token Distribute - 45.000.000
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="schedule-item">
-                      <div className="row">
-                        <div className="col-xl-12">
-                          <div className="pdb-1x">
-                            <h6 className="schedule-title">
-                              <span>Public ICO Sale</span>
-                              <span className="badge badge-disabled ucap badge-xs">
-                                Upcoming
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="col-xl-7">
-                          <div className="pdb-1x">
-                            <span className>Public ICO Price: $0.25</span>
-                            <span>Start at July 10 2022 00:00 AM (UTC +0)</span>
-                            <span>End at August 10 2022 11:59 PM (UTC +0)</span>
-                            <span>Token Distribute: 30.000.000</span>
-                          </div>
-                        </div>
-                        <div className="col-xl-5">
-                          <div className="pdb-1x">
-                            <span className="text-nowrap">
-                              Min purchase - $100
-                            </span>
-                            <span className="text-nowrap">
-                              Token Distribute - 108.000.000
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
                 {/* Ico Distribution */}
@@ -188,3 +133,12 @@ export default function IcoDistrubution() {
     </div>
   );
 }
+
+const calculateStatus = (schedule, currentSale) => {
+  if (schedule.startDate.getTime() === currentSale.startDate.getTime())
+    return <span className="badge badge-success ucap badge-xs">Running</span>;
+  if (schedule.startDate.getTime() < currentSale.startDate.getTime())
+    return <span className="badge badge-disabled ucap badge-xs">End</span>;
+  if (schedule.startDate.getTime() > currentSale.startDate.getTime())
+    return <span className="badge badge-disabled ucap badge-xs">Upcoming</span>;
+};
