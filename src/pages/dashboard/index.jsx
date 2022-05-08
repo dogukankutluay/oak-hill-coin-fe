@@ -12,10 +12,12 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Dashboard() {
   document.title = 'Oak Hill';
   const currentSale = getActiveSchedule();
+  const user = useSelector((state) => state.user.userInfo);
   return (
     <div className="krace">
       <div className="kracebody">
@@ -116,19 +118,28 @@ export default function Dashboard() {
                         <div className="token-balance mb-2">
                           <div className="token-balance-text">
                             <h6 className="card-sub-title">Tokens Balance</h6>
-                            <span className="lead">
-                              120,000,000 <span>OAKC</span>
+                            <span className="lead" style={{ color: '#035D20' }}>
+                              {user.tokenBalance} <span>OAKC</span>
                             </span>
                           </div>
                         </div>
                         <div className="token-balance token-balance-s2">
                           <h6 className="card-sub-title">Your Contribution</h6>
-                          <ul className="token-balance-list">
-                            <li className="token-balance-sub">
-                              <span className="lead">1.265</span>
-                              <span>USDT</span>
-                            </li>
-                          </ul>
+                          {/* <ul className="token-balance-list">
+                            <li className="token-balance-sub"> */}
+                          <span className="lead" style={{ color: '#035D20' }}>
+                            {user.usdtBalance}
+                            <span
+                              style={{
+                                display: 'inline',
+                                marginLeft: '0.125rem',
+                              }}
+                            >
+                              USDT
+                            </span>
+                          </span>
+                          {/* </li>
+                          </ul> */}
                         </div>
                       </div>
                     </div>

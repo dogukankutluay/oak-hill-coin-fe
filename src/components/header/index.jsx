@@ -9,6 +9,7 @@ export default function Header() {
   const user = useSelector((state) => state.user.userInfo);
   const [active, setActive] = useState(false);
   const dispatch = useDispatch();
+  const navbarStatus = useSelector((state) => state.preferences.navbar);
   const changeNavbar = () => {
     setActive(!active);
     dispatch(handleNavbar(!active));
@@ -20,7 +21,12 @@ export default function Header() {
         <div className="topbar-navigation">
           <ul className="topbar-nav d-lg-none" onClick={changeNavbar}>
             <li className="topbar-nav-item relative">
-              <div className="toggle-nav" style={{ cursor: 'pointer' }}>
+              <div
+                className={`toggle-nav ${
+                  navbarStatus && 'active mobilemenu-opened'
+                } `}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="toggle-icon">
                   <span className="toggle-line" />
                   <span className="toggle-line" />

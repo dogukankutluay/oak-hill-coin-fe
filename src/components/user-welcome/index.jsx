@@ -37,7 +37,7 @@ export default function UserWelcome() {
       setCountdown(true);
       setInterval(remainingInterval, 1000);
     }
-    return clearInterval(remainingInterval);
+    return () => clearInterval(remainingInterval);
   }, []);
   return (
     <div className="headuserwelcome">

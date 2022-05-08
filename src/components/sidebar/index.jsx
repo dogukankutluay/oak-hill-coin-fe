@@ -25,7 +25,11 @@ export default function Sidebar() {
       }`}
     >
       <div className="navbar-innr">
-        <ul className="navbar-menu" onClick={changeNavbar}>
+        <ul
+          className="navbar-menu"
+          onClick={changeNavbar}
+          style={{ userSelect: 'none' }}
+        >
           <li>
             <Link to={'/dashboard'}>
               <em className="ikon ikon-dashboard" /> Dashboard

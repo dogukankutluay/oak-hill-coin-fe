@@ -25,12 +25,12 @@ export default function TopInfo() {
               <span>Deposit Addresses</span>
             </Link>
           </li>
-          <li className="headbtnkyc d-none">
+          {/* <li className="headbtnkyc d-none">
             <Link to="/">
               <em className="ti ti-files" />
               <span>KYC Application</span>
             </Link>
-          </li>
+          </li> */}
           <li className="headbtnprofile">
             <Link to="/profile" title="Profile">
               <em className="ti ti-user" />
