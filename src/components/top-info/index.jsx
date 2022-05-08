@@ -12,10 +12,10 @@ export default function TopInfo() {
   return (
     <div className="headtopinfoarea">
       <div class="headtopinfoarea-balancelist">
-        <span class="card-sub-title text-orange mr-1">Oakin Price</span>
+        {/* <span class="card-sub-title text-orange mr-1">Oakin Price</span>
         <span class="card-sub-title text-dark">
           1 USDT = <span>{1 / coinPrice} Oakin</span>
-        </span>
+        </span> */}
       </div>
       <div className="headtopinfoarea-buttonlist">
         <ul className="user-menulist">

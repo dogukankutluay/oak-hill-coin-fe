@@ -1,3 +1,4 @@
+import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
@@ -38,7 +39,7 @@ export default function Wallet() {
                   <div className>
                     <h2 className="page-title">Wallet</h2>
                   </div>
-                  <div className="mt-3 mt-sm-0">
+                  {/* <div className="mt-3 mt-sm-0">
                     <a
                       href="#"
                       className="btn btn-primary btn-sm btn-block w-100"
@@ -56,7 +57,7 @@ export default function Wallet() {
                       />
                       Withdraw
                     </a>
-                  </div>
+                  </div> */}
                 </div>
                 {/* HeadTitle */}
                 {/* Alert */}
@@ -165,7 +166,7 @@ export default function Wallet() {
                       <thead>
                         <tr className="data-item data-head">
                           <th className="data-col dt-tnxno">Order NO</th>
-                          <th className="data-col dt-token">Oakin Amount</th>
+                          <th className="data-col dt-token">OAKC Amount</th>
                           <th className="data-col dt-amount">Amount</th>
                           <th className="data-col dt-type text-right">
                             <div className="dt-type-text">Type</div>
@@ -1026,7 +1027,7 @@ export default function Wallet() {
                               use MetaMask, MayEtherWallet, Mist wallets etc. Do
                               not use the address if you don’t have a private
                               key of the your address. You WILL NOT receive
-                              Oakins and WILL LOSE YOUR FUNDS if you do.
+                              OAKCs and WILL LOSE YOUR FUNDS if you do.
                             </p>
                           </div>
                           <div className="gaps-3x" />
@@ -1046,42 +1047,7 @@ export default function Wallet() {
             </div>
             {/* Layout Main Layout Start */}
             {/* Footer Start */}
-            <footer className="footer-bar">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-8">
-                  <ul className="footer-links">
-                    <li>
-                      <a href="javascript:void 0;">Litepaper</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Terms of Contitions</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 mt-2 mt-sm-0">
-                  <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                    <div className="copyright-text">© 2022 Oakin</div>
-                    <div className="lang-switch relative d-none">
-                      <select
-                        className="select-bordered select-block"
-                        name="langswitch"
-                      >
-                        <option value="EN" selected>
-                          EN
-                        </option>
-                        <option value="TR">TR</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <DashboardFooter />
             {/* Footer End */}
           </main>
           {/* Main End */}

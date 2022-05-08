@@ -1,3 +1,4 @@
+import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
@@ -114,7 +115,7 @@ export default function Dashboard() {
                           <div className="token-balance-text">
                             <h6 className="card-sub-title">Tokens Balance</h6>
                             <span className="lead">
-                              120,000,000 <span>Oakin</span>
+                              120,000,000 <span>OAKC</span>
                             </span>
                           </div>
                         </div>
@@ -161,7 +162,7 @@ export default function Dashboard() {
                       <div className="card-innr">
                         <div className="card-head">
                           <h4 className="card-title card-title-sm">
-                            Oakin Sales Progress
+                            OAKC Sales Progress
                           </h4>
                         </div>
                         <ul className="progress-info">
@@ -216,8 +217,8 @@ export default function Dashboard() {
                         <div className="token-rate-wrap">
                           <div className="token-rate">
                             <h5 className="card-sub-title">PRIVATE ICO SALE</h5>
-                            <div>Start at April 20, 2022 00:00 AM (UTC +0)</div>
-                            <div>End at May 20, 2022 23:59 am (UTC +0)</div>
+                            <div>Start at May 10 2022 00:00 AM (UTC +0)</div>
+                            <div>End at June 10, 2022 23:59 am (UTC +0)</div>
                             <div>Min purchase -100 Usdt</div>
                             <div>Token Distribute -10.000.000</div>
                           </div>
@@ -236,45 +237,7 @@ export default function Dashboard() {
             </div>
             {/* Layout Main Layout End */}
             {/* Footer Start */}
-            <footer className="footer-bar">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-8">
-                  <ul className="footer-links">
-                    <li>
-                      <a href="javascript:void 0;">Litepaper</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Telegram</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Terms of Contitions</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 mt-2 mt-sm-0">
-                  <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                    <div className="copyright-text">© 2022 Oakin</div>
-                    <div className="lang-switch relative d-none">
-                      <select
-                        className="select-bordered select-block"
-                        name="langswitch"
-                      >
-                        <option value="EN" selected>
-                          EN
-                        </option>
-                        <option value="TR">TR</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <DashboardFooter />
             {/* Footer End */}
           </main>
           {/* Main End */}

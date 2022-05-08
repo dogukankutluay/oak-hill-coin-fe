@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNavbar } from 'redux/actions/preferencesAction';
 export default function Sidebar() {
   const navbarStatus = useSelector((state) => state.preferences.navbar);
   const dispatch = useDispatch();
+  const [width, setWidth] = useState(window.innerWidth);
   const changeNavbar = () => {
     setTimeout(() => {
       dispatch(handleNavbar(!navbarStatus));
     }, 100);
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
-    <div className={`navbar navbar-mobile ${navbarStatus ? 'active' : ''}`}>
+    <div
+      className={`navbar mobile ${width < 1059 && 'navbar-mobile'}  ${
+        navbarStatus ? '  active' : ''
+      }`}
+    >
       <div className="navbar-innr">
         <ul className="navbar-menu" onClick={changeNavbar}>
           <li>

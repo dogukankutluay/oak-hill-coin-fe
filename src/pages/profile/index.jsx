@@ -6,6 +6,7 @@ import PersonalData from './tabs/PersonalData';
 import { useState } from 'react';
 import UserWelcome from 'components/user-welcome';
 import TopInfo from 'components/top-info';
+import DashboardFooter from 'components/dashboard-footer';
 export default function Profile() {
   const [tab, setTab] = useState(0);
   return (
@@ -200,42 +201,7 @@ export default function Profile() {
             </div>
             {/* Layout Main Layout Start */}
             {/* Footer Start */}
-            <footer className="footer-bar">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-8">
-                  <ul className="footer-links">
-                    <li>
-                      <a href="javascript:void 0;">Litepaper</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Terms of Contitions</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 mt-2 mt-sm-0">
-                  <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                    <div className="copyright-text">© 2022 Oakin</div>
-                    <div className="lang-switch relative d-none">
-                      <select
-                        className="select-bordered select-block"
-                        name="langswitch"
-                      >
-                        <option value="EN" selected>
-                          EN
-                        </option>
-                        <option value="TR">TR</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <DashboardFooter />
             {/* Footer End */}
           </main>
           {/* Main End */}

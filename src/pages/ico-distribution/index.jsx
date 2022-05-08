@@ -1,7 +1,9 @@
+import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function IcoDistrubution() {
   return (
@@ -35,18 +37,18 @@ export default function IcoDistrubution() {
                     </div>
                     <div className="card-text">
                       <p>
-                        To become a part of KRACE project, you can found all
+                        To become a part of OAKC project, you can found all
                         details of ICO. <br className="d-none d-sm-block" /> You
-                        can contribute and{' '}
-                        <a href="Buy_Token.html">buy Oakins</a>.
+                        can contribute and <Link to="/buy-token">buy OAKC</Link>
+                        .
                       </p>
-                      <p>
+                      {/* <p>
                         You can get a quick response and chat with our team in
                         Telegram:{' '}
                         <a href="https://t.me/kracegame" target="_blank">
                           https://t.me/kracegame
                         </a>
-                      </p>
+                      </p> */}
                     </div>
                     <div className="gaps-3x" />
                     <div className="card-head">
@@ -83,10 +85,8 @@ export default function IcoDistrubution() {
                         <div className="col-xl-7">
                           <div className="pdb-1x">
                             <span className>Private ICO Price: $0.10</span>
-                            <span>
-                              Start at April 20, 2022 00:00 AM (UTC +0)
-                            </span>
-                            <span>End at May 20, 2022 11:59 PM (UTC +0)</span>
+                            <span>Start at May 10, 2022 00:00 AM (UTC +0)</span>
+                            <span>End at June 10, 2022 11:59 PM (UTC +0)</span>
                             <span>Token Distribute: 10.000.000</span>
                           </div>
                         </div>
@@ -117,8 +117,10 @@ export default function IcoDistrubution() {
                         <div className="col-xl-7">
                           <div className="pdb-1x">
                             <span className>Pre ICO Price: $0.20</span>
-                            <span>Start at May 21, 2022 00:00 AM (UTC +0)</span>
-                            <span>End at June 20, 2022 11:59 PM (UTC +0)</span>
+                            <span>
+                              Start at June 10, 2022 00:00 AM (UTC +0)
+                            </span>
+                            <span>End at July 10, 2022 11:59 PM (UTC +0)</span>
                             <span>Token Distribute: 20.000.000</span>
                           </div>
                         </div>
@@ -149,8 +151,8 @@ export default function IcoDistrubution() {
                         <div className="col-xl-7">
                           <div className="pdb-1x">
                             <span className>Public ICO Price: $0.25</span>
-                            <span>Start at June 21 2022 00:00 AM (UTC +0)</span>
-                            <span>End at July 20 2022 11:59 PM (UTC +0)</span>
+                            <span>Start at July 10 2022 00:00 AM (UTC +0)</span>
+                            <span>End at August 10 2022 11:59 PM (UTC +0)</span>
                             <span>Token Distribute: 30.000.000</span>
                           </div>
                         </div>
@@ -174,42 +176,7 @@ export default function IcoDistrubution() {
             </div>
             {/* Layout Main Layout Start */}
             {/* Footer Start */}
-            <footer className="footer-bar">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-8">
-                  <ul className="footer-links">
-                    <li>
-                      <a href="javascript:void 0;">Litepaper</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Terms of Contitions</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 mt-2 mt-sm-0">
-                  <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                    <div className="copyright-text">© 2022 Oakin</div>
-                    <div className="lang-switch relative d-none">
-                      <select
-                        className="select-bordered select-block"
-                        name="langswitch"
-                      >
-                        <option value="EN" selected>
-                          EN
-                        </option>
-                        <option value="TR">TR</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <DashboardFooter />
             {/* Footer End */}
           </main>
           {/* Main End */}

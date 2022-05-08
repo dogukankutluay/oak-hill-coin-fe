@@ -48,7 +48,9 @@ export default function Login() {
       });
       if (data.success) {
         dispatch(login({ token: data.token }));
-        navigate('/dashboard');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 1000);
       }
     } catch (error) {
       setResponse({

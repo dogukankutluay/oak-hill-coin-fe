@@ -1,3 +1,4 @@
+import DashboardFooter from 'components/dashboard-footer';
 import Header from 'components/header';
 import { Info } from 'components/text';
 import TopInfo from 'components/top-info';
@@ -316,8 +317,7 @@ export default function BuyToken() {
                             Tokens will appear in your account after payment
                             successfully made and approved by our team.{' '}
                             <br className="d-none d-lg-block" /> Please note
-                            that, Oakins will distributed end of ICO Token
-                            Sales.{' '}
+                            that, OAKC will distributed end of ICO Token Sales.{' '}
                           </p>
                         </div>
                       </div>
@@ -343,12 +343,12 @@ export default function BuyToken() {
                         <p>
                           In order to receive your{' '}
                           <a href="#">
-                            <strong>Oakins</strong>
+                            <strong>OAKC</strong>
                           </a>
                           , please select your wallet address and you have to
                           put the address below input box.
                           <strong>
-                            You will receive Oakins to this address after the
+                            You will receive OAKC to this address after the
                             Token Sale end.
                           </strong>
                         </p>
@@ -405,8 +405,8 @@ export default function BuyToken() {
                               Kraken, Bitfinex, Bithumb, Binance etc. You can
                               use MetaMask, MayEtherWallet, Mist wallets etc. Do
                               not use the address if you don’t have a private
-                              key of the your address. You WILL NOT receive
-                              Oakins and WILL LOSE YOUR FUNDS if you do.
+                              key of the your address. You WILL NOT receive OAKC
+                              and WILL LOSE YOUR FUNDS if you do.
                             </p>
                           </div>
                           <div className="gaps-3x" />
@@ -445,10 +445,10 @@ export default function BuyToken() {
                         <p>
                           Please make deposit amount of <strong>1.0 ETH</strong>{' '}
                           to our address and receive{' '}
-                          <strong className="text-cyan">18,750 Oakin</strong>{' '}
+                          <strong className="text-cyan">18,750 OAKC</strong>{' '}
                           tokens including
                           <strong className="text-cyan">
-                            bonus 1,540 Oakin
+                            bonus 1,540 OAKC
                           </strong>{' '}
                           once we recevied payment.
                         </p>
@@ -515,8 +515,8 @@ export default function BuyToken() {
                         <div className="note note-plane note-danger">
                           <em className="fas fa-info-circle" />
                           <p>
-                            In case you send a different amount, number of
-                            Oakins will update accordingly.
+                            In case you send a different amount, number of OAKC
+                            will update accordingly.
                           </p>
                         </div>
                       </div>
@@ -532,10 +532,10 @@ export default function BuyToken() {
                         <h4 className="popup-title">Buy Tokens and Payment</h4>
                         <p className="lead">
                           To receiving{' '}
-                          <strong className="text-cyan">18,750 Oakin</strong>
+                          <strong className="text-cyan">18,750 OAKC</strong>
                           tokens including{' '}
                           <strong className="text-cyan">
-                            bonus 1,540 Oakin
+                            bonus 1,540 OAKC
                           </strong>
                           require payment amount of <strong>1.0 ETH</strong>.
                         </p>
@@ -669,10 +669,10 @@ export default function BuyToken() {
                         <h4 className="popup-title">Buy Tokens and Payment</h4>
                         <p className="lead">
                           To receiving{' '}
-                          <strong className="text-cyan">18,750 Oakin</strong>
+                          <strong className="text-cyan">18,750 OAKC</strong>
                           tokens including{' '}
                           <strong className="text-cyan">
-                            bonus 1,540 Oakin
+                            bonus 1,540 OAKC
                           </strong>
                           require payment amount of <strong>1.0 ETH</strong>.
                         </p>
@@ -816,8 +816,8 @@ export default function BuyToken() {
                         <div className="note note-plane note-danger">
                           <em className="fas fa-info-circle" />
                           <p>
-                            In case you send a different amount, number of
-                            Oakins will update accordingly.
+                            In case you send a different amount, number of OAKC
+                            will update accordingly.
                           </p>
                         </div>
                       </div>
@@ -873,7 +873,7 @@ export default function BuyToken() {
                           Your payment amount <strong>1.0 ETH</strong> has been
                           successfully received againest order no.{' '}
                           <strong>TNX94KR8N0</strong>. We’ve added{' '}
-                          <strong className="text-cyan">18,750 Oakin</strong>{' '}
+                          <strong className="text-cyan">18,750 OAKC</strong>{' '}
                           tokens in account.
                         </p>
                         <div className="gaps-2x" />
@@ -891,42 +891,7 @@ export default function BuyToken() {
             </div>
             {/* Layout Main Layout Start */}
             {/* Footer Start */}
-            <footer className="footer-bar">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-8">
-                  <ul className="footer-links">
-                    <li>
-                      <a href="javascript:void 0;">Litepaper</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="javascript:void 0;">Terms of Contitions</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 mt-2 mt-sm-0">
-                  <div className="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
-                    <div className="copyright-text">© 2022 Oakin Hill.</div>
-                    <div className="lang-switch relative d-none">
-                      <select
-                        className="select-bordered select-block"
-                        name="langswitch"
-                      >
-                        <option value="EN" selected>
-                          EN
-                        </option>
-                        <option value="TR">TR</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <DashboardFooter />
             {/* Footer End */}
           </main>
           {/* Main End */}

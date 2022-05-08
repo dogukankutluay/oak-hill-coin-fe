@@ -8,9 +8,10 @@ import Home from './home';
 
 export default function Pages() {
   const [access, setAccess] = useState(false);
-  const token = useSelector((state) => state.user.token);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.token);
+
   const getUser = async () => {
     try {
       const { data } = await auth.getProfile({
@@ -29,6 +30,8 @@ export default function Pages() {
   };
 
   useEffect(() => {
+    if (!token) return setLoading(false);
+
     getUser();
   }, [token]);
   if (loading) {

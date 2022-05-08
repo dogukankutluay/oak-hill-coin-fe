@@ -1,8 +1,10 @@
+import { OakhillMainIcon } from 'assets/icons';
 import Sidebar from 'components/sidebar';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { handleNavbar } from 'redux/actions/preferencesAction';
+import './header.css';
 export default function Header() {
   const user = useSelector((state) => state.user.userInfo);
   const [active, setActive] = useState(false);
@@ -32,11 +34,7 @@ export default function Header() {
             className="topbar-logo textusernotselect rainbowhoverbgcolor"
             to="/"
           >
-            <img
-              src={require('assets/img/krace/exchange_listing.png')}
-              srcSet="assets/img/krace/exchange_listing.png 2x"
-              alt="logo"
-            />
+            <OakhillMainIcon className="header-oak-hill-icon" />
           </Link>
           <Sidebar />
           <div className="topbar-balance">
@@ -46,7 +44,7 @@ export default function Header() {
                 <span className="lead">
                   {' '}
                   {user?.tokenBalance}
-                  <span style={{ marginLeft: '0.2rem' }}>Oakin</span>
+                  <span style={{ marginLeft: '0.2rem' }}>OAKC</span>
                 </span>
               </div>
             </div>

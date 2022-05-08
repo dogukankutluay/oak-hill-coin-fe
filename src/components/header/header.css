@@ -1,0 +1,16 @@
+.header-oak-hill-icon {
+  width: 90px;
+  height: 90px;
+}
+@media (max-width: 1380px) {
+  .header-oak-hill-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 1070px) {
+  .header-oak-hill-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
