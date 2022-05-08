@@ -3,9 +3,9 @@
   display: flex;
 
   &Item {
+    user-select: none;
     &:last-child a {
       position: relative;
-
       &::before {
         content: '';
         position: absolute;
