@@ -134,6 +134,25 @@ const TeamMembers = ({ animated: _animated }) => {
           </div>
         </div>
       </div>
+      <div
+        className={cn(
+          style.tree_body,
+          animated && 'animate__animated animate__fadeIn delay-200'
+        )}
+      >
+        <div className={style.member}>
+          <img src={require('./members/patrica_bono.png')} alt="patrica_bono" />
+          <div>
+            <p>Patrica Bono</p>
+          </div>
+        </div>
+        <div className={style.member}>
+          <img src={require('./members/awad_chamas.png')} alt="awad_chamas" />
+          <div>
+            <p>Awad Chamas</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
