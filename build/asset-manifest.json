@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.717457a4.css",
-    "main.js": "/static/js/main.b42468f9.js",
+    "main.js": "/static/js/main.0ebc9f0f.js",
     "static/media/teams_bg.svg": "/static/media/teams_bg.81a9f7027f4f0b0220dbb3b0bb3a9b42.svg",
     "static/media/oak_hill_invest.png": "/static/media/oak_hill_invest.d3861f9e594af40ac7bc.png",
     "static/media/container.png": "/static/media/container.2656f4cc2bdd7d3257d5.png",
     "static/media/fa-brands-400.svg": "/static/media/fa-brands-400.a30e7f5cb3286c77493e.svg",
     "static/media/patrica_bono.png": "/static/media/patrica_bono.bb3ace8470e621e4588b.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.48a87cae617e4783ef6d.svg",
+    "static/media/mazen_ali_jaber.png": "/static/media/mazen_ali_jaber.694060886d7a2d528773.png",
     "static/media/contact_world.png": "/static/media/contact_world.2b32c63f779f318081a0.png",
     "static/media/krace_sign_bg_cover.jpg?v=uvz8kmx": "/static/media/krace_sign_bg_cover.35d8f574d12a011824ba.jpg",
     "static/media/awad_chamas.png": "/static/media/awad_chamas.f3f796c8314fc539cdc5.png",
@@ -84,10 +85,10 @@
     "static/media/Plus-Icon.svg": "/static/media/Plus-Icon.77b12391e68a6e4ea28258c935254a48.svg",
     "index.html": "/index.html",
     "main.717457a4.css.map": "/static/css/main.717457a4.css.map",
-    "main.b42468f9.js.map": "/static/js/main.b42468f9.js.map"
+    "main.0ebc9f0f.js.map": "/static/js/main.0ebc9f0f.js.map"
   },
   "entrypoints": [
     "static/css/main.717457a4.css",
-    "static/js/main.b42468f9.js"
+    "static/js/main.0ebc9f0f.js"
   ]
 }
