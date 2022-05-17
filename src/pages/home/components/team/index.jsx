@@ -74,7 +74,7 @@ const TeamMembers = ({ animated: _animated }) => {
         <div className={style.member}>
           <img
             src={require('./members/yildirim_bakir.png')}
-            alt="yildirim_bakir"
+            alt="Yildirim Bakir"
           />
           <div>
             <p>Yıldırım BAKIR</p>
@@ -89,7 +89,7 @@ const TeamMembers = ({ animated: _animated }) => {
         )}
       >
         <div className={style.member}>
-          <img src={require('./members/yilmaz_bakir.png')} alt="yilmaz_bakir" />
+          <img src={require('./members/yilmaz_bakir.png')} alt="Yilmaz Bakir" />
           <div>
             <p>Yılmaz BAKIR</p>
             <h1>CTO</h1>
@@ -98,7 +98,7 @@ const TeamMembers = ({ animated: _animated }) => {
         <div className={style.member}>
           <img
             src={require('./members/abdulrahman_aleid.png')}
-            alt="abdulrahman_aleid"
+            alt="Abdulrahman Aleid"
           />
           <div>
             <p>Abdulrahman Aleid</p>
@@ -113,7 +113,7 @@ const TeamMembers = ({ animated: _animated }) => {
         )}
       >
         <div className={style.member}>
-          <img src={require('./members/hosni_emam.png')} alt="hosni_emam" />
+          <img src={require('./members/hosni_emam.png')} alt="Hosni Emam" />
           <div>
             <p>Hosni Emam</p>
           </div>
@@ -121,14 +121,14 @@ const TeamMembers = ({ animated: _animated }) => {
         <div className={style.member}>
           <img
             src={require('./members/murat_birkent.png')}
-            alt="murat_birkent"
+            alt="Murat Birkent"
           />
           <div>
             <p>Murat Birkent</p>
           </div>
         </div>
         <div className={style.member}>
-          <img src={require('./members/milan_rapaic.png')} alt="milan_rapaic" />
+          <img src={require('./members/milan_rapaic.png')} alt="Milan Rapaic" />
           <div>
             <p>Milan Rapaic</p>
           </div>
@@ -141,15 +141,24 @@ const TeamMembers = ({ animated: _animated }) => {
         )}
       >
         <div className={style.member}>
-          <img src={require('./members/patrica_bono.png')} alt="patrica_bono" />
+          <img src={require('./members/patrica_bono.png')} alt="Patrica Bono" />
           <div>
             <p>Patrica Bono</p>
           </div>
         </div>
         <div className={style.member}>
-          <img src={require('./members/awad_chamas.png')} alt="awad_chamas" />
+          <img src={require('./members/awad_chamas.png')} alt="Awad Chamas" />
           <div>
             <p>Awad Chamas</p>
+          </div>
+        </div>
+        <div className={style.member}>
+          <img
+            src={require('./members/mazen_ali_jaber.png')}
+            alt="Mazen Ali Jaber"
+          />
+          <div>
+            <p>Mazen Ali Jaber</p>
           </div>
         </div>
       </div>
@@ -162,7 +171,7 @@ const Advisors = () => {
     <div className={style.tree}>
       <div className={cn(style.tree_body, 'animate__animated animate__fadeIn')}>
         <div className={style.member}>
-          <img src={require('./members/Mr-Feihu-Yu 1.png')} alt="feihu_yu" />
+          <img src={require('./members/Mr-Feihu-Yu 1.png')} alt="Feihu Yu" />
           <div>
             <p>Feihu Yu</p>
           </div>
@@ -226,7 +235,7 @@ const Advisors = () => {
         <div className={style.member}>
           <img
             src={require('./members/Ahmed Ramadan 1.png')}
-            alt="ahmet_ramadan"
+            alt="Ahmet Ramadan"
           />
           <div>
             <p>Ahmet Ramadan</p>
