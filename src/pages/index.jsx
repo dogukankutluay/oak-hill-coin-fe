@@ -10,7 +10,7 @@ export default function Pages() {
   const [access, setAccess] = useState(false);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.user.token);
+  const token = useSelector(state => state.user.token);
 
   const getUser = async () => {
     try {

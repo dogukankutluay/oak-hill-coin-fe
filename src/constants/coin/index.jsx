@@ -6,7 +6,7 @@ export const coinSchedule = [
     end: 'End at June 10, 2022 23:59 am (UTC +0)',
     startDate: new Date('May 10, 2022 00:00:00'),
     endDate: new Date('June 11, 2022 00:00:00'),
-    coinPrice: parseFloat(0.1).toFixed(2),
+    coinPrice: parseFloat(0.11).toFixed(2),
     tokenDistribute: '10.000.000',
   },
   {
@@ -32,7 +32,7 @@ export const coinSchedule = [
 export const getActiveSchedule = () => {
   const currentDate = new Date().getTime();
   const activeEvent = coinSchedule.find(
-    (event) =>
+    event =>
       event.startDate.getTime() < currentDate &&
       event.endDate.getTime() > currentDate
   );

@@ -9,23 +9,20 @@ export default function Tokenomic({ reference, tab }) {
     <div
       className={style.tokenomic}
       id="tokenomic"
-      ref={reference.tokenomicRef}
-    >
+      ref={reference.tokenomicRef}>
       <div className={style.wrapper}>
         <h2
           className={cn(
             style.subtitle,
             animate && 'animate__animated animate__fadeIn delay-100'
-          )}
-        >
+          )}>
           Token Details
         </h2>
         <h1
           className={cn(
             style.title,
             animate && 'animate__animated animate__fadeIn delay-200'
-          )}
-        >
+          )}>
           TOKENOMICS
         </h1>
         <div className={style.container}>
@@ -33,19 +30,17 @@ export default function Tokenomic({ reference, tab }) {
             className={cn(
               style.chartSide,
               animate && 'animate__animated animate__fadeIn delay-300'
-            )}
-          >
+            )}>
             <TokenomicChart />
             <h1>
-              1 OAKC token price: <b>$0.10</b>
+              1 OAKC token price: <b>$0.11</b>
             </h1>
           </div>
           <div
             className={cn(
               style.chartInfo,
               animate && 'animate__animated animate__fadeIn delay-500'
-            )}
-          >
+            )}>
             <p>
               <b>Max supply:</b> 100.000.000 OAKC
             </p>
