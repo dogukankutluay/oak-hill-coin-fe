@@ -13,25 +13,25 @@ export default function Buy({ reference, tab }) {
           className={cn(
             style.coinSide,
             animate && 'animate__animated animate__fadeIn'
-          )}
-        >
+          )}>
           <Lottie {...coinAnimationOptions} />
           <h1>Oak Hill Coin</h1>
         </div>
         <div className={style.content}>
           <h1
-            className={animate && 'animate__animated animate__fadeIn delay-100'}
-          >
+            className={
+              animate && 'animate__animated animate__fadeIn delay-100'
+            }>
             ONLY FOR PRIVATE SALE
           </h1>
           <h2
-            className={animate && 'animate__animated animate__fadeIn delay-200'}
-          >
-            PRICE: <b>$0.10</b>
+            className={
+              animate && 'animate__animated animate__fadeIn delay-200'
+            }>
+            PRICE: <b>$0.11</b>
           </h2>
           <button
-            className={animate && 'animate__animated animate__pulse delay-300'}
-          >
+            className={animate && 'animate__animated animate__pulse delay-300'}>
             BUY
           </button>
         </div>
