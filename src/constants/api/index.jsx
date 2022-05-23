@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://oakhill.io/api/v1/';
 // export const BASE_URL = 'https://oakhill.io/api/v1/';
+export const BASE_URL = 'http://localhost:8080/api/v1/';
 
 const METHODS = {
   GET: 'GET',
@@ -32,6 +32,10 @@ export const API_CONFIG = {
       url: `${BASE_URL}auth/resetPassword`,
       method: METHODS.POST,
     },
+    emailSendAgain: {
+      url: `${BASE_URL}auth/emailSendAgain`,
+      method: METHODS.POST,
+    },
   },
   deposit: {
     createDeposit: { url: `${BASE_URL}deposit`, method: METHODS.POST },
@@ -42,5 +46,8 @@ export const API_CONFIG = {
       url: `${BASE_URL}deposit/check/address`,
       method: METHODS.GET,
     },
+  },
+  payment: {
+    getPayment: { url: `${BASE_URL}payment`, method: METHODS.GET },
   },
 };

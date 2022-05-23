@@ -10,10 +10,12 @@ import { Description, Info, Subtitle, Title } from 'components/text';
 import languages from 'constants/language';
 import useResponse from 'helpers/useResponse';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { register } from 'redux/actions/userAction';
 import { auth } from 'requests';
 import style from './register.module.scss';
+
 const FORM_INITIAL = {
   name: '',
   surname: '',
@@ -27,6 +29,8 @@ export default function Register() {
     (state) => languages[state.preferences.lang]
   ).register;
   document.title = lang.pageTitle;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [form, setForm] = useState(FORM_INITIAL);
   const [response, setResponse, RESPONSE_INITIAL] = useResponse();
   const handleForm = async (e) => {
@@ -39,11 +43,10 @@ export default function Register() {
     try {
       const { data } = await auth.register(form);
       if (data.success) {
-        setResponse({
-          success: true,
-          message: 'Register success! please check your mail for confirmation!',
-        });
-        setForm(FORM_INITIAL);
+        dispatch(register({ userInfo: { phone: form.phone } }));
+        setTimeout(() => {
+          navigate('/verify/register');
+        }, 100);
       }
     } catch (error) {
       setResponse({

@@ -23,18 +23,18 @@ export default function RegisterSuccess() {
   ).registerSuccess;
   document.title = lang.pageTitle;
   const confirmEmail = async () => {
-    try {
-      const confirmEmailToken = urlSearch.get('confirmEmailToken');
-      const { data } = await auth.confirmEmail({
-        params: { confirmEmailToken },
-      });
-      dispatch(login({ token: data.token }));
-    } catch (error) {
-      console.log(error.response);
-    }
+    // try {
+    //   const confirmEmailToken = urlSearch.get('confirmEmailToken');
+    //   const { data } = await auth.confirmEmail({
+    //     params: { confirmEmailToken },
+    //   });
+    //   dispatch(login({ token: data.token }));
+    // } catch (error) {
+    //   console.log(error.response);
+    // }
   };
   const direct = () => {
-    navigate('/dashboard');
+    navigate('/login');
   };
   useEffect(() => {
     confirmEmail();

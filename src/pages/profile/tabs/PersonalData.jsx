@@ -68,7 +68,7 @@ export default function PersonalData() {
               </div>
             </div>
           </div>
-          <div className="col-md-6">
+          {/* <div className="col-md-6">
             <div className="input-item input-with-label">
               <div className="input-wrap">
                 <label htmlFor="date-of-birth" className="input-item-label">
@@ -84,8 +84,8 @@ export default function PersonalData() {
                 />
               </div>
             </div>
-          </div>
-          <div className="col-md-6">
+          </div> */}
+          {/* <div className="col-md-6">
             <div className="input-item input-with-label">
               <div className="input-wrap">
                 <label htmlFor="date-of-birth" className="input-item-label">
@@ -99,8 +99,8 @@ export default function PersonalData() {
                 />
               </div>
             </div>
-          </div>
-          <div className="col-md-6">
+          </div> */}
+          {/* <div className="col-md-6">
             <div className="input-item input-with-label">
               <div className="input-wrap">
                 <label htmlFor="nationality" className="input-item-label">
@@ -120,7 +120,7 @@ export default function PersonalData() {
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="gaps-1x" />
         <div className="d-sm-flex justify-content-between align-items-center">

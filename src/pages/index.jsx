@@ -1,7 +1,7 @@
 import AllRoutes from 'constants/routes';
 import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { auth } from 'requests';
+import { auth, deposit } from 'requests';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/actions/userAction';
 import Home from './home';
@@ -29,11 +29,21 @@ export default function Pages() {
     }
   };
 
+  const checkDeposit = async () => {
+    const { data } = await deposit.checkDeposit({
+      headers: { authorization: `Bearer ${token}` },
+    });
+  };
   useEffect(() => {
     if (!token) return setLoading(false);
 
     getUser();
   }, [token]);
+
+  useEffect(() => {
+    const interval = setInterval(checkDeposit, 5000);
+    return () => clearInterval(interval);
+  }, []);
   if (loading) {
     return <div>loading...</div>;
   }

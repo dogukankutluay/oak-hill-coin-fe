@@ -1,4 +1,4 @@
-const { LOGIN, LOGOUT } = require('redux/types');
+const { LOGIN, LOGOUT, REGISTER } = require('redux/types');
 
 const INITIAL_STATE = {
   token: '',
@@ -17,6 +17,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         token: '',
         userInfo: {},
+      };
+    case REGISTER:
+      return {
+        ...state,
+        ...action.payload,
       };
 
     default:

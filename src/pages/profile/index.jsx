@@ -75,7 +75,7 @@ export default function Profile() {
                 {/* Profile Tabs */}
 
                 {/* Receiving Wallet */}
-                <div className="account-info card">
+                {/* <div className="account-info card">
                   <div className="card-innr">
                     <h6 className="card-title card-title-sm">
                       Receiving Wallet
@@ -100,7 +100,7 @@ export default function Profile() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* Receiving Wallet */}
                 {/* Modal Edit Wallet */}
                 <div className="modal fade" id="edit-wallet" tabIndex={-1}>

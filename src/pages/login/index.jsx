@@ -58,6 +58,16 @@ export default function Login() {
         success: false,
         message: error.response?.data?.message || 'an error occured',
       });
+      if (error?.response?.data?.message === 'email not confirmed') {
+        try {
+          const res = await auth.emailSendAgain({
+            data: { email: form.email },
+          });
+          navigate('/verify/register');
+        } catch (er) {
+          setResponse(er.response?.data);
+        }
+      }
     }
   };
 
@@ -111,8 +121,9 @@ export default function Login() {
             <Checkbox title={lang.checkbox} />
             <ReCAPTCHA
               onChange={handleCaptcha}
-              sitekey="6Levxs8fAAAAACzVBbp6cJIO08FYvpm-z2DbOICk"
-              // sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" test
+              // sitekey="6Levxs8fAAAAACzVBbp6cJIO08FYvpm-z2DbOICk"
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              //test
               className="animate__animated animate__fadeIn delay-350"
             />
 

@@ -4,20 +4,36 @@ import TopInfo from 'components/top-info';
 import UserWelcome from 'components/user-welcome';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { deposit } from 'requests';
-
+import { deposit, payment } from 'requests';
+import axios from 'axios';
 export default function Wallet() {
-  const [orders, setOrders] = useState([]);
+  const [deposits, setDeposits] = useState([]);
+  const [transactions, setTransactions] = useState([]);
   const token = useSelector((state) => state.user.token);
-  const getOrders = async () => {
-    // const { data } = await deposit.getDepositLog({
-    //   headers: { authorization: `Bearer ${token}` },
-    // });
+
+  const getDatas = async () => {
+    try {
+      const allDeposit = await deposit.getDepositLog({
+        headers: { authorization: `Bearer ${token}` },
+      });
+      const allPayment = await payment.getPayment({
+        headers: { authorization: `Bearer ${token}` },
+      });
+      axios.all([allDeposit, allPayment]).then(
+        axios.spread((...allData) => {
+          const depositData = allData[0];
+          const paymentData = allData[1];
+          setDeposits(depositData.data.logs);
+          setTransactions(paymentData.data.payment[0]);
+        })
+      );
+    } catch (error) {
+      console.log(error.response);
+    }
   };
   useEffect(() => {
-    getOrders();
+    getDatas();
   }, []);
-
   return (
     <div className="krace">
       {/* KRACE Body Area Start */}
@@ -213,7 +229,7 @@ export default function Wallet() {
                             </span>
                           </td>
                         </tr>
-                        <tr className="data-item">
+                        {/* <tr className="data-item">
                           <td className="data-col dt-tnxno">
                             <div className="d-flex align-items-center">
                               <div className="data-state data-state-approved">
@@ -485,10 +501,10 @@ export default function Wallet() {
                               P
                             </span>
                           </td>
-                        </tr>
+                        </tr> */}
                       </tbody>
                     </table>
-                    <div class="dataTables_paginate paging_simple_numbers">
+                    {/* <div class="dataTables_paginate paging_simple_numbers">
                       <ul class="pagination">
                         <li
                           class="paginate_button page-item previous"
@@ -541,7 +557,7 @@ export default function Wallet() {
                           </a>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* Orders */}
@@ -564,7 +580,7 @@ export default function Wallet() {
                             rowSpan={1}
                             colSpan={1}
                           >
-                            Date
+                            Name
                           </th>
                           <th
                             className="data-col dt-token sorting_disabled"
@@ -580,74 +596,80 @@ export default function Wallet() {
                           >
                             Address
                           </th>
-                          <th
+                          {/* <th
                             className="data-col dt-amount sorting_disabled"
                             rowSpan={1}
                             colSpan={1}
                           >
                             Transaction Id
-                          </th>
+                          </th> */}
                           <th className="data-col dt-type text-right">
                             <div className="dt-type-text">Type</div>
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="data-item odd" role="row">
-                          <td className="data-col dt-tnxno">
-                            <div className="d-flex align-items-center">
-                              <div className="data-state data-state-approved">
-                                <span className="d-none">Confirmed</span>
-                              </div>
-                              <div className="fake-class">
-                                <span className="lead tnx-id">Tether</span>
-                                <span className="sub sub-date">
-                                  01/03/2022 13:27:08
+                        {transactions?.verified_payment?.map((item, key) => {
+                          return (
+                            <tr className="data-item odd" role="row" key={key}>
+                              <td className="data-col dt-tnxno">
+                                <div className="d-flex align-items-center">
+                                  <div className="data-state data-state-approved">
+                                    <span className="d-none">Confirmed</span>
+                                  </div>
+                                  <div className="fake-class">
+                                    <span className="lead tnx-id">
+                                      {item.tokenName}
+                                    </span>
+                                    <span className="sub sub-date">
+                                      {/* 01/03/2022 13:27:08 */}
+                                    </span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="data-col dt-token">
+                                <span className="lead token-amount">
+                                  {item.amount}
                                 </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="data-col dt-token">
-                            <span className="lead token-amount">
-                              10.00000000
-                            </span>
-                          </td>
-                          <td className="data-col dt-amount">
-                            <a
-                              href="https://tronscan.org/#/address/TSibsdi6C8Bd9eNYNZ534cYKEwyfTdzq3T"
-                              target="_blank"
-                            >
-                              <span
-                                className="lead amount-pay textoverflowellipsis"
-                                style={{ maxWidth: 150 }}
-                              >
-                                TSibsdi6C8Bd9eNYNZ534cYKEwyfTdzq3T
-                              </span>
-                            </a>
-                          </td>
-                          <td className="data-col dt-amount">
-                            <a
-                              href="https://tronscan.org/#/transaction/9222810110fbff9798a7007bc8c99efc07adc9f1c9f6ab7ec369756723209836"
-                              target="_blank"
-                            >
-                              <span
-                                className="lead amount-pay textoverflowellipsis"
-                                style={{ maxWidth: 150 }}
-                              >
-                                9222810110fbff9798a7007bc8c99efc07adc9f1c9f6ab7ec369756723209836
-                              </span>
-                            </a>
-                          </td>
-                          <td className="data-col dt-type text-right">
-                            <span className="dt-type-md badge badge-outline badge-success badge-md">
-                              Deposit
-                            </span>
-                            <span className="dt-type-sm badge badge-sq badge-outline badge-success badge-md">
-                              D
-                            </span>
-                          </td>
-                        </tr>
-                        <tr className="data-item odd" role="row">
+                              </td>
+                              <td className="data-col dt-amount">
+                                <a
+                                  href={`https://tronscan.org/#/address/${item.tokenId}`}
+                                  target="_blank"
+                                >
+                                  <span
+                                    className="lead amount-pay textoverflowellipsis"
+                                    style={{ maxWidth: 150 }}
+                                  >
+                                    {item.tokenId}
+                                  </span>
+                                </a>
+                              </td>
+                              {/* <td className="data-col dt-amount">
+                                <a
+                                  href="https://tronscan.org/#/transaction/9222810110fbff9798a7007bc8c99efc07adc9f1c9f6ab7ec369756723209836"
+                                  target="_blank"
+                                >
+                                  <span
+                                    className="lead amount-pay textoverflowellipsis"
+                                    style={{ maxWidth: 150 }}
+                                  >
+                                    9222810110fbff9798a7007bc8c99efc07adc9f1c9f6ab7ec369756723209836
+                                  </span>
+                                </a>
+                              </td> */}
+                              <td className="data-col dt-type text-right">
+                                <span className="dt-type-md badge badge-outline badge-success badge-md">
+                                  Deposit
+                                </span>
+                                <span className="dt-type-sm badge badge-sq badge-outline badge-success badge-md">
+                                  D
+                                </span>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                        {/* <tr className="data-item odd" role="row">
                           <td className="data-col dt-tnxno">
                             <div className="d-flex align-items-center">
                               <div className="data-state data-state-approved">
@@ -700,10 +722,10 @@ export default function Wallet() {
                               W
                             </span>
                           </td>
-                        </tr>
+                        </tr> */}
                       </tbody>
                     </table>
-                    <div
+                    {/* <div
                       class="dataTables_paginate paging_simple_numbers"
                       id="DataTables_Table_1_paginate"
                     >
@@ -748,7 +770,7 @@ export default function Wallet() {
                           </a>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* Transaction */}
@@ -1054,8 +1076,6 @@ export default function Wallet() {
         </div>
       </div>
       {/* KRACE Body Area End */}
-      {/* JavaScript Start */}
-      {/* JavaScript End */}
     </div>
   );
 }

@@ -70,7 +70,7 @@
   "registerSuccess": {
     "pageTitle": "Success!",
     "title": "You have successfully registered!",
-    "description": "You can click to “Continue” button to see your dashboard.",
+    "description": "You can click to “Continue” button to login.",
     "btnContinue": "Continue"
   },
   "reset": {

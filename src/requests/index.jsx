@@ -21,6 +21,8 @@ export const auth = {
     axios({ ...API_CONFIG.auth.changePassword, ...payload }),
   resetPassword: (payload) =>
     axios({ ...API_CONFIG.auth.resetPassword, ...payload }),
+  emailSendAgain: (payload) =>
+    axios({ ...API_CONFIG.auth.emailSendAgain, ...payload }),
 };
 
 export const deposit = {
@@ -34,4 +36,8 @@ export const deposit = {
     axios({ ...API_CONFIG.deposit.buyDeposit, ...payload }),
   checkDeposit: (payload) =>
     axios({ ...API_CONFIG.deposit.checkDeposit, ...payload }),
+};
+export const payment = {
+  getPayment: (payload) =>
+    axios({ ...API_CONFIG.payment.getPayment, ...payload }),
 };
