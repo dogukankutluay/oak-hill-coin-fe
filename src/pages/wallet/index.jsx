@@ -181,7 +181,7 @@ export default function Wallet() {
                     <table className="data-table dt-init user-tnx">
                       <thead>
                         <tr className="data-item data-head">
-                          <th className="data-col dt-tnxno">Order NO</th>
+                          <th className="data-col dt-tnxno">Order </th>
                           <th className="data-col dt-token">OAKC Amount</th>
                           <th className="data-col dt-amount">Amount</th>
                           <th className="data-col dt-type text-right">
@@ -190,45 +190,53 @@ export default function Wallet() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="data-item">
-                          <td className="data-col dt-tnxno">
-                            <div className="d-flex align-items-center">
-                              <div className="data-state data-state-pending">
-                                <span className="d-none">Pending</span>
-                              </div>
-                              <div className="fake-class">
-                                <span className="lead tnx-id">TNX1002</span>
+                        {deposits?.map((item, key) => {
+                          return (
+                            <tr className="data-item">
+                              <td className="data-col dt-tnxno">
+                                <div className="d-flex align-items-center">
+                                  <div className="data-state data-state-approved">
+                                    <span className="d-none">Approved</span>
+                                  </div>
+                                  <div className="fake-class">
+                                    {/* <span className="lead tnx-id">TNX1002</span>
                                 <span className="sub sub-date">
                                   2018-08-24 10:45PM
+                                </span> */}
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="data-col dt-token">
+                                <span className="lead token-amount">
+                                  {item?.ggc}
                                 </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="data-col dt-token">
-                            <span className="lead token-amount">18,750</span>
-                            <span className="sub sub-symbol">TWZ</span>
-                          </td>
-                          <td className="data-col dt-amount">
-                            <span className="lead amount-pay">50.00</span>
-                            <span className="sub sub-symbol">
-                              ETH
-                              <em
+                                <span className="sub sub-symbol">OAKC</span>
+                              </td>
+                              <td className="data-col dt-amount">
+                                <span className="lead amount-pay">
+                                  {item?.usdt}
+                                </span>
+                                <span className="sub sub-symbol">
+                                  USDT
+                                  {/* <em
                                 className="fas fa-info-circle"
                                 data-toggle="tooltip"
                                 data-placement="bottom"
                                 title="1 ETH = 1250 TWZ"
-                              />
-                            </span>
-                          </td>
-                          <td className="data-col dt-type text-right">
-                            <span className="dt-type-md badge badge-outline badge-success badge-md">
-                              Purchase
-                            </span>
-                            <span className="dt-type-sm badge badge-sq badge-outline badge-success badge-md">
-                              P
-                            </span>
-                          </td>
-                        </tr>
+                              /> */}
+                                </span>
+                              </td>
+                              <td className="data-col dt-type text-right">
+                                <span className="dt-type-md badge badge-outline badge-success badge-md">
+                                  Purchase
+                                </span>
+                                <span className="dt-type-sm badge badge-sq badge-outline badge-success badge-md">
+                                  P
+                                </span>
+                              </td>
+                            </tr>
+                          );
+                        })}
                         {/* <tr className="data-item">
                           <td className="data-col dt-tnxno">
                             <div className="d-flex align-items-center">
