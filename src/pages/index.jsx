@@ -10,7 +10,7 @@ export default function Pages() {
   const [access, setAccess] = useState(false);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  const token = useSelector(state => state.user.token);
+  const token = useSelector((state) => state.user.token);
 
   const getUser = async () => {
     try {
@@ -41,9 +41,10 @@ export default function Pages() {
   }, [token]);
 
   useEffect(() => {
-    const interval = setInterval(checkDeposit, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    if (access) {
+      setInterval(checkDeposit, 5000);
+    }
+  }, [access]);
   if (loading) {
     return <div>loading...</div>;
   }

@@ -192,7 +192,7 @@ export default function Wallet() {
                       <tbody>
                         {deposits?.map((item, key) => {
                           return (
-                            <tr className="data-item">
+                            <tr className="data-item" key={key}>
                               <td className="data-col dt-tnxno">
                                 <div className="d-flex align-items-center">
                                   <div className="data-state data-state-approved">
